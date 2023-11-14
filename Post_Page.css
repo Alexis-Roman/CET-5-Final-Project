@@ -403,3 +403,153 @@ nav a.start-recycling-link {
     margin: 40px auto;
     position: relative;
 }
+
+.content-container2 {
+    width: 100%;
+    max-width: 1295px;
+    margin: 40px auto; /* Adjust the margin as needed for space below the header */
+}
+
+.main-box {
+    width: 100%;
+    max-width: 1295px;
+    height: 416px;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    padding-left: 20px; /* Add left padding as needed */
+}
+
+
+.title-text h1.title {
+    color: #242424;
+    font-family:'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+}
+
+
+.description-box2 {
+    width: 1200px;
+    background-color: #fff;
+    margin-top: 40px; /* Add margin to separate it from the existing small box */
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.content-container2 {
+    width: 100%;
+    max-width: 1295px;
+    margin: 40px auto;
+}
+
+.main-box {
+    width: 100%;
+    max-width: 1295px;
+    height: 316px;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    padding-left: 20px;
+}
+
+.title-text h1.title {
+    color: #242424;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+}
+
+.description-box2 {
+    width: 1200px;
+    background-color: #fff;
+    margin-top: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-image {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 10px; /* Adjust the spacing between image and text */
+}
+
+.user-text {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 20px;
+    color: #08989F;
+    margin: 0;
+}
+
+.post-time {
+    font-size: 20px;
+    color: #989898;
+    margin: 0;
+}
+
+/* New Styles */
+
+.new-content {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.comment-box {
+    flex-grow: 1;
+    max-width: 1074px; /* Adjust the max-width as needed */
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #7D7D7D;
+    margin: 0;
+}
+
+.green-box {
+    width: 66px;
+    height: 50px;
+    background-color: #08989F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.arrow-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin: 0;
+}
