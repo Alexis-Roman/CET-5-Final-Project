@@ -277,7 +277,7 @@ nav a.start-recycling-link {
     width: 1295px;
     height: 1100px;
     background-color: #FFFFFF; /* Adjust the background color as needed */
-    margin: 20px auto;
+    margin: 40px auto;
     position: relative;
 }
 
@@ -351,7 +351,7 @@ nav a.start-recycling-link {
 }
 
 .indent {
-    margin-left: 20px; /* Adjust the indentation as needed */
+    margin-left: 80px; /* Adjust the indentation as needed */
 }
 
 .additional-instructions .indent {
@@ -366,4 +366,40 @@ nav a.start-recycling-link {
     font-size: 20px; /* Adjust the font size as needed */
     margin: 10px 0; /* Add margin between paragraphs */
     margin-top: 20px
+}
+.additional-content-box2 {
+    width: 1295px;
+    height: 750px;
+    background-color: #FFFFFF; /* Adjust the background color as needed */
+    margin: 40px auto;
+    position: relative;
+}
+.picture-container2 {
+    width: 1295px;
+    height: 475px;
+    overflow: hidden; /* Ensure the image stays within the container */
+    padding-top: 100px; /* Add space between the picture and the top of the container */
+}
+
+.additional-instructions2 {
+    max-width: 1295px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center align the content */
+}
+
+.additional-instructions2 p {
+    padding-left: 150px;
+    text-align: left; /* Left-align paragraphs */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 20px; /* Adjust the font size as needed */
+    margin: 10px 0; /* Add margin between paragraphs */
+    margin-top: 20px
+}
+
+.additional-content-box {
+    width: 1295px;
+    height: 1200px;
+    background-color: #FFFFFF; /* Adjust the background color as needed */
+    margin: 40px auto;
+    position: relative;
 }
