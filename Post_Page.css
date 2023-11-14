@@ -553,3 +553,30 @@ nav a.start-recycling-link {
     color: #FFFFFF;
     margin: 0;
 }
+
+/* New Styles for content-container3 */
+
+.content-container3 {
+    width: 100%;
+    max-width: 1295px;
+    margin: 40px auto;
+}
+
+.related-text {
+    color: #242424;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+}
+
+.related-images {
+    display: flex;
+    gap: 15px; /* Adjust the gap between images as needed */
+    margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+.related-image {
+    width: 390px; /* Adjust the width of the images */
+    height: 224px; /* Adjust the height of the images */
+}
