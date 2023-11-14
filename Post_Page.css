@@ -181,7 +181,7 @@ nav a.start-recycling-link {
 .description-box {
     width: 579px;
     background-color: #fff;
-    margin-top: 40px; /* Add margin to separate it from the existing small box */
+    margin-top: 20px; /* Add margin to separate it from the existing small box */
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -210,7 +210,7 @@ nav a.start-recycling-link {
     position: absolute;
     bottom: 0;
     right: 0;
-    margin-bottom: 65px; /* Add margin to separate it from the main box */
+    margin-bottom: 20px; /* Add margin to separate it from the main box */
     margin-right: 20px; /* Add margin to separate it from the main box */
     padding: 20px;
     box-sizing: border-box;
