@@ -580,3 +580,41 @@ nav a.start-recycling-link {
     width: 390px; /* Adjust the width of the images */
     height: 224px; /* Adjust the height of the images */
 }
+
+/* New Styles for content-container4 */
+.content-container4 {
+    width: 100%;
+    max-width: 1295px;
+    margin: 40px auto;
+}
+
+.main-box4 {
+    width: 100%;
+    max-width: 1295px;
+    height: 416px;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content4 {
+    padding-left: 20px;
+}
+
+.references-text4 {
+    color: #242424;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+}
+
+.reference {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    margin: 1px;
+    padding-top: 15px;
+    padding-left: 100px; /* Adjust the left padding as needed */
+}
