@@ -137,6 +137,10 @@ nav a.start-recycling-link {
     box-sizing: border-box;
 }
 
+.main-content {
+    padding-left: 20px; /* Add left padding as needed */
+}
+
 .header-text p.recycle-text {
     color: #03696E;
     font-family: 'Open Sans', sans-serif;
@@ -266,4 +270,100 @@ nav a.start-recycling-link {
     font-weight: 800;
     font-size: 36px;
     margin: 0;
+}
+
+
+.additional-content-box {
+    width: 1295px;
+    height: 1100px;
+    background-color: #FFFFFF; /* Adjust the background color as needed */
+    margin: 20px auto;
+    position: relative;
+}
+
+.step-image {
+    width: 111px;
+    height: 84px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.step-info {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 111px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-text {
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+.step-number {
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0;
+}
+
+.instruction-text {
+    position: absolute;
+    top: -20px;
+    left: 130px; /* Adjust the left positioning as needed */
+    color: #242424;
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    margin: 0;
+}
+
+.picture-container {
+    width: 1295px;
+    height: 675px;
+    overflow: hidden; /* Ensure the image stays within the container */
+    padding-top: 100px; /* Add space between the picture and the top of the container */
+}
+
+.picture-image {
+    width: 100%; /* Make the image fill the container width */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove default inline display */
+}
+
+.additional-instructions {
+    max-width: 1295px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center align the content */
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.indent {
+    margin-left: 20px; /* Adjust the indentation as needed */
+}
+
+.additional-instructions .indent {
+    margin-bottom: 5px; /* Reduce the spacing between sentences in indented text */
+}
+
+.additional-instructions p {
+    padding-left: 150px;
+    text-align: left; /* Left-align paragraphs */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 20px; /* Adjust the font size as needed */
+    margin: 10px 0; /* Add margin between paragraphs */
+    margin-top: 20px
 }
