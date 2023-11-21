@@ -159,6 +159,60 @@
     display: block;
 }
 
+.text-container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Welcome text styles */
+.welcome-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    color: #fff;
+    margin-top: -480px;
+}
+
+/* Upcycle! text styles */
+.upcycle-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 200px;
+    font-weight: 700;
+    color: #F06205;
+    margin-top: -30px;
+}
+
+/* Upcycle description styles */
+.upcycle-description {
+    width: 1335px;
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 400;
+    color: #fff;
+    margin-top: -30px;
+    margin-left: 100px;
+}
+
+/* Sign In button styles */
+.btn-signin2 {
+    margin-top: 10px;
+    width: 301px;
+    height: 70px;
+    background-color: #F06205;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-signin2:hover {
+    background-color: #d84315;
+}
+
 /* Media query to show navigation on larger screens */
 @media (min-width: 1200px) {
     .custom-nav {
