@@ -20,26 +20,26 @@
     <div class="signup-text">Sign up</div>
     <div class="create-account-text">Create your Account</div>
     <div class="personal-info-text">Personal information:</div>
-    <input type="text" class="form-input" placeholder="Full Name">
-    <!-- "Username" form input -->
-    <input type="text" class="username-input" placeholder="Username">
-    <!-- "Birthday" form input -->
-    <input type="text" class="birthday-input" placeholder="Birthday">
+    
 
     <div class="account-text">Account:</div>
 
-    <!-- "Email" form input -->
-    <input type="text" class="email-input" placeholder="Email">
-
-    <!--  "Password" form input -->
-    <input type="password" class="password-input" placeholder="Password">
-
-    <!-- "Confirm Password" form input -->
-    <input type="password" class="confirm-password-input" placeholder="Confirm Password">
-
     <div class="agreement-text">By signing up, you agree to our Terms, Privacy Policy, and Cookies Policy.</div>
 
-    <div class="signup-button">Sign up</div>
+    <form action="signup.php" method="post">
+
+        <!-- ... (existing form fields) ... -->
+    
+        <!-- Add the "name" attribute to each input element to retrieve values in PHP -->
+        <input type="text" name="full_name" class="form-input" placeholder="Full Name">
+        <input type="text" name="username" class="username-input" placeholder="Username">
+        <input type="text" name="birthday" class="birthday-input" placeholder="Birthday">
+        <input type="text" name="email" class="email-input" placeholder="Email">
+        <input type="password" name="password" class="password-input" placeholder="Password">
+        <input type="password" name="confirm_password" class="confirm-password-input" placeholder="Confirm Password">
+    
+        <button type="submit" class="signup-button">Sign up</button>
+    </form>
 
     <!-- "WELCOME TO UPCYCLE!" text -->
     <div class="welcome-text">WELCOME TO UPCYCLE!</div>
@@ -56,5 +56,7 @@
             window.location.href = 'login.html';
         });
     </script>
+
+    
 </body>
 </html>
