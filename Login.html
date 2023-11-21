@@ -54,12 +54,16 @@
     </div>
 
     <form action="login.php" method="post">
-
         <!-- Add the "name" attribute to each input element to retrieve values in PHP -->
-        <input type="text" name="email" class="email-input" placeholder="Email">
-        <input type="password" name="password" class="password-input" placeholder="Password">
-    
-        <button type="submit" class="login-button">Log in</button>
+        <div class="email-form">
+            <input type="text" name="email" class="email-input" placeholder="Email">
+        </div>
+        <div class="password-form">
+            <input type="password" name="password" class="password-input" placeholder="Password">
+        </div>
+        <div class="login-button">
+            <button type="submit" class="custom-login-button">Log in</button>
+        </div>
     </form>
 
     <script>
