@@ -58,6 +58,13 @@ header {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
+.burger-menu {
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: -40px;
+    margin-left: 3%;
+}
+
 nav {
     margin-top: -45px;
     margin-left: auto;
@@ -68,6 +75,10 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
+}
+
+nav.show.ul {
+    display: flex;
 }
 
 nav li {
@@ -118,13 +129,6 @@ nav a {
 
 .auth-buttons button.signup-btn:hover {
     background-color: rgba(240, 98, 5, 0.1);
-}
-
-.burger-menu {
-    font-size: 25px;
-    cursor: pointer;
-    margin-top: -40px;
-    margin-left: 3%;
 }
 
 /* Content */
@@ -404,10 +408,6 @@ button.signin4-btn:hover {
 @media screen and (min-width: 1274px) {
     nav ul {
         display: flex !important;
-    }
-
-    .burger-menu {
-        display: none;
     }
 }
 
