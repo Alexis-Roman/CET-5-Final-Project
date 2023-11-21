@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPCYCLEL! - Home</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="LandingPage.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
@@ -12,43 +13,61 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="src/img/Logo/NGOlogo.png" alt="Your Logo">
-        </div>
-        
-        <div class="Webtitle">
-            <h1>Upcycle</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="Home.html">Home</a></li>
-                <li><a href="Post_Page.html">Start Recycling</a></li>
-                <li><a href="#">Latest Post</a></li>
-                <li><a href="#">Community Forum</a></li>
-            </ul>
-        </nav>
-        <div class="auth-buttons">
-            <a href="signin.html">
-                <button class="signin-btn">Sign In</button>
-            </a>
-            <a href="signup.html">
-            <button class="signup-btn">Sign Up</button>
-            </a>
+    <header class="landing-header">
+        <div class="header-container">
+            <div class="align-container">
+                <!-- Logo -->
+                <div class="col-logo">
+                    <div class="logo">
+                        <img src="src/img/Logo/NGOlogo.png" alt="Your Logo" class="img-fluid">
+                    </div>
+                </div>
+
+                <!-- Web title -->
+                <div class="col-webtitle">
+                    <div class="Webtitle">
+                        <h1 class="webtitle-text">Upcycle</h1>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="col-nav custom-nav">
+                    <nav>
+                        <ul class="nav">
+                            <li class="nav-item"><a href="Home.html" class="nav-link">Home</a></li>
+                            <li class="nav-item"><a href="Post_Page.html" class="nav-link">Start Recycling</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Latest Post</a></li>
+                            <li class="nav-item"><a href="#" class="nav-link">Community Forum</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Authentication buttons -->
+                <div class="col-auth custom-auth">
+                    <div class="auth-buttons text-end">
+                        <a href="signin.html" class="btn btn-signin text-center">Sign In</a>
+                        <a href="signup.html" class="btn btn-signup text-center">Sign Up</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
     <div class="content">
+        <div class="bg-image-1">
+            <img class="bg1" src="src/img/hpbg1.png">
+        </div>
+        <div class="text-container-1">
+            <h2 class="welcome-text">Welcome to</h2>
+            <h2 class="upcycle-text">UPCYCLE!</h2>
+            <h1 class="upcycle-description">
+                Connect with eco-conscious individuals, share tips, and discuss innovative ways to do the 3Rs.
+            </h1>
+            <a href="signin.html">
+                <button class="signin2-btn">Sign In</button>
+            </a>
+        </div>
         
-        <img class="bg1" src="src/img/hpbg1.png">
-        <h2 class="welcome-text">Welcome to</h2>
-        <h2 class="upcycle-text">UPCYCLE!</h2>
-        <h1 class="upcycle-description">
-            Connect with eco-conscious individuals, share tips, and discuss innovative ways to do the 3Rs.
-        </h1>
-        <a href="signin.html">
-            <button class="signin2-btn">Sign In</button>
-        </a>
 
 
 
@@ -94,6 +113,16 @@
         <img class="join-img" src="src/join.png">
         <img class="last" src="src/last.png">
     </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js">
+
+
+    </script>
+    <script src="bootstrap/js/bootstrap.min.js">
+
+
+    </script>
+
 
 </body>
 
