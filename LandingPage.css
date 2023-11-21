@@ -167,7 +167,6 @@ nav a {
 }
 
 .welcome-text {
-    position: absolute;
     margin-top: 50px;
     font-family: 'Quicksand', sans-serif;
     font-size: 80px;
@@ -203,11 +202,20 @@ nav a {
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
     color: #fff;
-    border-radius: 10px;
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
     border: none;
     background-color: #F06205;
     cursor: pointer;
+}
+
+
+.c1 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 50%;
+    height: auto;
+    
 }
 
 .create-and {
@@ -231,6 +239,16 @@ nav a {
     text-align: center;
     z-index: 1;
     line-height: 40px;
+}
+
+.signin3-btn {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    border: none;
+    background-color: #F06205;
+    cursor: pointer;
 }
 
 .engage-in {
@@ -291,22 +309,12 @@ nav a {
     transform: translateX(-50%);
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
+    border-radius: 10px;
     z-index: 1;
 }
 
 button.signin2-btn:hover {
     background-color: #D84315;
-}
-
-.signin3-btn {
-    font-family: 'Poppins', sans-serif;
-    font-size: 32px;
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    border: none;
-    background-color: #F06205;
-    cursor: pointer;
 }
 
 button.signin3-btn:hover {
@@ -359,7 +367,6 @@ button.signin4-btn:hover {
 }
 
 /* images */
-.c1,
 .bg2,
 .bg3,
 .c2,
@@ -385,19 +392,37 @@ button.signin4-btn:hover {
     .auth-buttons {
         display: none;
     }
+}
 
+@media screen and (max-width: 1000px) {
     .welcome-text {
-        font-size: 15px;
+        top: -30px;
+        font-size: 20px;
     }
 
     .upcycle-text {
-        top: 2%;
-        font-size: 40px;
-        position: absolute;
+        top: 50px;
+        font-size: 50px;
     }
-    
+
     .upcycle-description {
-        font-size: 15px;
+        font-size: 11px;
+        top: 190px;
+    }
+
+    .signin2-btn,
+    .signin3-btn,
+    .signin4-btn,
+    .signup2-btn {
+        top: 180px;
+        width: 15%;
+        height: 25px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: 'Poppins', sans-serif;
+        font-size: 11px;
+        border-radius: 5px;
+        z-index: 1;
     }
 }
 
