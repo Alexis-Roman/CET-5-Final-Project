@@ -154,3 +154,135 @@ body::-webkit-scrollbar-track {
     color: #272727;
     z-index: 2; /* Ensure the text is in front of other content */
 }
+
+.email-input {
+    position: absolute;
+    left: 219px;
+    top: 492px;
+    width: 670px;
+    height: 70px;
+    border-radius: 25px;
+    background-color: #E4E4E4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: #767676;
+    z-index: 2; /* Ensure the form is in front of other content */
+    border: none; /* Remove the border */
+    text-indent: 15px; /* Adjust the indentation as needed */
+}
+
+
+.password-input {
+    position: absolute;
+    left: 219px;
+    top: 577px;
+    width: 670px;
+    height: 70px;
+    border-radius: 25px;
+    background-color: #E4E4E4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: #767676;
+    z-index: 2; /* Ensure the form is in front of other content */
+    border: none; /* Remove the border */
+    text-indent: 15px; /* Adjust the indentation as needed */
+}
+
+
+.confirm-password-input {
+    position: absolute;
+    left: 219px;
+    top: 662px;
+    width: 670px;
+    height: 70px;
+    border-radius: 25px;
+    background-color: #E4E4E4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: #767676;
+    z-index: 2; /* Ensure the form is in front of other content */
+    border: none; /* Remove the border */
+    text-indent: 15px; /* Adjust the indentation as needed */
+}
+
+.agreement-text {
+    position: absolute;
+    left: 320px; /* Adjust the left position as needed */
+    top: 750px; /* Adjust the top position as needed */
+    width: 464px;
+    height: 48px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+    color: #000000;
+    z-index: 2; /* Ensure the text is in front of other content */
+    text-align: center; /* Center the text */
+}
+
+.signup-button {
+    position: absolute;
+    left: 431px; /* Adjust the left position as needed */
+    top: 810px; /* Adjust the top position as needed */
+    width: 247px;
+    height: 76px;
+    border-radius: 38px;
+    background-color: #EC5300;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: medium;
+    color: #FFFFFF;
+    z-index: 2; /* Ensure the button is in front of other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Add a pointer cursor for better interaction */
+}
+
+.welcome-text {
+    position: absolute;
+    left: 1199px; /* Adjust the left position as needed */
+    top: 291px; /* Adjust the top position as needed */
+    width: 681px;
+    height: 255px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 96px;
+    font-weight: bold;
+    color: #ffffff;
+    z-index: 2; /* Ensure the text is in front of other content */
+    text-align: center; /* Center the text */
+}
+
+.existing-account-text {
+    position: absolute;
+    left: 1306px; /* Adjust the left position as needed */
+    top: 559px; /* Adjust the top position as needed */
+    width: 446px;
+    height: 40px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    color: #FFFFFF;
+    z-index: 2; /* Ensure the text is in front of other content */
+}
+
+.login-button {
+    position: absolute;
+    left: 1382px; /* Adjust the left position as needed */
+    top: 638px; /* Adjust the top position as needed */
+    width: 287px;
+    height: 83px;
+    border-radius: 38px;
+    background-color: #08989F;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: medium;
+    color: #FFFFFF;
+    z-index: 2; /* Ensure the button is in front of other content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Add a pointer cursor for better interaction */
+}
