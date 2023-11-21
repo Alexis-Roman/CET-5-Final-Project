@@ -1,0 +1,37 @@
+.navbar{
+    background-color: #08989F;
+    height: 70px;
+}
+
+a.navbar-brand, a.navbar-brand:hover{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+a.nav-link{
+    color: white !important;
+    margin-inline: 20px;
+    font-family: 'Poppins';
+}
+
+button.btn.btn-login{
+    width: 90px;
+    color: #fff;
+    background-color: #F06205;
+}
+
+button.btn.btn-signup{
+    width: 120px;
+    color: #fff;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+
+input.form-control{
+    width: 30rem;
+}
