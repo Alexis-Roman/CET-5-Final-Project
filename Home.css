@@ -1,3 +1,54 @@
+
+@media screen and (max-width: 100%) {
+    body {
+        zoom: 100%;
+    }
+
+    .logo {
+        margin-left: 5%;
+    }
+
+    .Webtitle {
+        margin-left: -15%;
+    }
+
+    nav li {
+        margin: 0 5%;
+    }
+
+    .auth-buttons button.signin-btn {
+        margin-left: -10%;
+    }
+
+    .welcome-text,
+    .upcycle-text,
+    .upcycle-description,
+    .create-and,
+    .through-well,
+    .engage-in,
+    .through2-well,
+    .create-your,
+    .join-our,
+    .signin2-btn,
+    .signin3-btn,
+    .signin4-btn,
+    .email-input,
+    .signup2-btn {
+        width: 90%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 16px;
+    }
+
+    
+    .content {
+        position: relative;
+        height: auto;
+    }
+}
+
+
+
 body {
     margin: 0;
     padding: 0;
