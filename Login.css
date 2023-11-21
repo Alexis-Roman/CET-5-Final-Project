@@ -229,7 +229,7 @@ body::-webkit-scrollbar-track {
     padding-left: 25px;
 }
 
-.custom-signup-button {
+.custom-login-button {
     background-color: #00777F;
     color: #FFFFFF;
     border: none;
@@ -243,11 +243,11 @@ body::-webkit-scrollbar-track {
     margin-top: 10px;
 }
 
-.custom-signup-button:hover {
+.custom-login-button:hover {
     background-color: #00565A;
 }
 
-.signup1-button {
+.login-button {
     position: absolute;
     left: 431px;
     top: 709px;
