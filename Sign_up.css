@@ -76,3 +76,81 @@ body::-webkit-scrollbar-track {
     color: #9B9B9B;
     z-index: 2; /* Ensure the text is in front of other content */
 }
+
+.personal-info-text {
+    position: absolute;
+    left: 214px;
+    top: 238px;
+    width: 216px;
+    height: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500; /* Medium */
+    color: #272727;
+    z-index: 2; /* Ensure the text is in front of other content */
+}
+
+.form-input {
+    position: absolute;
+    left: 219px;
+    top: 279px;
+    width: 670px;
+    height: 70px;
+    border-radius: 25px;
+    background-color: #E4E4E4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: #767676;
+    z-index: 2; /* Ensure the form is in front of other content */
+    border: none; /* Remove the border */
+    text-indent: 15px; /* Adjust the indentation as needed */
+}
+
+.username-input {
+    position: absolute;
+    left: 219px;
+    top: 364px;
+    width: 317px;
+    height: 70px;
+    border-radius: 25px;
+    background-color: #E4E4E4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: #767676;
+    z-index: 2; /* Ensure the form is in front of other content */
+    border: none; /* Remove the border */
+    text-indent: 15px; /* Adjust the indentation as needed */
+}
+
+/* Add the following CSS for the "Birthday" form input */
+.birthday-input {
+    position: absolute;
+    left: 554px;
+    top: 364px;
+    width: 335px;
+    height: 70px;
+    border-radius: 25px;
+    background-color: #E4E4E4;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: #767676;
+    z-index: 2; /* Ensure the form is in front of other content */
+    border: none; /* Remove the border */
+    text-indent: 15px; /* Adjust the indentation as needed */
+}
+
+.account-text {
+    position: absolute;
+    left: 214px;
+    top: 455px;
+    width: 216px;
+    height: 30px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 500; /* Medium */
+    color: #272727;
+    z-index: 2; /* Ensure the text is in front of other content */
+}
