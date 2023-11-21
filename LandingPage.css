@@ -133,8 +133,8 @@ nav a {
 
 /* Content */
 .content {
-    width: 80%;
-    margin: 0 auto; /* Center the content */
+    position: absolute;
+    width: 100%;
 }
 
 /* text */
@@ -153,33 +153,61 @@ nav a {
 .email-input,
 .signup2-btn {
     width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+    max-width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.bg1 {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: auto;
 }
 
 .welcome-text {
+    position: absolute;
+    margin-top: 50px;
     font-family: 'Quicksand', sans-serif;
     font-size: 80px;
     font-weight: 500;
     color: #fff; 
+    text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .upcycle-text {
+    margin-top: -100px;
     font-family: 'Quicksand', sans-serif;
     font-size: 200px;
     font-weight: 700;
-    color: #F06205; 
+    color: #F06205;
+    text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 .upcycle-description {
-    width: 80%;
+    width: 70%;
+    margin-top: -180px;
+    left: 15%;
     font-family: 'Poppins', sans-serif;
     font-size: 35px;
     font-weight: 400;
     color: #fff; 
     text-align: center;
+}
+
+.signin2-btn {
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    border: none;
+    background-color: #F06205;
+    cursor: pointer;
 }
 
 .create-and {
@@ -257,23 +285,13 @@ nav a {
 .signin3-btn,
 .signin4-btn,
 .signup2-btn {
-    width: 80%;
+    width: 15%;
+    height: 70px;
     left: 50%;
     transform: translateX(-50%);
     font-family: 'Poppins', sans-serif;
     font-size: 32px;
     z-index: 1;
-}
-
-.signin2-btn {
-    font-family: 'Poppins', sans-serif;
-    font-size: 32px;
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-    border: none;
-    background-color: #F06205;
-    cursor: pointer;
 }
 
 button.signin2-btn:hover {
@@ -341,7 +359,6 @@ button.signin4-btn:hover {
 }
 
 /* images */
-.bg1,
 .c1,
 .bg2,
 .bg3,
@@ -362,15 +379,25 @@ button.signin4-btn:hover {
     }
 
     .Webtitle {
-        margin-left: 3%;
-    }
-
-    .burger-menu {
-        margin-left: 3%;
+        margin-right: 30%;
     }
 
     .auth-buttons {
         display: none;
+    }
+
+    .welcome-text {
+        font-size: 15px;
+    }
+
+    .upcycle-text {
+        top: 2%;
+        font-size: 40px;
+        position: absolute;
+    }
+    
+    .upcycle-description {
+        font-size: 15px;
     }
 }
 
@@ -378,38 +405,10 @@ button.signin4-btn:hover {
 @media screen and (max-width: 1275px) {
 
     nav {
-        margin-top: 0;
-        margin-left: 0;
-    }
-
-    nav ul {
-        display: none; /* Hide the nav links by default on smaller screens */
-        flex-direction: column;
-        align-items: center;
-        position: absolute;
-        top: 90px;
-        left: 0;
-        width: 100%;
-        background-color: #08989F;
-        text-align: center;
-    }
-
-    nav ul.active {
-        display: flex; /* Show the nav links when the menu is active */
-    }
-
-    nav li {
-        margin: 10px 0;
+        display: none;
     }
 }
 
-
-
-@media screen and (min-width: 1274px) {
-    nav ul {
-        display: flex !important;
-    }
-}
 
 
 
