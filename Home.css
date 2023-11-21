@@ -33,42 +33,45 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .logo {
-    margin-left: 101px;
+    margin-left: 5%;
 }
 
 .logo img {
     width: 87px;
     height: 90px;
-    display: block;
 }
 
 .Webtitle {
-    margin-left: -250px;
+    margin-left: 3%;
+    margin-top: -50px;
 }
 
 .Webtitle h1 {
     font-family: 'Quicksand', sans-serif;
-    font-size: 50px;
+    font-size: 45px;
     font-weight: 700;
     color: #fff;
-    margin: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+nav {
+    margin-top: -45px;
+    margin-left: auto;
+    margin-right: 3%;
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
+    justify-content: center;
 }
 
 nav li {
-    margin-left: 50px;
-    margin-right: 50px;
-
+    margin-left: 100px;
 }
 
 nav a {
@@ -79,17 +82,21 @@ nav a {
     font-family: 'Poppins', sans-serif;
 }
 
+.auth-buttons {
+    margin-top: -45px;
+    margin-right: 3%;
+}
+
 .auth-buttons button.signin-btn {
-    margin-left: -200px;
-    margin-right: 22px;
+    margin-right: 10px;
     background-color: #F06205;
     color: white;
     border: none;
     border-radius: 10px;
-    width: 102px;
+    width: 120px;
     height: 48px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -98,15 +105,14 @@ nav a {
 }
 
 .auth-buttons button.signup-btn {
-    margin-right: 21px;
     background-color: transparent;
     color: #fff;
     border: 2px solid #fff;
     border-radius: 10px;
-    width: 161px;
+    width: 120px;
     height: 48px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -114,19 +120,44 @@ nav a {
     background-color: rgba(240, 98, 5, 0.1);
 }
 
+.burger-menu {
+    font-size: 25px;
+    cursor: pointer;
+    margin-top: -40px;
+    margin-left: 3%;
+}
+
 /* Content */
 .content {
-    position: relative;
+    width: 80%;
+    margin: 0 auto; /* Center the content */
 }
 
 /* text */
+.welcome-text,
+.upcycle-text,
+.upcycle-description,
+.create-and,
+.through-well,
+.engage-in,
+.through2-well,
+.create-your,
+.join-our,
+.signin2-btn,
+.signin3-btn,
+.signin4-btn,
+.email-input,
+.signup2-btn {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
 
 .welcome-text {
     font-family: 'Quicksand', sans-serif;
     font-size: 80px;
     font-weight: 500;
     color: #fff; 
-    margin: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
@@ -135,7 +166,6 @@ nav a {
     font-size: 200px;
     font-weight: 700;
     color: #F06205; 
-    margin: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
@@ -145,7 +175,6 @@ nav a {
     font-size: 35px;
     font-weight: 400;
     color: #fff; 
-    margin: 0;
     text-align: center;
 }
 
@@ -155,7 +184,6 @@ nav a {
     font-size: 120px;
     font-weight: 700;
     color: #00757E; 
-    margin: 0;
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     z-index: 1;
@@ -168,7 +196,6 @@ nav a {
     font-size: 36px;
     font-weight: 400;
     color: #000000; 
-    margin: 0;
     text-align: center;
     z-index: 1;
     line-height: 40px;
@@ -180,7 +207,6 @@ nav a {
     font-size: 120px;
     font-weight: 700;
     color: #00757E; 
-    margin: 0;
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     z-index: 1;
@@ -193,7 +219,6 @@ nav a {
     font-size: 36px;
     font-weight: 400;
     color: #000000; 
-    margin: 0;
     text-align: center;
     z-index: 1;
     line-height: 40px;
@@ -205,7 +230,6 @@ nav a {
     font-size: 120px;
     font-weight: 700;
     color: #EC5300; 
-    margin: 0;
     text-align: center;
     z-index: 1;
     line-height: 127.5px;
@@ -218,7 +242,6 @@ nav a {
     font-size: 36px;
     font-weight: 400;
     color: #000000; 
-    margin: 0;
     text-align: center;
     z-index: 1;
     line-height: 40px;
@@ -323,67 +346,70 @@ button.signin4-btn:hover {
 .c4,
 .join-img,
 .last {
+    width: 100%;
     max-width: 100%;
     height: auto;
 }
 
-@media screen and (max-width: 1200px) {
-    body {
-        zoom: 100%;
-    }
 
+@media screen and (max-width: 800px) {
     .logo {
-        margin-left: 20px;
+        margin-left: 5%;
     }
 
     .Webtitle {
-        margin-left: -150px;
+        margin-left: 3%;
+    }
+
+    .burger-menu {
+        margin-left: 3%;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 1275px) {
+
+    nav {
+        margin-top: 0;
+        margin-left: 0;
+    }
+
+    nav ul {
+        display: none; /* Hide the nav links by default on smaller screens */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        width: 100%;
+        background-color: #08989F;
+        text-align: center;
+    }
+
+    nav ul.active {
+        display: flex; /* Show the nav links when the menu is active */
     }
 
     nav li {
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-
-    .auth-buttons button.signin-btn {
-        margin-left: -100px;
-    }
-
-    .welcome-text,
-    .upcycle-text,
-    .upcycle-description,
-    .create-and,
-    .through-well,
-    .engage-in,
-    .through2-well,
-    .create-your,
-    .join-our,
-    .signin2-btn,
-    .signin3-btn,
-    .signin4-btn,
-    .email-input,
-    .signup2-btn {
-        width: 80%;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 16px;
-    }
-    
-    .content {
-        position: relative;
-        height: auto;
-    }
-
-    /* Adjust image sizes and positions */
-    .content img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .c1, .bg2, .bg3, .c2, .c3, .c4, .join-img, .last, .bg1 {
-        top: auto;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        max-width: 100%;
+        margin: 10px 0;
     }
 }
+
+
+
+@media screen and (min-width: 1274px) {
+    nav ul {
+        display: flex !important;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+}
+
+
+

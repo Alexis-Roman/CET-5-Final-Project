@@ -20,6 +20,8 @@
         <div class="Webtitle">
             <h1>Upcycle</h1>
         </div>
+        
+        <div class="burger-menu">&#9776;</div>
         <nav>
             <ul>
                 <li><a href="Home.html">Home</a></li>
@@ -92,6 +94,17 @@
         <img class="join-img" src="src/join.png">
         <img class="last" src="src/last.png">
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const nav = document.querySelector('nav');
+    
+            burgerMenu.addEventListener('click', function () {
+                nav.classList.toggle('show');
+            });
+        });
+    </script>
 
 </body>
 
