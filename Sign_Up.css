@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    zoom: 80%;
+    overflow-x: hidden; 
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #606060 #f0f0f0; /* Firefox */
+}
+
+/* Webkit (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #606060;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+/* Header */
+header {
+    width: 100%;
+    height: 90px;
+    background-color: #08989F;
+    color: white;
+    text-align: center;
+    line-height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 101px;
+}
+
+.logo img {
+    width: 87px;
+    height: 90px;
+    display: block;
+}
+
+.Webtitle {
+    margin-left: -250px;
+}
+
+.Webtitle h1 {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left: 50px;
+    margin-right: 50px;
+
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-buttons button.signin-btn {
+    margin-left: -200px;
+    margin-right: 22px;
+    background-color: #F06205;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    width: 102px;
+    height: 48px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-buttons button.signin-btn:hover {
+    background-color: #D84315;
+}
+
+.auth-buttons button.signup-btn {
+    margin-right: 21px;
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    width: 161px;
+    height: 48px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.auth-buttons button.signup-btn:hover {
+    background-color: rgba(240, 98, 5, 0.1);
+}
+
+/* bg_image (right) */
+.bg_image {
+    position: absolute;
+    top: 90px;
+    left: 1136px;
+    width: 784px;
+    height: 834px;
+}
