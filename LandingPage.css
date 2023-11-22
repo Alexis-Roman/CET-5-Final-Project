@@ -19,9 +19,8 @@ body::-webkit-scrollbar-track {
 }
 
 .header-container {
-    max-width: 1920px;
-    max-height: 90px;
-    margin: 0 auto;
+    max-width: 100%;
+    max-height: 4.69%;
 }
 
 .align-container {
@@ -50,7 +49,7 @@ body::-webkit-scrollbar-track {
 
 .Webtitle h1 {
     font-family: 'Quicksand', sans-serif;
-    font-size: 50px;
+    font-size: 3.125rem;
     font-weight: 700; 
     color: #fff;
 }
@@ -69,7 +68,7 @@ body::-webkit-scrollbar-track {
     font-family: 'Poppins', sans-serif;
     text-decoration: none;
     color: #fff;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 500;
 }
 
@@ -120,7 +119,7 @@ body::-webkit-scrollbar-track {
 .btn {
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-size: 1rem;
     margin-left: 20px;
     transition: background-color 0.3s ease;
 }
@@ -144,7 +143,7 @@ body::-webkit-scrollbar-track {
 
 .bg1 {
     width: 100%; 
-    height: 659px;
+    height: 34.32%;
     display: block;
 }
 
@@ -156,7 +155,7 @@ body::-webkit-scrollbar-track {
 /* Welcome text styles */
 .welcome-text {
     font-family: 'Quicksand', sans-serif;
-    font-size: 80px;
+    font-size: 5rem;
     font-weight: 500;
     color: #fff;
     margin-top: -600px;
@@ -166,7 +165,7 @@ body::-webkit-scrollbar-track {
 /* Upcycle! text styles */
 .upcycle-text {
     font-family: 'Quicksand', sans-serif;
-    font-size: 200px;
+    font-size: 12.5rem;
     font-weight: 700;
     color: #F06205;
     margin-top: -30px;
@@ -179,7 +178,7 @@ body::-webkit-scrollbar-track {
     height: 4.167%;
     margin-left: 15.57%;
     font-family: 'Poppins', sans-serif;
-    font-size: 35px;
+    font-size: 2.1875rem;
     font-weight: 400;
     color: #fff;
 }
@@ -195,7 +194,7 @@ body::-webkit-scrollbar-track {
     background-color: #F06205;
     color: #fff;
     font-family: 'Poppins', sans-serif;
-    font-size: 32px;
+    font-size: 2rem;
     font-weight: 500;
     border-radius: 5px;
     cursor: pointer;
@@ -217,7 +216,7 @@ body::-webkit-scrollbar-track {
 
 .bg2 {
     margin-top: -500px;
-    margin-left: -13.96%;
+    margin-left: -56%;
     width: 72.29%; 
     height: 48.13%;
 }
@@ -234,7 +233,7 @@ body::-webkit-scrollbar-track {
 
 .create-and {
     font-family: 'Poppins', sans-serif;
-    font-size: 120px;
+    font-size: 7.5rem;
     font-weight: 700;
     color: #00757E;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -243,7 +242,7 @@ body::-webkit-scrollbar-track {
 /* Upcycle description styles */
 .through-well {
     font-family: 'Poppins', sans-serif;
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 400;
     color: #0000;
 }
