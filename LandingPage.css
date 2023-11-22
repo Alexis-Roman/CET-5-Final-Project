@@ -186,7 +186,7 @@ body::-webkit-scrollbar-track {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-top: 25px;
+    margin-top: 30px;
     width: 301px;
     height: 70px;
     background-color: #F06205;
@@ -206,14 +206,12 @@ body::-webkit-scrollbar-track {
 /* 2nd page */
 .c1 {
     margin-top: 500px;
-    margin-left: 900px;
+    margin-left: 1210px;
     width: 719px; 
     height: 719px;
 }
 
 .bg2 {
-    margin-top: -500px;
-    margin-left: -400px;
     width: 1138px; 
     height: 924px;
 }
