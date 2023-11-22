@@ -32,8 +32,7 @@ body::-webkit-scrollbar-track {
 
 /* Logo styles */
 .col-logo {
-    margin-left: 101px;
-    flex: 0 0 87px;
+    margin-left: 5.26%;
 }
 
 .logo img {
@@ -47,7 +46,7 @@ body::-webkit-scrollbar-track {
 }
 
 .Webtitle {
-    margin-left: 43px;
+    margin-left: 7.5%;
 }
 
 .Webtitle h1 {
@@ -82,7 +81,7 @@ body::-webkit-scrollbar-track {
 
 .auth-buttons {
     display: flex;
-    margin-right: 60px;
+    margin-right: 10.2%;
     justify-content: flex-end;
 }
 
@@ -162,6 +161,7 @@ body::-webkit-scrollbar-track {
     font-weight: 500;
     color: #fff;
     margin-top: -600px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Upcycle! text styles */
@@ -171,6 +171,7 @@ body::-webkit-scrollbar-track {
     font-weight: 700;
     color: #F06205;
     margin-top: -30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Upcycle description styles */
@@ -197,6 +198,7 @@ body::-webkit-scrollbar-track {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .btn-signin2:hover {
@@ -212,14 +214,20 @@ body::-webkit-scrollbar-track {
 }
 
 .bg2 {
-    width: 1138px; 
+    margin-top: -500px;
+    margin-right: 500px;
+    width: 1388px; 
     height: 924px;
 }
 
 .text-container-2 {
     position: relative;
+    width: 888px;
+    height: auto;
+    position: relative;
     z-index: 1;
-    margin-top: -500px;
+    margin-top: -600px;
+    margin-left: 500px;
 }
 
 .create-and {
@@ -227,12 +235,11 @@ body::-webkit-scrollbar-track {
     font-size: 120px;
     font-weight: 700;
     color: #00757E;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* Upcycle description styles */
 .through-well {
-    width: 698px;
-    height: 120px;
     font-family: 'Poppins', sans-serif;
     font-size: 36px;
     font-weight: 400;
@@ -254,6 +261,7 @@ body::-webkit-scrollbar-track {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 
 .btn-signin3:hover {
