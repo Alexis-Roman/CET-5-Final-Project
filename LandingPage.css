@@ -223,12 +223,12 @@ body::-webkit-scrollbar-track {
 
 .text-container-2 {
     position: relative;
-    width: 888px;
+    width: 46.25%;
     height: auto;
     position: relative;
     z-index: 1;
-    margin-top: -600px;
-    margin-left: 500px;
+    margin-top: -790px;
+    margin-left: 50.26%;
 }
 
 .create-and {
@@ -239,16 +239,19 @@ body::-webkit-scrollbar-track {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Upcycle description styles */
-.through-well {
+.page3-text {
+    width: 78.60%;
     font-family: 'Poppins', sans-serif;
     font-size: 2.25rem;
     font-weight: 400;
-    color: #0000;
+    color: #000000; 
+    z-index: 1;
+    margin-left: 12.5%;
 }
 
 /* Sign In button styles */
 .btn-signin3 {
+    margin-top: 20px;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -267,6 +270,21 @@ body::-webkit-scrollbar-track {
 
 .btn-signin3:hover {
     background-color: #d84315;
+}
+
+/* page 3*/
+.bg3 {
+    margin-top: 500px;
+    width: 66.04%;
+    height: 44.06%;
+    margin-left: 39.32%;
+}
+
+.c2 {
+    margin-top: -720px;
+    width: 18.725%; 
+    height: 18.725%;
+    margin-left: -82%;
 }
 
 
