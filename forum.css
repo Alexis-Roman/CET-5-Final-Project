@@ -10,13 +10,41 @@ button.btn.btn-createnewtopic{
 .right-column{
     background-color: white;
     border-radius: 10px;
+    margin-left: 6%;
+    align-items: end;
+    
 }
 
 button.btn.btn-topic{
+    font-size: 25px;
+    font-weight: bold;
     width: 100%;
     padding-block: 12px;
     color: #fff;
     background-color: #F06205;
     margin-top: 3%;
     margin-bottom: 1%;
+    text-align: start;
+}
+
+p.h1.forum-highlighted-left{
+    font-weight: 700;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-block: 10px;
+    color: white;
+    background-color: #00777F;
+    
+}
+
+.space { 
+    margin:0; 
+    padding:0; 
+    height:80px; 
+}
+
+ul{
+    list-style-type:none;
+    font-size: 16px;
+    font-weight: 500;
 }
