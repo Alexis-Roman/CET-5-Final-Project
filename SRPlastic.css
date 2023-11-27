@@ -1,4 +1,3 @@
-
 .navbar{
     background-color: #08989F;
     height: 70px;
@@ -11,6 +10,17 @@ a.navbar-brand, a.navbar-brand:hover{
     color: #fff;
     margin: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+p.h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 50px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+div.banner-info.section{
+    color: white;
 }
 
 a.nav-link{
@@ -35,4 +45,41 @@ button.btn.btn-signup{
 
 input.form-control{
     width: 30rem;
+}
+
+#search-section form {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: white;
+    height: 50px;
+    box-shadow: 3px 4px 4px rgba(0, 0, 0, .13);
+}
+
+.outbox {
+    height: 500px;
+}
+
+.form-control:active,
+.form-control:focus {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+p.label.h1 {
+    font-family: 'Open Sans';
+    font-size: large;
+    color: black;
+
+}
+
+.card{
+    margin: 10px;
+}
+ul{
+    list-style-type: none;
+}
+
+.footer{
+    background-image: url(images/footer_bg.png);
 }
