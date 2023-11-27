@@ -76,6 +76,13 @@ p.label.h1 {
 .card{
     margin: 10px;
 }
+
+h4.card-title{
+    font-family: 'Quicksand';
+    font-weight: bold;
+    color: #F06205;
+}
+
 ul{
     list-style-type: none;
 }

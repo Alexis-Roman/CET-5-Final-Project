@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upcycle - Plastic</title>
-    <link rel="stylesheet" href="SRPlastic.css">
+    <title>Upcycle - Categories</title>
+    <link rel="stylesheet" href="Account.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -46,13 +46,13 @@
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Create New Post</a></li>
                 </ul>
-              </li>
-              <li class="nav-item ">
+            </li>
+            <li class="nav-item ">
                 <a class="nav-link" href="#">Recent Post</a>
-              </li>
-              <li class="nav-item">
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="#">Community Forum</a>
-              </li>
+            </li>
             </ul>
             
             <div class="d-grid gap-1 d-md-flex justify-content-md-end">
@@ -60,41 +60,65 @@
                 <button class="btn btn-signup" type="button">Sign In</button>
             </div>
             </div>
-              
-          </div>
-      </div>
-      
+        </div>
+    </div>
+
     </div>
 </nav>
 
-<!-- BANNER SEARCH -->
-<div class="section p-5 text-center" style="background-image: url(images/plastic_bg.png);">
-    <div class="container" style="padding-block: 50px;">
-        <div>
-            <p class="h1">Plastic</p>
-            <form class="d-flex justify-content-center" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success " type="submit">Search</button>
-            </form>
+<!-- <section class="banner">
+    <img class="profile" src="images/profile.png" />
+</section> -->
+
+<section class="banner">
+    <div class="container">
+        <div class="profile d-flex justify-content-center">
+            <div class="row profile p-5 rounded-4 shadow-sm" style="background-color: white;">
+                <div class="col d-flex my-3 justify-content-center">
+                    <img src="images/profile.png" alt="">
+                </div>
+                <div class="col">
+                    <div class="row align-items-center">
+                        <div class="username col "><h4>User Name here</h4></div>
+                        <div class="col"><button class="edit"><img class="w-50" src="src/edit_icon.png" alt=""></button></div>
+                    </div>
+                    
+                    <p class="date-joined"> Joined October 10, 2023</p>
+                    <p class="signature">This will be my signature ^^!
+                        Nice to meet you~</p>
+                </div>
+                <hr>
+                <h4>User Activity</h4>
+                <div class="col mt-2">
+                    <div class="row text-center">
+                        <div class="col r">
+                            <p class="h1">10</p>
+                            <p class="h3">Liked Post</p>
+                        </div>
+                        
+                        <div class="col">
+                            <p class="h1">10</p>
+                            <p class="h3">Read Post</p>
+                            
+                        </div>
+                        <div class="col">
+                            <p class="h1">10</p>
+                            <p class="h3">Created Post</p>
+                            
+                        </div>
+                    </div>
+            </div>
+            
         </div>
     </div>
-</div>
+</section>
 
-<!-- BANNER INFO -->
-<div class="banner-info section p-5" style="background-color: #F6760E;">
-    <div class="container" >
-        <div>
-            <p>Plastic</p>
-            <p>Plastic, a versatile synthetic material derived from polymers, has become an integral part of modern life due to its durability and adaptability. However, our overreliance on plastic has led to a pressing environmental crisis marked by pollution, ecosystem disruption, and long-lasting waste. To address this challenge, recycling emerges as a crucial solution, offering a sustainable approach to minimize environmental impact, conserve resources, and alleviate the detrimental effects of plastic waste.</p>
-        </div>
-        
-    </div>
-</div>
 
-<!-- FEATURED ARTICLES -->
-<div class="article container" style="background-color: white; margin-top: 2%; padding: 3%;">
+<div class="container contain-all">
+    <!-- HISTORY -->
+<div class="article container" style="background-color: white; margin-top: 1%; padding: 3%;">
     <div class="row">
-        <p class="label h1">Featured Articles:</p>
+        <p class="label h1">History</p>
         <hr>
         <div class="row">
             <div class="col align-items-center">
@@ -172,14 +196,12 @@
         </div>
         
     </div>
-
-    <!-- Posts cards -->
 </div>
 
-<!-- RECENTLY POSTED -->
-<div class="article container" style="background-color: white; margin-top: 2%; padding: 3%;">
+<!-- FAVORITE -->
+<div class="article container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
     <div class="row">
-        <p class="label h1">Recently Posted:</p>
+        <p class="label h1">Favorite</p>
         <hr>
         <div class="row">
             <div class="col align-items-center">
@@ -218,59 +240,100 @@
                 </div>
             </div>
         </div>
-
-        
-        
     </div>
-
-    <!-- Posts cards -->
 </div>
 
-<!-- YOU MAY LIKE -->
-<div class="article container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
+<!-- BOOKMARK -->
+<div class="discussion container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
     <div class="row">
-        <p class="label h1">You may like:</p>
+        <p class="label h1">Bookmark</p>
         <hr>
         <div class="row">
-            <div class="col align-items-center">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="card">
+                <div class="row my-3 mx-2">
+                    <div class="col">
+                        <h4 class="card-title">Hello!</h4>
+                        <p class="card-category">Glass Category</p>
                     </div>
-                </div>
-            </div>
+                    <div class="col">
+                        <p class="author">
+                            by: 4Bids
+                        </p>
 
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+                        <p class="date&time">
+                            June. 18, 2023 12:15 PM
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="comment">
+                            30 comments
+                        </p>
+                        <p class="likes">
+                            100 likes
+                        </p>
                     </div>
                 </div>
-            </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
-                    </div>
-                </div>
+                
             </div>
         </div>
-        
-    </div>
 
+        <div class="row">
+            <div class="card">
+                <div class="row my-3 mx-2">
+                    <div class="col">
+                        <h4 class="card-title">Hello!</h4>
+                        <p class="card-category">Glass Category</p>
+                    </div>
+                    <div class="col">
+                        <p class="author">
+                            by: 4Bids
+                        </p>
+
+                        <p class="date&time">
+                            June. 18, 2023 12:15 PM
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="comment">
+                            30 comments
+                        </p>
+                        <p class="likes">
+                            100 likes
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="card">
+                <div class="row my-3 mx-2">
+                    <div class="col">
+                        <h4 class="card-title">Hello!</h4>
+                        <p class="card-category">Glass Category</p>
+                    </div>
+                    <div class="col">
+                        <p class="author">
+                            by: 4Bids
+                        </p>
+
+                        <p class="date&time">
+                            June. 18, 2023 12:15 PM
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="comment">
+                            30 comments
+                        </p>
+                        <p class="likes">
+                            100 likes
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>    
 </div>
 
 <!-- FOOTER -->
@@ -296,5 +359,6 @@
     </div>
 </div>
 </footer>
+
 </body>
 </html>
