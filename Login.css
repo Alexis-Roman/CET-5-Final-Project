@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    zoom: 80%;
+    overflow-x: hidden; 
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #606060 #f0f0f0; /* Firefox */
+}
+
+/* Webkit (Chrome, Safari) */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #606060;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+.logo {
+    position: absolute;
+    left: 33px;
+    top: 19px;
+    width: 87px;
+    height: 90px;
+    z-index: 1; /* Ensure the logo is in front of other content */
+}
+
+.brand-text {
+    position: absolute;
+    left: 120px;
+    top: -12px;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    color: #F06205;
+    z-index: 1; /* Ensure the text is in front of other content */
+}
+
+/* bg_image (right) */
+.bg_image {
+    position: absolute;
+    top: -14px;
+    left: 1136px;
+    width: 784px;
+    height: 938px;
+    z-index: -1;
+}
+
+.new-here {
+    position: absolute;
+    left: 1271px;
+    top: 321px;
+    width: 517px;
+    height: 128px;
+}
+
+.new-here-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 96px;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+.signup-text {
+    position: absolute;
+    left: 1306px;
+    top: 449px;
+    width: 446px;
+    height: 80px;
+    text-align: center; /* Center the text horizontally */
+}
+
+.signup-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    color: #FFFFFF;
+    line-height: 40px;
+    margin: 0;
+}
+
+.signup-button {
+    background-color: #EC5300;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 38px;
+    width: 287px;
+    height: 83px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px; /* Adjust the margin to align with the text */
+}
+
+.signup-button:hover {
+    background-color: #D24300;
+}
+
+.login-text {
+    position: absolute;
+    left: 198px;
+    top: 193px;
+    width: 716px;
+    height: 128px;
+    text-align: center; /* Center the text horizontally */
+}
+
+.login-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 64px;
+    font-weight: bold;
+    color: #3D3D3D;
+    margin: 0;
+    white-space: nowrap; /* Prevent line breaks */
+}
+
+.social-networks-text {
+    position: absolute;
+    left: 325px;
+    top: 301px;
+    width: 463px;
+    height: 40px;
+    text-align: center; /* Center the text horizontally */
+}
+
+.social-networks-message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: normal;
+    color: #9B9B9B;
+    margin: 0;
+}
+
+.custom-image {
+    position: absolute;
+    left: 447px;
+    top: 349px;
+    width: 219px;
+    height: 72px;
+    z-index: 2; /* Adjust the z-index to place the image in the desired layer */
+}
+
+.or-container {
+    position: absolute;
+    left: 219px;
+    top: 420.5px;
+    display: flex;
+    align-items: center;
+}
+
+.or-line {
+    height: 0;
+    width: 299.5px;
+    border-top: 1px solid #A5A1A1;
+}
+
+.left-line {
+    margin-right: 10px;
+}
+
+.right-line {
+    margin-left: 10px;
+}
+
+.or-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    color: #A5A1A1;
+    margin: 0;
+    z-index: 2; /* Ensure the text is on top */
+}
+
+.email-form {
+    position: absolute;
+    left: 219px;
+    top: 490px;
+    width: 670px;
+    height: 70px;
+    background-color: #E4E4E4;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px; /* Add border-radius property */
+}
+
+.email-input {
+    height: 40px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-top: 5px;
+    border-radius: 25px; /* Add border-radius property */
+    padding-left: 25px; /* Add padding to the left for indentation */
+}
+
+.password-form {
+    position: absolute;
+    left: 219px;
+    top: 570px; /* Adjust the top position as needed */
+    width: 670px;
+    height: 70px;
+    background-color: #E4E4E4;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    margin-top: 10px; /* Adjust the margin between the email and password forms */
+}
+
+.password-input {
+    height: 40px;
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-top: 5px;
+    border-radius: 25px;
+    padding-left: 25px;
+}
+
+.custom-login-button {
+    background-color: #00777F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 38px;
+    width: 247px;
+    height: 76px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: medium;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.custom-login-button:hover {
+    background-color: #00565A;
+}
+
+.login-button {
+    position: absolute;
+    left: 431px;
+    top: 709px;
+    z-index: 1; /* Adjust the z-index as needed */
+}

@@ -137,6 +137,10 @@ nav a.start-recycling-link {
     box-sizing: border-box;
 }
 
+.main-content {
+    padding-left: 20px; /* Add left padding as needed */
+}
+
 .header-text p.recycle-text {
     color: #03696E;
     font-family: 'Open Sans', sans-serif;
@@ -177,7 +181,7 @@ nav a.start-recycling-link {
 .description-box {
     width: 579px;
     background-color: #fff;
-    margin-top: 40px; /* Add margin to separate it from the existing small box */
+    margin-top: 20px; /* Add margin to separate it from the existing small box */
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
@@ -206,7 +210,7 @@ nav a.start-recycling-link {
     position: absolute;
     bottom: 0;
     right: 0;
-    margin-bottom: 65px; /* Add margin to separate it from the main box */
+    margin-bottom: 20px; /* Add margin to separate it from the main box */
     margin-right: 20px; /* Add margin to separate it from the main box */
     padding: 20px;
     box-sizing: border-box;
@@ -266,4 +270,352 @@ nav a.start-recycling-link {
     font-weight: 800;
     font-size: 36px;
     margin: 0;
+}
+
+
+.additional-content-box {
+    width: 1295px;
+    height: 1100px;
+    background-color: #FFFFFF; /* Adjust the background color as needed */
+    margin: 40px auto;
+    position: relative;
+}
+
+.step-image {
+    width: 111px;
+    height: 84px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.step-info {
+    position: absolute;
+    top: 0;
+    left: -10px;
+    width: 111px;
+    height: 84px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-text {
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 0;
+}
+
+.step-number {
+    color: #FFFFFF;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 32px;
+    margin: 0;
+}
+
+.instruction-text {
+    position: absolute;
+    top: -20px;
+    left: 130px; /* Adjust the left positioning as needed */
+    color: #242424;
+    font-family: 'Lato', sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    margin: 0;
+}
+
+.picture-container {
+    width: 1295px;
+    height: 675px;
+    overflow: hidden; /* Ensure the image stays within the container */
+    padding-top: 100px; /* Add space between the picture and the top of the container */
+}
+
+.picture-image {
+    width: 100%; /* Make the image fill the container width */
+    height: auto; /* Maintain the aspect ratio */
+    display: block; /* Remove default inline display */
+}
+
+.additional-instructions {
+    max-width: 1295px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center align the content */
+}
+
+.bold-text {
+    font-weight: bold;
+}
+
+.indent {
+    margin-left: 80px; /* Adjust the indentation as needed */
+}
+
+.additional-instructions .indent {
+    margin-bottom: 5px; /* Reduce the spacing between sentences in indented text */
+}
+
+.additional-instructions p {
+    padding-left: 150px;
+    text-align: left; /* Left-align paragraphs */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 20px; /* Adjust the font size as needed */
+    margin: 10px 0; /* Add margin between paragraphs */
+    margin-top: 20px
+}
+.additional-content-box2 {
+    width: 1295px;
+    height: 750px;
+    background-color: #FFFFFF; /* Adjust the background color as needed */
+    margin: 40px auto;
+    position: relative;
+}
+.picture-container2 {
+    width: 1295px;
+    height: 475px;
+    overflow: hidden; /* Ensure the image stays within the container */
+    padding-top: 100px; /* Add space between the picture and the top of the container */
+}
+
+.additional-instructions2 {
+    max-width: 1295px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center align the content */
+}
+
+.additional-instructions2 p {
+    padding-left: 150px;
+    text-align: left; /* Left-align paragraphs */
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 20px; /* Adjust the font size as needed */
+    margin: 10px 0; /* Add margin between paragraphs */
+    margin-top: 20px
+}
+
+.additional-content-box3 {
+    width: 1295px;
+    height: 1200px;
+    background-color: #FFFFFF; /* Adjust the background color as needed */
+    margin: 40px auto;
+    position: relative;
+}
+
+.content-container2 {
+    width: 100%;
+    max-width: 1295px;
+    margin: 40px auto; /* Adjust the margin as needed for space below the header */
+}
+
+.main-box {
+    width: 100%;
+    max-width: 1295px;
+    height: 416px;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    padding-left: 20px; /* Add left padding as needed */
+}
+
+
+.title-text h1.title {
+    color: #242424;
+    font-family:'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+}
+
+
+.description-box2 {
+    width: 1200px;
+    background-color: #fff;
+    margin-top: 40px; /* Add margin to separate it from the existing small box */
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.content-container2 {
+    width: 100%;
+    max-width: 1295px;
+    margin: 40px auto;
+}
+
+.main-box {
+    width: 100%;
+    max-width: 1295px;
+    height: 316px;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content {
+    padding-left: 20px;
+}
+
+.title-text h1.title {
+    color: #242424;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+}
+
+.description-box2 {
+    width: 1200px;
+    background-color: #fff;
+    margin-top: 40px;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-image {
+    width: 50px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    margin-right: 10px; /* Adjust the spacing between image and text */
+}
+
+.user-text {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.user-name {
+    font-weight: bold;
+    font-size: 20px;
+    color: #08989F;
+    margin: 0;
+}
+
+.post-time {
+    font-size: 20px;
+    color: #989898;
+    margin: 0;
+}
+
+/* New Styles */
+
+.new-content {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.comment-box {
+    flex-grow: 1;
+    max-width: 1074px; /* Adjust the max-width as needed */
+    height: 50px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.comment-text {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    color: #7D7D7D;
+    margin: 0;
+}
+
+.green-box {
+    width: 66px;
+    height: 50px;
+    background-color: #08989F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.arrow-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+/* New Styles for content-container3 */
+
+.content-container3 {
+    width: 100%;
+    max-width: 1295px;
+    margin: 40px auto;
+}
+
+.related-text {
+    color: #242424;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    margin: 0;
+}
+
+.related-images {
+    display: flex;
+    gap: 15px; /* Adjust the gap between images as needed */
+    margin-top: 20px; /* Adjust the top margin as needed */
+}
+
+.related-image {
+    width: 390px; /* Adjust the width of the images */
+    height: 224px; /* Adjust the height of the images */
+}
+
+/* New Styles for content-container4 */
+.content-container4 {
+    width: 100%;
+    max-width: 1295px;
+    margin: 40px auto;
+}
+
+.main-box4 {
+    width: 100%;
+    max-width: 1295px;
+    height: 416px;
+    background-color: #fff;
+    position: relative;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-content4 {
+    padding-left: 20px;
+}
+
+.references-text4 {
+    color: #242424;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 32px;
+    padding-top: 10px;
+    margin: 0;
+}
+
+.reference {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 24px;
+    color: #000000;
+    margin: 1px;
+    padding-top: 15px;
+    padding-left: 100px; /* Adjust the left padding as needed */
 }
