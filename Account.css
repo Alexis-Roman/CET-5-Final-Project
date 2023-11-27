@@ -48,8 +48,9 @@ div.profile.d-flex{
     box-shadow: inherit;
 }
 
+
 div.container.contain-all{
-margin-top: 10%;
+margin-top: 20%;
 }
 
 p.label.h1{
@@ -67,6 +68,31 @@ h4.card-title{
     font-family: 'Quicksand';
     font-weight: bold;
     color: #F06205;
+}
+
+.username.col{
+    font-family: 'Open Sans';
+    font-weight: bold;
+    color: black;
+}
+
+.date-joined{
+    color: #9D9D9D;
+}
+
+.signature{
+    color: #FF6B00;
+}
+
+.edit{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+}
+
+ul{
+    list-style-type: none;
 }
 /* .cover{
     background-image: url(src/account_cover.png);
