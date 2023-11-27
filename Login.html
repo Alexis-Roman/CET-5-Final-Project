@@ -17,11 +17,9 @@
 </header>
 <body>
     <img src="images/login.png" alt="Description of the image" class="bg_image">
-
     <div class="new-here">
         <p class="new-here-text">New Here?</p>
-    </div> 
-
+    </div>
     <div class="signup-text">
         <p class="signup-message">Sign-up and join our community!</p>
         <button class="signup-button">Sign up</button>
@@ -38,12 +36,10 @@
     <div class="login-text">
         <p class="login-message">Login to Your Account</p>
     </div>
-
     <div class="social-networks-text">
         <p class="social-networks-message">Login using your social networks</p>
     </div>
     <img src="images/socials.png" alt="Description of the image" class="custom-image">
-
     <!-- Add the "OR" text with lines -->
     <div class="or-container">
         <div class="or-line left-line"></div>
@@ -52,47 +48,15 @@
         </div>
         <div class="or-line right-line"></div>
     </div>
-
-    <form action="login.php" method="post">
-        <!-- Add the "name" attribute to each input element to retrieve values in PHP -->
-        <div class="email-form">
-            <input type="text" name="email" class="email-input" placeholder="Email">
-        </div>
-        <div class="password-form">
-            <input type="password" name="password" class="password-input" placeholder="Password">
-        </div>
-        <div class="login-button">
-            <button type="submit" class="custom-login-button">Log in</button>
-        </div>
-    </form>
-
-    <script>
-        document.querySelector('.login-button').addEventListener('click', function () {
-          const email = document.getElementById('email-input').value;
-          const password = document.getElementById('password-input').value;
-      
-          fetch('/login', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
-          })
-            .then(response => response.text())
-            .then(data => {
-              console.log(data);
-              if (data === 'Login successful') {
-                alert('Login successful!');
-                // You can redirect to home.html or perform other actions based on the response
-              } else {
-                alert('Invalid email or password');
-                // Handle unsuccessful login
-              }
-            })
-            .catch(error => console.error('Error:', error));
-        });
-    </script>
-
-
+    <!-- Add the email form -->
+    <div class="email-form">
+        <input type="email" id="email-input" class="email-input" placeholder="Email">
+    </div>
+    <div class="password-form">
+        <input type="password" id="password-input" class="password-input" placeholder="Password">
+    </div>
+    <div class="login-button">
+        <button class="custom-login-button">Login</button>
+    </div>
 </body>
 </html>
