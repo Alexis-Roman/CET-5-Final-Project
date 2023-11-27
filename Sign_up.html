@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Upcyle - Login</title>
+    <title>Upcyle - Sign Up</title>
+    <link rel="stylesheet" href="Sign_up.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+    <link rel="shortcut icon" href="src/img/Logo/NGOlogo.png" type="image/x-icon">    
+</head>
+<header>
+    <img src="src/img/Logo/NGOlogo.png" alt="Logo" class="logo">
+    <h2 class="brand-text">UPCYCLE</h2>
+    <!-- ... (existing header code) ... -->
+</header>
+<body>
+    <img src="images/signup.png" alt="Description of the image" class="bg_image">
+    <div class="signup-text">Sign up</div>
+    <div class="create-account-text">Create your Account</div>
+    <div class="personal-info-text">Personal information:</div>
+    <input type="text" class="form-input" placeholder="Full Name" required>
+    <!-- "Username" form input -->
+    <input type="text" class="username-input" placeholder="Username" required>
+    <!-- "Birthday" form input -->
+    <input type="text" class="birthday-input" placeholder="Birthday" required>
+    <div class="account-text">Account:</div>
+    <!-- "Email" form input -->
+    <input type="text" class="email-input" placeholder="Email" required>
+    <!--  "Password" form input -->
+    <input type="password" class="password-input" placeholder="Password" required>
+    <!-- "Confirm Password" form input -->
+    <input type="password" class="confirm-password-input" placeholder="Confirm Password" required>
+    <div class="agreement-text">By signing up, you agree to our Terms, Privacy Policy, and Cookies Policy.</div>
+    <div class="signup-button">Sign up</div>
+    <!-- "WELCOME TO UPCYCLE!" text -->
+    <div class="welcome-text">WELCOME TO UPCYCLE!</div>
+    <div class="existing-account-text">Have an existing account?</div>
+    <!-- "Log in" button -->
+    <div class="login-button">Log in</div>
+    <script>
+        // JavaScript code to handle the click event on the "Log in" button
+        document.querySelector('.login-button').addEventListener('click', function() {
+            // Redirect to login.html
+            window.location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
