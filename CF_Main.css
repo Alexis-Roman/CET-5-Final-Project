@@ -1,0 +1,25 @@
+body {
+    padding-top: 0; /* Adjust body padding to accommodate the fixed navbar */
+
+}
+
+.navbar {
+    background-color: #08989F !important; /* Use !important to ensure the color is applied */
+    height: 90px;
+}
+
+.navbar-brand {
+    color: #fff !important; /* Change the color of the navbar brand */
+}
+
+.navbar-toggler-icon {
+    background-color: #fff !important; /* Change the color of the navbar toggler icon */
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important; /* Change the color of the navbar links */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #fff !important; /* Change the color of the navbar links on hover */
+}
