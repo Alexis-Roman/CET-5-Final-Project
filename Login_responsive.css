@@ -70,12 +70,30 @@ img.brand_img{
 
 .signup1-button {
 
-    
     left: 431px;
     top: 709px;
     z-index: 1; /* Adjust the z-index as needed */
 }
 
-.login_to-sign-in{
-    background-image: url(src/login_bg.png);
+.signup-button{
+    background-color: #EC5300;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 38px;
+    padding-inline: 60px;
+    padding-block: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    cursor: pointer;
+    margin-top: 40px;
 }
+
+/* .login_to-sign-in{
+    background-image: url(src/login_bg.png);
+    object-fit: cover;
+    align-self: flex-end;
+    position: absolute;
+    height: 100%;
+    width: 40%;
+}  */
