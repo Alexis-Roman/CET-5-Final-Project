@@ -1,0 +1,81 @@
+.contain_all{
+    background-color: #F4F4F4;
+    height: 100vh;
+}
+
+img.brand_img{
+    height: 80px;
+    text-align: start;
+}
+
+
+.email-form {
+    padding: 10px;
+    background-color: #E4E4E4;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px; /* Add border-radius property */
+}
+
+.email-input {
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-top: 5px;
+    border-radius: 25px; /* Add border-radius property */
+    padding-left: 25px; /* Add padding to the left for indentation */
+}
+
+.password-form {
+    padding: 10px;
+    background-color: #E4E4E4;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    margin-top: 10px; /* Adjust the margin between the email and password forms */
+}
+
+.password-input {
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background: transparent;
+    margin-top: 5px;
+    border-radius: 25px;
+    padding-left: 25px;
+}
+
+.custom-signup-button {
+    background-color: #00777F;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 38px;
+    padding-inline: 60px;
+    padding-block: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: medium;
+    cursor: pointer;
+    margin-top: 40px;
+}
+
+.custom-signup-button:hover {
+    background-color: #00565A;
+}
+
+.signup1-button {
+
+    
+    left: 431px;
+    top: 709px;
+    z-index: 1; /* Adjust the z-index as needed */
+}
+
+.login_to-sign-in{
+    background-image: url(src/login_bg.png);
+}
