@@ -1,92 +1,236 @@
-.navbar{
+/* Modified by Carl Andrei D. Lambino BSCOE 3-4 */
+
+/* scroll bar */
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #606060;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: #f0f0f0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+/* Header styles */
+.landing-header {
     background-color: #08989F;
-    height: 70px;
 }
 
-a.navbar-brand, a.navbar-brand:hover{
+.header-container {
+    max-width: 100%;
+    max-height: 4.69%;
+}
+
+.align-container {
+    display: flex;
+    align-items: center; 
+}
+
+/* Logo styles */
+.col-logo {
+    margin-left: 5.26%;
+}
+
+.logo img {
+    max-width: 87px;
+    height: 90px;
+}
+
+/* Web title styles */
+.col-webtitle {
+    flex-grow: 1;
+}
+
+.Webtitle {
+    margin-left: 7.5%;
+}
+
+.Webtitle h1 {
     font-family: 'Quicksand', sans-serif;
-    font-size: 35px;
-    font-weight: 700;
+    font-size: 3.125rem;
+    font-weight: 700; 
     color: #fff;
-    margin: 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-}
-p.h1{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 50px;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 20px;
 }
 
-div.banner-info.section{
-    color: white;
+/* Navigation styles */
+.nav {
+    list-style: none;
 }
 
-a.nav-link{
-    color: white !important;
-    margin-inline: 20px;
-    font-family: 'Poppins';
+.nav-item {
+    display: inline-block;
+    margin-right: 50px;
 }
 
-button.btn.btn-login{
-    width: 90px;
+.nav-link {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
     color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Authentication buttons styles */
+.col-auth {
+    flex: 0 0 150px; /* Set a fixed width for the authentication buttons column */
+}
+
+.auth-buttons {
+    display: flex;
+    margin-right: 10.2%;
+    justify-content: flex-end;
+}
+
+.btn-signin,
+.btn-signup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn-signin {
+    color: #fff; 
     background-color: #F06205;
+    width: 102px;
+    height: 48px;
 }
 
-button.btn.btn-signup{
-    width: 120px;
+.btn-signin:hover {
+    background-color: #d84315;
+}
+
+.btn-signup {
     color: #fff;
     background-color: transparent;
-    border: 1px solid white;
+    border-color: #fff;
+    width: 161px;
+    height: 48px;
 }
 
-
-input.form-control{
-    width: 30rem;
+.btn-signup:hover {
+    background-color: #fff;
+    color: #d84315;
+    border-color: #d84315;
 }
 
-#search-section form {
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: white;
-    height: 50px;
-    box-shadow: 3px 4px 4px rgba(0, 0, 0, .13);
+.btn {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    margin-left: 20px;
+    transition: background-color 0.3s ease;
 }
 
-.outbox {
-    height: 500px;
+/* Hiding */
+.custom-nav {
+    display: none;
 }
 
-.form-control:active,
-.form-control:focus {
-    border: none;
-    outline: none;
-    box-shadow: none;
+.custom-auth {
+    display: none;
 }
 
-p.label.h1 {
-    font-family: 'Open Sans';
-    font-size: large;
-    color: black;
+/* Content */
 
+.content {
+    position: relative;
+    text-align: center;
+    overflow: hiddeng;
 }
 
-.card{
-    margin: 10px;
+.bg1 {
+    width: 100%; 
+    height: 34.32%;
+    display: block;
 }
 
-h4.card-title{
-    font-family: 'Quicksand';
-    font-weight: bold;
+.text-container-1 {
+    position: relative;
+    margin-top: -32%;
+    z-index: 1;
+}
+
+/* Welcome text styles */
+.welcome-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 5rem;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Upcycle! text styles */
+.upcycle-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 12.5rem;
+    font-weight: 700;
     color: #F06205;
+    margin-top: -30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-ul{
-    list-style-type: none;
+
+
+
+/* Media query to show navigation on larger screens */
+@media (min-width: 1200px) {
+    .custom-nav {
+        display: block;
+    }
 }
 
-.footer{
-    background-image: url(images/footer_bg.png);
+@media (min-width: 900px) {
+
+    .custom-auth {
+        display: block;
+    }
+}
+
+@media (max-width: 1200px) {
+    /* Adjust font sizes for smaller screens */
+    .welcome-text {
+        font-size: 3rem;
+    }
+
+    .upcycle-text {
+        font-size: 7rem;
+    }
+
+    .upcycle-description {
+        font-size: 1.3125rem;
+    }
+    
+    /* Sign In button styles */
+    .btn-signin2 {
+        width: 180.6px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+    /* Add similar adjustments for other elements as needed */
+
+    .custom-auth {
+        display: block;
+    }
+
+    .create-and {
+        font-size: 4.5rem;
+    }
+
+    .page2-text {
+        font-size: 1.35rem;
+    }
+
+    .btn-signin3 {
+        width: 180.6px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+
 }
