@@ -47,6 +47,10 @@ body {
     flex-grow: 1;
 }
 
+.col-webtitle a {
+    text-decoration: none;
+}
+
 .Webtitle {
     margin-left: 7.5%;
 }
