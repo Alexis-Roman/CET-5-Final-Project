@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
     <link rel="shortcut icon" href="src/img/Logo/NGOlogo.png" type="image/x-icon">    
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js" type="module"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js" type="module"></script>
+    <script type="module">
+        const firebaseConfig = {
+            apiKey: "AIzaSyAtPlc5gKUL3bE3JJyoR15eywqzYqcMyBM",
+            authDomain: "upcycle-d254a.firebaseapp.com",
+            projectId: "upcycle-d254a",
+            storageBucket: "upcycle-d254a.appspot.com",
+            messagingSenderId: "144128623287",
+            appId: "1:144128623287:web:64194a3160eb550447c332",
+            measurementId: "G-M29PS6ZNN6"
+        };
+
+        const app = firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+    </script>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
@@ -20,7 +36,9 @@
             <div class="d-lg-flex">
                 <!-- LEFT SIDE -->
                 <div class="px-5">
-                    <img class="brand_img img-fluid" src="src/img/Logo/Site_brand.png" alt="">
+                    <a href="LandingPage.html">
+                        <img class="brand_img img-fluid" src="src/img/Logo/Site_brand.png" alt="">
+                    </a>
                     <h1>Sign Up</h1>
                     <p>Create your Account</p>
                     <p class="h5 text-start">Personal Information</p>
@@ -75,7 +93,15 @@
                 
             </div>
         </div>
+
+        <form id="signup-form">
+            <input type="email" id="signup-email" placeholder="Email" required>
+            <input type="password" id="signup-password" placeholder="Password" required>
+            <button type="button" onclick="signUp()">Sign Up</button>
+        </form>
     </section>
 
+    <!-- Include auth.js -->
+    <script type="module" src="auth.js"></script>
 </body>
 </html>

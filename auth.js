@@ -21,3 +21,33 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 
 const auth = getAuth();
+
+function signUp(email, password) {
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed up successfully
+        const user = userCredential.user;
+        console.log('User signed up:', user);
+      })
+      .catch((error) => {
+        // Handle errors
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Sign-up error:', errorCode, errorMessage);
+      });
+  }
+
+  function logIn(email, password) {
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Login successful
+        const user = userCredential.user;
+        console.log('User logged in:', user);
+      })
+      .catch((error) => {
+        // Handle errors
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Login error:', errorCode, errorMessage);
+      });
+  }
