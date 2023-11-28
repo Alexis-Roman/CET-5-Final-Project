@@ -32,14 +32,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Start Recycling
                 </a>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">View Post</a></li>
+                <li><a class="dropdown-item" href="SRCategories.html">View Post</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="#">Create New Post</a></li>
                 </ul>
@@ -48,14 +48,15 @@
                 <a class="nav-link" href="#">Recent Post</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">Community Forum</a>
+                <a class="nav-link" href="Forum.html">Community Forum</a>
               </li>
             </ul>
             
             <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-                <button class="btn btn-login me-md-2" type="button">Log In</button>
-                <button class="btn btn-signup" type="button">Sign In</button>
+                <button class="btn btn-login me-md-2" type="button" onclick="redirectToLogin()">Log In</button>
+                <button class="btn btn-signup" type="button" onclick="redirectToSignup()">Sign In</button>
             </div>
+            <script src="connection.js"></script>
             </div>
               
           </div>
@@ -74,7 +75,7 @@
       </div>
       <div class="row text-center" style="margin-top: 5%; margin-bottom: 2%;">
           <div class="col">
-            <div class="card" style="width: 15rem;">
+            <div class="card" style="width: 15rem;" onclick="redirectToMaterial('SRPlastic.html')">
               <img src="images/plastic.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Plastic</h5>
@@ -83,7 +84,7 @@
             </div>
           </div>
           <div class="col">
-            <div class="card" style="width: 15rem;">
+            <div class="card" style="width: 15rem;" onclick="redirectToMaterial('SR-Paper.html')">
               <img src="images/paper.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Paper</h5>
@@ -93,7 +94,7 @@
           </div>
 
           <div class="col">
-            <div class="card" style="width: 15rem;">
+            <div class="card" style="width: 15rem;" onclick="redirectToMaterial('SR-Textile.html')">
               <img src="images/textile.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Textile</h5>
@@ -103,7 +104,7 @@
           </div>
 
           <div class="col">
-            <div class="card" style="width: 15rem;">
+            <div class="card" style="width: 15rem;" onclick="redirectToMaterial('SR-Glass.html')">
               <img src="images/glass.png" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title">Glass</h5>
@@ -111,6 +112,7 @@
               </div>
             </div>
           </div>
+          <script src="connection.js"></script>
       </div>
       
   </div>
