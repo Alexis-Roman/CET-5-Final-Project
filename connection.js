@@ -22,5 +22,17 @@ function redirectToLoginResponsiveFromSignup() {
 
 function redirectToMaterial(materialPage) {
     // Redirect to the selected material page in the same tab
+    
     window.location.href = materialPage;
+
+    if (materialPage === 'Post_page.html') {
+        // Redirect to Post_page.html in the same tab
+        window.location.href = materialPage;
+    }
+}
+
+// New function to handle redirection from login button to account.html
+function redirectToAccount() {
+    // Redirect to account.html
+    window.location.href = "Account.html";
 }

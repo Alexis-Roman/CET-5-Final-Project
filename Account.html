@@ -42,23 +42,24 @@
                     Start Recycling
                 </a>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">View Post</a></li>
+                <li><a class="dropdown-item" href="Homepage.html">View Post</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Create New Post</a></li>
+                <li><a class="dropdown-item" href="Create_Post.html">Create New Post</a></li>
                 </ul>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="#">Recent Post</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Community Forum</a>
+                <a class="nav-link" href="Forum.html">Community Forum</a>
             </li>
             </ul>
             
             <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-                <button class="btn btn-login me-md-2" type="button">Log In</button>
-                <button class="btn btn-signup" type="button">Sign In</button>
+                <button class="btn btn-login me-md-2" type="button" onclick="redirectToLogin()">Log In</button>
+                <button class="btn btn-signup" type="button" onclick="redirectToSignup()">Sign In</button>
             </div>
+            <script src="connection.js"></script>
             </div>
         </div>
     </div>
