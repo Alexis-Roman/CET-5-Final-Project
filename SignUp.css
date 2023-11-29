@@ -13,7 +13,7 @@ img.brand_img{
     background-color: #E4E4E4;
     display: flex;
     flex-direction: column;
-    border-radius: 25px; /* Add border-radius property */
+    border-radius: 25px;
     padding: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
@@ -21,17 +21,6 @@ img.brand_img{
     border: none;
     outline: none;
 }
-/* .email-input {
-    padding: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    background: transparent;
-    margin-top: 5px;
-    border-radius: 25px;
-    padding-left: 25px;
-} */
 
 /* FORMS INPUT START HERE */
 
@@ -57,39 +46,11 @@ img.brand_img{
     padding-top: 15%;
     padding-bottom: 15%;
     padding-inline: 10%;
-/* margin-top: 15%;
-margin-left: 10%; */
 }
 
 div.login_to-sign-in{
-    /* background-color: #EC5300; */
     background-image: url(src/signin_bg.png);
 }
-
-
-/* .password-input {
-    padding: 10px;
-    background-color: #E4E4E4;
-    display: flex;
-    flex-direction: column;
-    border-radius: 25px;
-    margin-top: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    border: none;
-    outline: none;
-}
-
-.password-input {
-    padding: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    border: none;
-    outline: none;
-    margin-top: 5px;
-    border-radius: 25px;
-    padding-left: 25px;
-} */
 
 .custom-signup-button {
     background-color: #EC5300;
@@ -113,7 +74,7 @@ div.login_to-sign-in{
 
     left: 431px;
     top: 709px;
-    z-index: 1; /* Adjust the z-index as needed */
+    z-index: 1; 
 }
 
 .signup-button{
@@ -129,12 +90,3 @@ div.login_to-sign-in{
     cursor: pointer;
     margin-top: 40px;
 }
-
-/* .login_to-sign-in{
-    background-image: url(src/login_bg.png);
-    object-fit: cover;
-    align-self: flex-end;
-    position: absolute;
-    height: 100%;
-    width: 40%;
-}  */
