@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Upcyle - SignUp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>Upcyle! - SignUp</title>
     <link rel="stylesheet" href="SignUp.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap">
@@ -22,7 +22,7 @@
                 <!-- LEFT SIDE -->
                 <div class="px-5">
                     <a href="LandingPage.html">
-                        <img class="brand_img img-fluid" src="src/images/Site_brand.png" alt="">
+                        <img class="brand_img-fluid" src="src/images/Site_brand.png" alt="">
                     </a>
                     <h1 class="signup-text">
                         Sign Up
@@ -71,12 +71,13 @@
                 <!-- RIGHT SIDE -->
                 <div class="login_to-sign-in">
                     <div class="row">
-                        <div class="col">
+                        <div class="right-col">
                             <h1 class="new-here-text">WELCOME TO UPCYCLE!</h1>
                             <p class="signup-message">Have an existing account? </p>
-                            <button class="signup-button" onclick="redirectToLogin()">Log In</button>
+                            <a href="LogIn.html">
+                                <button class="signup-button" onclick="redirectToLogin()">Log In</button>
+                            </a>
                         </div>
-                        <script src="connection.js"></script>
                     </div>
                     
                 </div>
