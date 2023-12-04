@@ -133,13 +133,14 @@ p.label.h1 {
     }
 
     .card-text.topic{
-        color: #626262;
+        color: #828282;
         font-weight: 500;
         font-size: clamp(12px, 1vw, 14px);
     }
 
     p.author, p.date-time, p.comment, p.like {
         font-size: clamp(12px, 1vw, 14px);
+        font-weight: 500;
     }
 
 
