@@ -109,19 +109,37 @@ p.label.h1 {
         font-weight: 500;
         margin-bottom: 0px;
     }
-    h5.card-title.title{
+    h5.card-title.post{
         font-family: 'Quicksand';
         font-weight: bold;
         font-size: clamp(20px, 1vw, 30px);
     }
     .card-img-top {
         width:clamp(5rem, 10vw, 12rem) ;
-        height:clamp(8rem, 1vw, 10rem) ;
+        height:clamp(9rem, 1vw, 10rem) ;
         object-fit: cover;
     }
     .card-body.post{
-        height:clamp(6.5rem, 1vw, 8rem);
+        height:clamp(6rem, 1vw, 8rem);
         padding-top: 10px;
+    }
+
+    /* FOR TOPIC CARDS */
+    .card-title.topic{
+        color: #F06205;
+        font-family: 'Open Sans';
+        font-weight: bold;
+        font-size: clamp(20px, 1.5vw, 30px);
+    }
+
+    .card-text.topic{
+        color: #626262;
+        font-weight: 500;
+        font-size: clamp(12px, 1vw, 14px);
+    }
+
+    p.author, p.date-time, p.comment, p.like {
+        font-size: clamp(12px, 1vw, 14px);
     }
 
 
