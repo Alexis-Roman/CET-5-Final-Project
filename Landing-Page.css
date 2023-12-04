@@ -1,8 +1,8 @@
+/* NAVBAR */
 .navbar{
     background-color: #08989F;
     height: 70px;
 }
-
 a.navbar-brand, a.navbar-brand:hover{
     font-family: 'Quicksand', sans-serif;
     font-size: 35px;
@@ -11,27 +11,57 @@ a.navbar-brand, a.navbar-brand:hover{
     margin: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
+
+/* WELCOME MESSAGE AND BUTTON*/
+p.h1.welcome, p.h1.brand, p.h5.message{
+    font-family: 'Quicksand', sans-serif; 
+}
 p.h1.welcome{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 50px;
+    font-size: clamp(2.5rem, 4vw, 6rem);
     color: white;
     font-weight: bold;
-    margin-bottom: 20px;
 }
 p.h1.brand{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 150px;
     color: #F06205;
     font-weight: bold;
-    margin-bottom: 20px;
+    font-size: clamp(5rem,10vw, 12rem);
+    text-shadow: 2px 1px 2px rgba(81, 81, 81, 0.8);
+}
+p.h5.message{
+    font-size: clamp(1.25rem, 2vw, 3rem);
+    color: white;
+}
+.signup-button{
+    background-color: #EC5300;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    padding-inline: 60px;
+    padding-block: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(1px, 3vw, 25px);
+    font-weight: medium;
+    cursor: pointer;
+    margin-top: 40px;
 }
 
-p.h5.message{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 28px;
-    color: white;
-    margin-bottom: 20px;
+/* CONTENT STARTING HERE */
+.col-md.content{
+    padding: 0px;
 }
+p.h1.main-title{
+    font-size: clamp(2rem,4vw, 12rem);
+    font-family: 'Poppins';
+    color: #00757E;
+    font-weight: bolder;
+}
+
+p.h5.sub-title{
+    font-family: 'Poppins';
+    font-size: clamp(1.25rem, 1vw, 3rem);
+    margin-inline: 20%;
+}
+
 
 .email-input {
     padding-inline: 40%;
@@ -117,20 +147,6 @@ p.label.h1 {
 
 .card{
     margin: 10px;
-}
-
-.signup-button{
-    background-color: #EC5300;
-    color: #FFFFFF;
-    border: none;
-    border-radius: 10px;
-    padding-inline: 60px;
-    padding-block: 10px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    font-weight: medium;
-    cursor: pointer;
-    margin-top: 40px;
 }
 
 h4.card-title{
