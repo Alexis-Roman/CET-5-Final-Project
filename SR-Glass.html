@@ -35,31 +35,30 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Start Recycling
                 </a>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="SRCategories.html">View Post</a></li>
+                <li><a class="dropdown-item" href="#">View Post</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="Create_Post.html">Create New Post</a></li>
+                <li><a class="dropdown-item" href="#">Create New Post</a></li>
                 </ul>
               </li>
               <li class="nav-item ">
                 <a class="nav-link" href="#">Recent Post</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="Forum.html">Community Forum</a>
+                <a class="nav-link" href="#">Community Forum</a>
               </li>
             </ul>
             
             <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-                <button class="btn btn-login me-md-2" type="button" onclick="redirectToLogin()">Log In</button>
-                <button class="btn btn-signup" type="button" onclick="redirectToSignup()">Sign In</button>
+                <button class="btn btn-login me-md-2" type="button">Log In</button>
+                <button class="btn btn-signup" type="button">Sign In</button>
             </div>
-            <script src="connection.js"></script>
             </div>
               
           </div>
@@ -72,21 +71,40 @@
 <div class="section p-5 text-center" style="background-image: url(images/glass_bg.png);">
     <div class="container" style="padding-block: 50px;">
         <div>
-            <p class="h1">Glass</p>
+            <p class="h1 title">Glass</p>
             <form class="d-flex justify-content-center" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success " type="submit">Search</button>
+                <button class="btn search" type="submit">Search</button>
             </form>
         </div>
     </div>
 </div>
 
 <!-- BANNER INFO -->
-<div class="banner-info section p-5" style="background-color: #F6760E;">
-    <div class="container" >
-        <div>
-            <p>Glass</p>
-            <p>Glass, a versatile and inert material, has long been a staple in various industries and households for its transparency, durability, and recyclability. However, our challenge with glass lies in the environmental impact of its production, as it requires significant energy and raw materials. Recognizing the need for sustainable practices, glass recycling emerges as a crucial solution, offering a pathway to reduce energy consumption, curb resource depletion, and minimize the ecological footprint associated with the manufacturing of this ubiquitous material.</p>
+<div class="section banner-info" style="background-color: #F6760E;">
+    <div class="container-fluid" >
+        <div class="inside-orange-banner">
+            <div class="row">
+                <div class="col-1 img-left d-flex justify-content-start align-items-center pt-2">
+                    <img class="side-img" src="images/Categories/glass_left.png" alt="">
+                </div>
+                <div class="col-10 description py-4 d-flex justify-content-center align-items-center">
+                    <p>Glass, a versatile and inert material, has long been a 
+                        staple in various industries and households for its 
+                        transparency, durability, and recyclability. However, our 
+                        challenge with glass lies in the environmental impact of its 
+                        production, as it requires significant energy and raw 
+                        materials. Recognizing the need for sustainable practices, 
+                        glass recycling emerges as a crucial solution, offering a 
+                        pathway to reduce energy consumption, curb resource depletion,
+                        and minimize the ecological footprint associated with the 
+                        manufacturing of this ubiquitous material.
+                    </p>
+                </div>
+                <div class="col-1 img-right d-flex justify-content-end align-items-center pb-2">
+                    <img class="side-img" src="images/Categories/glass_right.png" alt="">
+                </div>
+            </div>
         </div>
         
     </div>
@@ -97,84 +115,46 @@
     <div class="row">
         <p class="label h1">Featured Articles:</p>
         <hr>
-        <div class="row">
-            <div class="col align-items-center">
-                <div class="card" style="width: 15rem;" onclick="redirectToMaterial('Post_page.html')">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+        <div class="row post">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;" onclick="redirectToMaterial('Post_page.html')">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;" onclick="redirectToMaterial('Post_page.html')">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;" onclick="redirectToMaterial('Post_page.html')">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-
-            <div class="col align-items-center">
-                <div class="card" style="width: 15rem;"onclick="redirectToMaterial('Post_page.html')">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;" onclick="redirectToMaterial('Post_page.html')">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
-                    </div>
-                </div>
-            </div>
+            
         </div>
-        
     </div>
-
-    <!-- Posts cards -->
 </div>
 
 <!-- RECENTLY POSTED -->
@@ -182,46 +162,45 @@
     <div class="row">
         <p class="label h1">Recently Posted:</p>
         <hr>
-        <div class="row">
-            <div class="col align-items-center">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">How to cover a ball with fabric</h5>
+        <div class="row post">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
+            
         </div>
-
-        
-        
     </div>
 
     <!-- Posts cards -->
@@ -232,46 +211,46 @@
     <div class="row">
         <p class="label h1">You may like:</p>
         <hr>
-        <div class="row">
-            <div class="col align-items-center">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+        <div class="row post">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
-
-            <div class="col">
-                <div class="card" style="width: 15rem;">
-                    <img src="images/glass.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Glass</h5>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+                <div class="card post">
+                    <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <div class="card-body post">
+                    <p class="card-text category">How to recycle 'Category'</p>
+                    <h5 class="card-title post">TITLE PLACEHOLDER</h5>
                     </div>
                 </div>
             </div>
+            
         </div>
-        
     </div>
-
 </div>
 
 <!-- FOOTER -->

@@ -14,7 +14,8 @@ img.brand_img{
     display: flex;
     flex-direction: column;
     border-radius: 25px; /* Add border-radius property */
-    padding: 10px;
+    padding-block: 7px;
+    padding-inline: 10px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     margin-top: 5px;
@@ -61,10 +62,9 @@ img.brand_img{
 margin-left: 10%; */
 }
 
-div.login_to-sign-in{
-    /* background-color: #EC5300; */
+/* div.login_to-sign-in{
     background-image: url(src/signin_bg.png);
-}
+} */
 
 
 /* .password-input {
@@ -138,3 +138,4 @@ div.login_to-sign-in{
     height: 100%;
     width: 40%;
 }  */
+
