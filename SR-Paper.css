@@ -1,15 +1,100 @@
+/* NAVBAR */
 .navbar{
     background-color: #08989F;
     height: 70px;
 }
-
-a.navbar-brand, a.navbar-brand:hover{
+a.navbar-brand, h5.offcanvas-title{
     font-family: 'Quicksand', sans-serif;
-    font-size: 35px;
+    font-size: 25px;
     font-weight: 700;
     color: #fff;
     margin: 0;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+div.offcanvas-header{
+    padding: 10px;
+}
+@media(max-width: 1200px){
+    .sidebar.offcanvas{
+        background-color: rgba(38, 208, 188, 0.55);
+        backdrop-filter: blur(5px);
+    }
+    ul.dropdown-menu{
+        background-color: rgba(255, 255, 255, 0.692);
+        border: 0px;
+    }
+    a.dropdown-item{
+        font-family: 'Poppins';
+    }
+    li.navbar{
+        padding: 0px;
+        margin: 0px;
+    }
+}
+    .login.text-white{
+        border: 1px solid white;
+        border-radius: 5px;
+    }
+    .signup.text-white{
+        background-color: #EC5300;
+        border-radius: 5px;
+    }
+
+/* FOOTER */
+footer.footer{
+    background-image: url(images/footer_bg.png);
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    background-position: center top;
+    background-size: 100% 100%;
+    }
+    @media(max-width: 992px){
+        footer.footer{
+            background-color: #EC5300;
+        }
+    }
+    p.h4.brand{
+        font-family: 'Quicksand', sans-serif;
+        font-weight: 700;
+        color: #fff;
+        margin: 0;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+    p.description, a.footer, p.copyright{
+        margin-top: 10px;
+        font-family: 'Poppins';
+        color: white;
+    }
+    p.h4.link{
+        font-family: 'Quicksand';
+        font-weight: 700;
+        color: #FFFFFF;
+        margin: 0;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8);
+    }
+    
+    ul.footer-links{
+        list-style-type: none;
+        color: #FFFFFF;
+        padding: 0px;
+    }
+    a.footer{
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+    a.footer:hover{
+        color: #07f3ff;
+    }
+    p.copyright{
+        color: white;
+    }
+
+/* BANNER SEARCH */
+.banner-bg{
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    background-position: center top;
+    background-size: 100% 100%;
 }
 p.h1{
     font-family: 'Quicksand', sans-serif;
@@ -18,31 +103,10 @@ p.h1{
     font-weight: bold;
     margin-bottom: 20px;
 }
-
-div.banner-info.section{
-    color: white;
-}
-
-a.nav-link{
-    color: white !important;
-    margin-inline: 20px;
-    font-family: 'Poppins';
-}
-
-button.btn.btn-login{
-    width: 90px;
-    color: #fff;
-    background-color: #F06205;
-}
-
-button.btn.btn-signup{
-    width: 120px;
-    color: #fff;
-    background-color: transparent;
-    border: 1px solid white;
-}
-
-/* BANNER SEARCH */
+    /* BANNER INFO */
+    div.banner-info.section{
+        color: white;
+    }
 p.h1.title{
     font-size: clamp(20px, 10vw, 80px);
 }
@@ -135,13 +199,4 @@ p.label.h1 {
 
 .card{
     margin: 10px;
-}
-
-/* FOOTER */
-ul{
-    list-style-type: none;
-}
-
-.footer{
-    background-image: url(images/footer_bg.png);
 }

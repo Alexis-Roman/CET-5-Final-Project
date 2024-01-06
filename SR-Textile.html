@@ -21,55 +21,68 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid" style="margin-left: 5%; margin-right: 5%;">
-        <a class="navbar-brand" href="#">
+<nav class="navbar navbar-dark navbar-expand-xl">
+    <div class="container">
+        <!-- LOGO & BRAND -->
+      <div class="d-flex flex-row align-items-center gap-2">
         <img src="src/img/Logo/NGOlogo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-center">
-        Upcycle
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">Upcycle</a>
+      </div>
+        <!-- TOGGLE BTN -->
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container"style="margin-left: 10%;">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
-                </li>
-                <li class="nav-item dropdown">
+      </button>
+      <!-- SIDEBAR -->
+      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        
+        <!-- SIDEBAR - header -->
+        <div class="offcanvas-header text-white border-bottom">
+          <div class="d-flex flex-row align-items-center gap-2">
+            <img src="src/img/Logo/NGOlogo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-center">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Upcycle</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- SIDEBAR - body -->
+        <div class="offcanvas-body d-flex flex-column flex-xl-row p-4">
+          <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3 gap-1">
+            <li class="nav-item">
+              <a class="nav-link active " aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Start Recycling
+                  Start Recycling
                 </a>
                 <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="SRCategories.html">View Post</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="Create_Post.html">Create New Post</a></li>
+                  <li><a class="dropdown-item" href="#">View Post</a></li>
+                  <li>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Create New Post</a></li>
                 </ul>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="#">Recent Post</a>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Recent Post</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Community Forum</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="Forum.html">Community Forum</a>
-              </li>
-            </ul>
-            
-            <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-                <button class="btn btn-login me-md-2" type="button" onclick="redirectToLogin()">Log In</button>
-                <button class="btn btn-signup" type="button" onclick="redirectToSignup()">Sign In</button>
-            </div>
-            <script src="connection.js"></script>
-            </div>
-              
+          </ul>
+          <!-- LOGIN & SIGN UP -->
+          <div class="d-flex justify-content-center flex-xl-row align-items-center gap-2">
+            <a href="login" class="login text-white text-decoration-none inner-border px-4 py-2"> Login</a>
+            <a href="signup" class="signup text-white text-decoration-none px-4 py-2">Sign Up</a>
           </div>
+        </div>
       </div>
-      
     </div>
 </nav>
 
 <!-- BANNER SEARCH -->
-<div class="section p-5 text-center" style="background-image: url(images/textile_bg.png);">
+<div class="banner-bg p-5 text-center" style="background-image: url(images/textile_bg.png);">
     <div class="container" style="padding-block: 50px;">
         <div>
             <p class="h1 title">Textile</p>
@@ -115,7 +128,7 @@
         <p class="label h1">Featured Articles:</p>
         <hr>
         <div class="row post">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post"  onclick="redirectToMaterial('Post_page.html')">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -124,7 +137,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post"  onclick="redirectToMaterial('Post_page.html')">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -133,7 +146,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post"  onclick="redirectToMaterial('Post_page.html')">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -142,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post"  onclick="redirectToMaterial('Post_page.html')">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -162,7 +175,7 @@
         <p class="label h1">Recently Posted:</p>
         <hr>
         <div class="row post">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -171,7 +184,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -180,7 +193,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -189,7 +202,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -211,7 +224,7 @@
         <p class="label h1">You may like:</p>
         <hr>
         <div class="row post">
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -220,7 +233,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -229,7 +242,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -238,7 +251,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-12 g-3">
+            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card post">
                     <img src="images/card_placeholder_img.png" class="card-img-top" alt="...">
                     <div class="card-body post">
@@ -253,27 +266,28 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="p-5 text-white text-center position-relative" style="background-color: #F6760E;">
-<div class="container">
-    <div class="row">
-        <div class="col text-start">
-            <p>UPCYCLE!</p>
-            <p>This website combines insightfularticles on ways to reuse recyclable materials with engaging forums for a community of recyclers, all in one place. Explore to stay informed and join forums to connect!</p>
-        </div>
-        <div class="col">
-            <ul class="footer links">
-                <li>About Us</li>
-                <li>Contact Us</li>
-                <li>Home</li>
-                <li>FAQ</li>
-            </ul>
-        </div>
-        <div class="col">
-            <p>Follow Us</p>
-            <img class="w-50" src="images/footer_icons.png" alt="">
+<footer class="footer pt-5 pb-2 position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-6 text-center text-md-start mx-auto mt-3">
+                <p class="h4 brand">Upcycle</p>
+                <p class="description">This website combines insightful articles on ways to reuse recyclable materials with engaging forums for a community of recyclers, all in one place. Explore to stay informed and join forums to connect!</p>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xl-4 text-center text-md-start mx-auto mt-3">
+                <p class="h4 link">Link</p>
+                <ul class="footer-links">
+                    <li><a class="footer" href="">About Us</a></li>
+                    <li><a class="footer" href="">Contact Us</a></li>
+                    <li><a class="footer" href="">Home</a></li>
+                    <li><a class="footer" href="">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="row text-center g-4">
+              <p class="copyright">© 2024 Upcycle</p>
+            </div>
         </div>
     </div>
-</div>
 </footer>
+
 </body>
 </html>

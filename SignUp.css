@@ -1,14 +1,26 @@
+@media(width > 1200px){
+    div.description{
+        height: 100vh;
+    }
+}
+/* div.description{
+    height: 100vh;
+    background-color:#F4F4F4;
+} */
 .contain_all{
     background-color: #F4F4F4;
-    height: 100vh;
 }
 
 img.brand_img{
     height: 80px;
     text-align: start;
 }
-
-
+.right-side{
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    background-position: center top;
+    background-size: 100% 100%;
+    }
 .email-input, .fullname-input, .username-input, .birthday-input, .password-input, .confirmpassword-input{
     background-color: #E4E4E4;
     display: flex;
@@ -43,6 +55,7 @@ img.brand_img{
     font-weight: bold;
     color: #FFFFFF;
     margin: 0;
+    text-shadow: 2px 2px 2px rgba(23, 122, 139, 0.8);
 }
 
 .signup-message{
@@ -55,8 +68,8 @@ img.brand_img{
 }
 
 .login_to-sign-in{
-    padding-top: 15%;
-    padding-bottom: 15%;
+    padding-top: 10%;
+    padding-bottom: 10%;
     padding-inline: 10%;
 /* margin-top: 15%;
 margin-left: 10%; */

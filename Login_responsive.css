@@ -1,7 +1,19 @@
 /* START HERE */
+@media(width > 992px){
+    div.description{
+        height: 100vh;
+    }
+}
 img.brand_img{
     height: 80px;
     text-align: start;
+}
+
+.img-right{
+    background-repeat: no-repeat;
+    background-blend-mode: normal;
+    background-position: center top;
+    background-size: 100% 100%;
 }
 
 .email-form {

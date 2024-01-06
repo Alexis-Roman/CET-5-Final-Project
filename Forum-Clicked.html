@@ -19,152 +19,295 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid" style="margin-left: 5%; margin-right: 5%;">
-        <a class="navbar-brand" href="#">
+<nav class="navbar navbar-dark navbar-expand-xl">
+    <div class="container">
+        <!-- LOGO & BRAND -->
+      <div class="d-flex flex-row align-items-center gap-2">
         <img src="src/img/Logo/NGOlogo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-center">
-        Upcycle
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">Upcycle</a>
+      </div>
+        <!-- TOGGLE BTN -->
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container"style="margin-left: 10%;">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Start Recycling
-                    </a>
+      </button>
+      <!-- SIDEBAR -->
+      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        
+        <!-- SIDEBAR - header -->
+        <div class="offcanvas-header text-white border-bottom">
+          <div class="d-flex flex-row align-items-center gap-2">
+            <img src="src/img/Logo/NGOlogo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-center">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Upcycle</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- SIDEBAR - body -->
+        <div class="offcanvas-body d-flex flex-column flex-xl-row p-4">
+          <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3 gap-1">
+            <li class="nav-item">
+              <a class="nav-link active " aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Start Recycling
+                </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="SRCategories.html">View Post</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="Create_Post.html">Create New Post</a></li>
+                  <li><a class="dropdown-item" href="#">View Post</a></li>
+                  <li>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Create New Post</a></li>
                 </ul>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">Recent Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Forum.html">Community Forum</a>
-                </li>
-            </ul>
-            
-            <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-                <button class="btn btn-login me-md-2" type="button"onclick="redirectToLogin()">Log In</button>
-                <button class="btn btn-signup" type="button" onclick="redirectToSignup()">Sign In</button>
-            </div>
-            <script src="connection.js"></script>
+              </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Recent Post</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Community Forum</a>
+              </li>
+          </ul>
+          <!-- LOGIN & SIGN UP -->
+          <div class="d-flex justify-content-center flex-xl-row align-items-center gap-2">
+            <a href="login" class="login text-white text-decoration-none inner-border px-4 py-2"> Login</a>
+            <a href="signup" class="signup text-white text-decoration-none px-4 py-2">Sign Up</a>
+          </div>
         </div>
-        </div>
-        </div> 
+      </div>
     </div>
-</nav>
+  </nav>
 
 <div class="mt-5"></div>
 <!-- FORUM -->
 
-
-<div class="container">
-    <div class="row">
-        <!-- LEFT column -->
-        <div class="col-md-2">
-            <div class="container">
-                <div class="row">
-                    <div class="space"></div>
+<div class="container d-flex justify-content-center">
+    <div class="forum-content row justify-content-center" style="background-color: white;">
+        <div class="row justify-content-center">
+            <div class="row user mt-3 d-flex align-items-center">
+                <div class="col-2 like-dislike">
+                    <div class="row text-center align-items-start">
+                        <p class="like">like</p>
+                        <p class="like-num">#</p>
+                        <p class="dislike">dislike</p>
+                    </div>
+                </div>
+                <!-- USER INFO -->
+                <div class="col-lg-1 col-2 d-flex justify-content-end">
+                    <img class="profile-img" src="images/Ellipse 12.png" alt="">
+                </div>
+                
+                <div class="col-lg-8 col-sm-4 col-6">
+                    <div class="col">
+                        <div class="user-info row">
+                            <div class="col">
+                                <p class="h5 username">username</p>
+                                <p class="h6 post-date">posted date</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div class="container">
-                <div class="row">
-                    <p class="h1 forum-highlighted-left">Categories</p>
-            <ul class="categories forum">
-                <li>Plastic</li>
-                <li>Paper</li>
-                <li>Glass</li>
-                <li>Textile</li>
-            </ul>
-            <p class="h1 forum-highlighted-left">Tips</p>
-            <ul class="tips forum">
-                <li>Reduce</li>
-                <li>Reuse</li>
-                <li>Recycle</li>
-            </ul>
-            <p class="h1 forum-highlighted-left">Q&A Discussion</p>
-            <ul class="tips Q&A forum">
-                <li>All</li>
-            </ul>
-                </div>
-            </div>
-
-        </div>
-        <!-- RIGHT column -->
-        <div class="col-md-10">
+            <hr>
+            <!-- TITLE -->
             <div class="row">
-                <div class="col">
-                    <img src="" alt="">
-                </div>
-                <div class="col">
-                    <p>username</p>
-                </div>
-
-                <div class="col">
-                    <p>posted date</p>
-                </div>
+                <p class="h4 forum-title">Title placeholder</p>
             </div>
-
+            <!-- IMG -->
             <div class="row">
-                <h1>Title or Question here</h1>
-                <img src="images/card_placeholder_img.png" alt="">
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <p>upvote</p>
+                <div class="container d-flex justify-content-center" style="background-color: rgb(223, 223, 223); height: 450px;">
+                    <img class="forum-img" src="images/card_placeholder_img.png" alt="">
                 </div>
-                <div class="col">
-                    <p>downvote</p>
-                </div>
-            </div>
             </div>
             <div class="row">
-                <button>Add Comment</button>
+                <p class="h6 message mt-3 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolor possimus aspernatur error voluptas illo eius similique rem dolorem, est consectetur molestiae deserunt facilis at quidem ab ut fugit obcaecati!Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, in quod expedita suscipit incidunt cum, delectus hic eius eos, vitae dicta qui repudiandae ut ipsam aperiam similique. Harum, ab alias?</p>
             </div>
-
-            <div class="col-md-10">
-                <div class="row">
-                    <div class="col">
-                        <img src="" alt="">
-                    </div>
-                    <div class="col">
-                        <p>username</p>
-                    </div>
-    
-                    <div class="col">
-                        <p>posted date</p>
-                    </div>
-
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius voluptas laboriosam aut deleniti praesentium distinctio accusantium necessitatibus, nostrum cumque tempore, nisi facere ipsam deserunt aspernatur? Ad animi voluptatem aut dolorum.</p>
-                    <div class="col">
-                        <p>upvote</p>
-                    </div>
-                    <div class="col">
-                        <p>downvote</p>
-                    </div>
-                    <div class="col">
-                        <p>reply</p>
-                    </div>
+            </div>
+            <hr>
+            <!-- COUNT -->
+            <div class="row mb-3">
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="h6">#</p>
                 </div>
+                <div class="col-2">
+                    <p class="h6">Comments</p>
+                </div>
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="h6">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="h6">Likes</p>
+                </div>
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="h6">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="h6">Dislikes</p>
+                </div>
+            </div>
+    </div>
+</div>
+<span class="br"></span> 
+<!-- ADD COMMENT -->
+<div class="container d-flex justify-content-center">
+    <div class="forum-content row justify-content-center px-4 py-2" style="background-color: white;">
+        <p class="h6 mt-2">Add Comment</p>
+        <form>
+            <div class="form-group">
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </form>
+        <div class="col my-3 d-flex justify-content-end">
+            <button class="btn btn-primary" type="submit">Comment</button>
         </div>
     </div>
 </div>
 
+<span class="br"></span>
+<!-- COMMENT -->
+<div class="container d-flex justify-content-center">
+    <div class="forum-content row px-4 py-2" style="background-color: white;">
+        <p class="h6 mt-2">Comments:</p>
+        <hr>
+        <!-- USER INFO -->
+        <div class="row d-flex">
+            <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
+                <img class="comment-profile-img" src="images/Ellipse 12.png" alt="">
+            </div>
+            <div class="col-lg-8 col-sm-4 col-6">
+                <div class="col">
+                    <div class="user-info row">
+                        <div class="col">
+                            <p class="h6 comment-username">username</p>
+                            <p class="h6 comment-post-date">posted date</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1 col-2"></div>
+                <div class="col">
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
+                </div>
+            </div>
+            <!-- COUNT -->
+            <div class="row">
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Comments</p>
+                </div>
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Likes</p>
+                </div>
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Dislikes</p>
+                </div>
+                <hr>
+            </div>
+        </div>
 
+        <!-- OTHER COMMENT -->
+        <!-- USER INFO -->
+        <div class="row">
+            <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
+                <img class="comment-profile-img" src="images/Ellipse 12.png" alt="">
+            </div>
+            <div class="col-lg-8 col-sm-4 col-6">
+                <div class="col">
+                    <div class="user-info row">
+                        <div class="col">
+                            <p class="h6 comment-username">username</p>
+                            <p class="h6 comment-post-date">posted date</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1 col-2"></div>
+                <div class="col">
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
+                </div>
+            </div>
+            <!-- COUNT -->
+            <div class="row mb-3">
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Comments</p>
+                </div>
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Likes</p>
+                </div>
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Dislikes</p>
+                </div>
+                <hr>
+            </div>
+        </div>
 
-
+        <!-- USER INFO -->
+        <div class="row d-flex">
+            <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
+                <img class="comment-profile-img" src="images/Ellipse 12.png" alt="">
+            </div>
+            <div class="col-lg-8 col-sm-4 col-6">
+                <div class="col">
+                    <div class="user-info row">
+                        <div class="col">
+                            <p class="h6 comment-username">username</p>
+                            <p class="h6 comment-post-date">posted date</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-1 col-2"></div>
+                <div class="col">
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
+                </div>
+            </div>
+            <!-- COUNT -->
+            <div class="row">
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Comments</p>
+                </div>
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Likes</p>
+                </div>
+                <div class="col-1 d-flex justify-content-end">
+                    <p class="">#</p>
+                </div>
+                <div class="col-2">
+                    <p class="">Dislikes</p>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="mb-5"></div>
 
 </body>
 </html>

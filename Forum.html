@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcycle - Forum</title>
-    <link rel="stylesheet" href="SRCategories.css">
     <link rel="stylesheet" href="forum.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap">
@@ -19,51 +18,86 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid" style="margin-left: 5%; margin-right: 5%;">
-        <a class="navbar-brand" href="#">
+<nav class="navbar navbar-dark navbar-expand-xl">
+    <div class="container">
+        <!-- LOGO & BRAND -->
+      <div class="d-flex flex-row align-items-center gap-2">
         <img src="src/img/Logo/NGOlogo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-center">
-        Upcycle
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">Upcycle</a>
+      </div>
+        <!-- TOGGLE BTN -->
+      <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="container"style="margin-left: 10%;">
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="Homepage.html">Home</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Start Recycling
-                    </a>
+      </button>
+      <!-- SIDEBAR -->
+      <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        
+        <!-- SIDEBAR - header -->
+        <div class="offcanvas-header text-white border-bottom">
+          <div class="d-flex flex-row align-items-center gap-2">
+            <img src="src/img/Logo/NGOlogo.png" alt="Logo" width="60" height="60" class="d-inline-block align-text-center">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Upcycle</h5>
+          </div>
+          <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+
+        <!-- SIDEBAR - body -->
+        <div class="offcanvas-body d-flex flex-column flex-xl-row p-4">
+          <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3 gap-1">
+            <li class="nav-item">
+              <a class="nav-link active " aria-current="page" href="#">Home</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Start Recycling
+                </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="SRCategories.html">View Post</a></li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li><a class="dropdown-item" href="Create_Post.html">Create New Post</a></li>
+                  <li><a class="dropdown-item" href="#">View Post</a></li>
+                  <li>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Create New Post</a></li>
                 </ul>
-                </li>
-                <li class="nav-item ">
-                    <a class="nav-link" href="#">Recent Post</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Forum.html">Community Forum</a>
-                </li>
-            </ul>
-            
-            <div class="d-grid gap-1 d-md-flex justify-content-md-end">
-                <button class="btn btn-login me-md-2" type="button"onclick="redirectToLogin()">Log In</button>
-                <button class="btn btn-signup" type="button" onclick="redirectToSignup()">Sign In</button>
-            </div>
-            <script src="connection.js"></script>
+              </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">Recent Post</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Community Forum</a>
+              </li>
+          </ul>
+          <!-- LOGIN & SIGN UP -->
+          <div class="d-flex justify-content-center flex-xl-row align-items-center gap-2">
+            <a href="login" class="login text-white text-decoration-none inner-border px-4 py-2"> Login</a>
+            <a href="signup" class="signup text-white text-decoration-none px-4 py-2">Sign Up</a>
+          </div>
         </div>
-        </div>
-        </div> 
+      </div>
     </div>
 </nav>
 
+<!-- TABS EXPERIMENT -->
+<!-- <div class="d-flex align-items-start">
+    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+      <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</button>
+      <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</button>
+      <button class="nav-link" id="v-pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#v-pills-disabled" type="button" role="tab" aria-controls="v-pills-disabled" aria-selected="false" disabled>Disabled</button>
+      <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</button>
+      <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>
+    </div>
+    <div class="tab-content" id="v-pills-tabContent">
+      <div class="tab-pane fade show active" id="v-pills-plastic" role="tabpanel" aria-labelledby="v-pills-plastic-tab" tabindex="0">hello</div>
+      <div class="tab-pane fade" id="v-pills-paper" role="tabpanel" aria-labelledby="v-pills-paper-tab" tabindex="0">hi</div>
+      <div class="tab-pane fade" id="v-pills-glass" role="tabpanel" aria-labelledby="v-pills-glass-tab" tabindex="0">sdasdasd</div>
+      <div class="tab-pane fade" id="v-pills-textile" role="tabpanel" aria-labelledby="v-pills-textile-tab" tabindex="0">sadasdasdaeaea</div>
+      <div class="tab-pane fade" id="v-pills-reduce" role="tabpanel" aria-labelledby="v-pills-reduce-tab" tabindex="0">ffgfdg</div>
+    </div>
+  </div> -->
+
+
+  
 <div class="mt-5"></div>
 <!-- FORUM -->
 
@@ -71,7 +105,7 @@
 <div class="container">
     <div class="row">
         <!-- LEFT column -->
-        <div class="col-md-2">
+        <div class="col-xl-3 col-lg-3 col-md-4 ">
             <div class="container">
                 <div class="row">
                     <div class="space"></div>
@@ -81,190 +115,584 @@
             <div class="container">
                 <div class="row">
                     <p class="h1 forum-highlighted-left">Categories</p>
-            <ul class="categories forum">
-                <li>Plastic</li>
-                <li>Paper</li>
-                <li>Glass</li>
-                <li>Textile</li>
-            </ul>
-            <p class="h1 forum-highlighted-left">Tips</p>
-            <ul class="tips forum">
-                <li>Reduce</li>
-                <li>Reuse</li>
-                <li>Recycle</li>
-            </ul>
+                        <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <button class="nav-link active" id="v-pills-plastic-tab" data-bs-toggle="pill" data-bs-target="#v-pills-plastic" type="button" role="tab" aria-controls="v-pills-plastic" aria-selected="true">Plastic</button>
+                            <button class="nav-link" id="v-pills-paper-tab" data-bs-toggle="pill" data-bs-target="#v-pills-paper" type="button" role="tab" aria-controls="v-pills-paper" aria-selected="false">Paper</button>
+                            <button class="nav-link" id="v-pills-glass-tab" data-bs-toggle="pill" data-bs-target="#v-pills-glass" type="button" role="tab" aria-controls="v-pills-glass" aria-selected="false">Glass</button>
+                            <button class="nav-link" id="v-pills-textile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-textile" type="button" role="tab" aria-controls="v-pills-textile" aria-selected="false">Textile</button>
+                            <!-- WILL BE UPDATED -->
+                            <!-- <button class="nav-link" id="v-pills-reduce-tab" data-bs-toggle="pill" data-bs-target="#v-pills-reduce" type="button" role="tab" aria-controls="v-pills-reduce" aria-selected="false">Reduce</button>
+                            <button class="nav-link" id="v-pills-reuse-tab" data-bs-toggle="pill" data-bs-target="#v-pills-reuse" type="button" role="tab" aria-controls="v-pills-reuse" aria-selected="false">Reuse</button>
+                            <button class="nav-link" id="v-pills-recycle-tab" data-bs-toggle="pill" data-bs-target="#v-pills-recycle" type="button" role="tab" aria-controls="v-pills-recycle" aria-selected="false">Recycle</button> -->
+                            </div>
+                        </div>
+                        
+                    <!-- <p class="h1 forum-highlighted-left">Tips</p>
+                        <div class="d-flex align-items-start">
+                            <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <button class="nav-link active" id="v-pills-reduce-tab" data-bs-toggle="pill" data-bs-target="#v-pills-reduce" type="button" role="tab" aria-controls="v-pills-reduce" aria-selected="true">Reduce</button>
+                            <button class="nav-link" id="v-pills-reuse-tab" data-bs-toggle="pill" data-bs-target="#v-pills-reuse" type="button" role="tab" aria-controls="v-pills-reuse" aria-selected="false">Reuse</button>
+                            <button class="nav-link" id="v-pills-recycle-tab" data-bs-toggle="pill" data-bs-target="#v-pills-recycle" type="button" role="tab" aria-controls="v-pills-recycle" aria-selected="false">Recycle</button>
+                            </div>
+                        </div>
             <p class="h1 forum-highlighted-left">Q&A Discussion</p>
             <ul class="tips Q&A forum">
-                <li>All</li>
-            </ul>
+                <li><a class="q-and-a" href="">All</a></li>
+            </ul> -->
                 </div>
             </div>
 
         </div>
         <!-- RIGHT column -->
-        <div class="col-md-10">
-            <div class="container">
-                <div class="row">
-                    <div class="text-right">
-                        <button class="btn btn-createnewtopic me-md-2 float-end">Create new topic</button>
+        <div class="col-xl-9 col-lg-9 col-md-8">
+            <div class="tab-content" id="v-pills-tabContent">
+                <!-- PLASTIC -->
+                <div class="tab-pane fade show active" id="v-pills-plastic" role="tabpanel" aria-labelledby="v-pills-plastic-tab" tabindex="0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-right">
+                                <button class="btn btn-createnewtopic me-md-2 float-end">Create new topic</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container right-column">
+                        <div class="row">
+                            <button class="btn btn-topic">Plastic</button>
+                        </div>
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
                     </div>
                 </div>
-            </div>
-            <div class="container right-column">
-                <div class="row">
-                    <button class="btn btn-topic">Plastic Design</button>
-                </div>
-                <!-- SUBTOPIC STARTS HERE -->
-                <div class="row row-of-every-topic">
-                    <div class="container" style="margin-left: 20px;">
-                    <div class="row">
 
-                        <div class="col">
-                            <div class="row title">Upcycled lamp</div>
-                            <div class="row category">Category Glass</div>
-                        </div>
-                        <div class="col">
-                            <div class="row author">by: 4Bids</div>
-                            <div class="row date-time">June. 18, 2023 12:15 PM</div>
-                        </div>
-                        <div class="col">
-                            <div class="row comments">90 comments</div>
-                            <div class="row likes">728 likes</div>
+                <!-- PAPER -->
+                <div class="tab-pane fade" id="v-pills-paper" role="tabpanel" aria-labelledby="v-pills-paper-tab" tabindex="0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-right">
+                                <button class="btn btn-createnewtopic me-md-2 float-end">Create new topic</button>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                </div>
-                <hr>
-                <!-- SUBTOPIC ENDS HERE -->
-
-                <!-- SUBTOPIC STARTS HERE -->
-                <div class="row row-of-every-topic">
-                    <div class="container" style="margin-left: 20px;">
-                    <div class="row">
-
-                        <div class="col">
-                            <div class="row title">Upcycled lamp</div>
-                            <div class="row category">Category Glass</div>
+                    <div class="container right-column">
+                        <div class="row">
+                            <button class="btn btn-topic">Paper</button>
                         </div>
-                        <div class="col">
-                            <div class="row author">by: 4Bids</div>
-                            <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <div class="row comments">90 comments</div>
-                            <div class="row likes">728 likes</div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                </div>
-                <hr>
-                <!-- SUBTOPIC ENDS HERE -->
-
-                <!-- SUBTOPIC STARTS HERE -->
-                <div class="row row-of-every-topic">
-                    <div class="container" style="margin-left: 20px;">
-                    <div class="row">
-
-                        <div class="col">
-                            <div class="row title">Upcycled lamp</div>
-                            <div class="row category">Category Glass</div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <div class="row author">by: 4Bids</div>
-                            <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <div class="row comments">90 comments</div>
-                            <div class="row likes">728 likes</div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
                         </div>
-                    </div>
-                    </div>
-                </div>
-                <hr>
-                <!-- SUBTOPIC ENDS HERE -->
-
-                <!-- SUBTOPIC STARTS HERE -->
-                <div class="row row-of-every-topic">
-                    <div class="container" style="margin-left: 20px;">
-                    <div class="row">
-
-                        <div class="col">
-                            <div class="row title">Upcycled lamp</div>
-                            <div class="row category">Category Glass</div>
-                        </div>
-                        <div class="col">
-                            <div class="row author">by: 4Bids</div>
-                            <div class="row date-time">June. 18, 2023 12:15 PM</div>
-                        </div>
-                        <div class="col">
-                            <div class="row comments">90 comments</div>
-                            <div class="row likes">728 likes</div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <hr>
-                <!-- SUBTOPIC ENDS HERE -->
-
-                <!-- SUBTOPIC STARTS HERE -->
-                <div class="row row-of-every-topic">
-                    <div class="container" style="margin-left: 20px;">
-                    <div class="row">
-
-                        <div class="col">
-                            <div class="row title">Upcycled lamp</div>
-                            <div class="row category">Category Glass</div>
-                        </div>
-                        <div class="col">
-                            <div class="row author">by: 4Bids</div>
-                            <div class="row date-time">June. 18, 2023 12:15 PM</div>
-                        </div>
-                        <div class="col">
-                            <div class="row comments">90 comments</div>
-                            <div class="row likes">728 likes</div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-                <hr>
-                <!-- SUBTOPIC ENDS HERE -->
-
-
-                <!-- SAMPLE 2nd SUBTOPIC -->
-                <div class="row">
-                    <button class="btn btn-topic">Sample Sub topic here!</button>
-                </div>
-                <!-- SUBTOPIC STARTS HERE -->
-                <div class="row row-of-every-topic">
-                    <div class="container" style="margin-left: 20px;">
-                    <div class="row">
-
-                        <div class="col">
-                            <div class="row title">Upcycled lamp</div>
-                            <div class="row category">Category Glass</div>
-                        </div>
-                        <div class="col">
-                            <div class="row author">by: 4Bids</div>
-                            <div class="row date-time">June. 18, 2023 12:15 PM</div>
-                        </div>
-                        <div class="col">
-                            <div class="row comments">90 comments</div>
-                            <div class="row likes">728 likes</div>
-                        </div>
-                    </div>
+                        <hr>
                     </div>
                 </div>
-                <hr>
-                <!-- SUBTOPIC ENDS HERE -->
 
+                <!-- GLASS -->
+                <div class="tab-pane fade" id="v-pills-glass" role="tabpanel" aria-labelledby="v-pills-glass-tab" tabindex="0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-right">
+                                <button class="btn btn-createnewtopic me-md-2 float-end">Create new topic</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container right-column">
+                        <div class="row">
+                            <button class="btn btn-topic">Glass</button>
+                        </div>
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
+                <!-- TEXTILE -->
+                <div class="tab-pane fade" id="v-pills-textile" role="tabpanel" aria-labelledby="v-pills-textile-tab" tabindex="0">
+                    <div class="container">
+                        <div class="row">
+                            <div class="text-right">
+                                <button class="btn btn-createnewtopic me-md-2 float-end">Create new topic</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container right-column">
+                        <div class="row">
+                            <button class="btn btn-topic">Textile</button>
+                        </div>
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <!-- SUBTOPIC ENDS HERE -->
+        
+                        <!-- SUBTOPIC STARTS HERE -->
+                        <div class="row row-of-every-topic">
+                            <div class="container" style="margin-left: 20px;">
+                            <div class="row">
+        
+                                <div class="col">
+                                    <div class="row title">Upcycled lamp</div>
+                                    <div class="row category">Category Glass</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row author">by: 4Bids</div>
+                                    <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                                </div>
+                                <div class="col">
+                                    <div class="row comments">90 comments</div>
+                                    <div class="row likes">728 likes</div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-reduce" role="tabpanel" aria-labelledby="v-pills-reduce-tab" tabindex="0">
+                    
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-
-
-
+<!-- FOOTER -->
+<footer class="footer pt-5 pb-2 position-relative">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-xl-6 text-center text-md-start mx-auto mt-3">
+                <p class="h4 brand">Upcycle</p>
+                <p class="description">This website combines insightful articles on ways to reuse recyclable materials with engaging forums for a community of recyclers, all in one place. Explore to stay informed and join forums to connect!</p>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xl-4 text-center text-md-start mx-auto mt-3">
+                <p class="h4 link">Link</p>
+                <ul class="footer-links">
+                    <li><a class="footer" href="">About Us</a></li>
+                    <li><a class="footer" href="">Contact Us</a></li>
+                    <li><a class="footer" href="">Home</a></li>
+                    <li><a class="footer" href="">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="row text-center g-4">
+            <p class="copyright">© 2024 Upcycle</p>
+            </div>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
