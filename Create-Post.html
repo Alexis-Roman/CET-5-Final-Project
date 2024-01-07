@@ -84,22 +84,22 @@
     <div class="row">
         <!-- TITLE -->
         <div class="my-3">
-            <label for="exampleFormControlTextarea1" class="form-label"><strong>Description:</strong></label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="1"></textarea>
+            <label for="post-form-title" class="form-label"><strong>Title</strong></label>
+            <textarea class="form-control" id="post-form-title" placeholder="Add title here" rows="1"></textarea>
         </div>
         <div class="row g-3">
             <!-- DESCRIPTION -->
             <div class="col post-description px-5">
                 <div class="mb-3">
-                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="5"></textarea>
+                    <label for="exampleFormControlTextarea1" class="form-label"><strong>Description:</strong></label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Add post description..." rows="5"></textarea>
                 </div>
             </div>
             <!-- MATERIALS NEEDED -->
                 <div class="col post-description">
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="5"></textarea>
+                        <label for="exampleFormControlTextarea1" class="form-label"><strong>Materials Needed:</strong></label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Add needed materials..." rows="5"></textarea>
                     </div>
                 </div>
         </div>
@@ -109,12 +109,13 @@
 <!-- POST CONTENT -->
 <div class="container post-content col-xl-8 col-xs-12 mt-3">
     <div class="row">
-        <div class="container post-instruction-title rounded-top text-white" style="background-color: #F06205;">
-            <div class="row px-3 py-2 d-flex align-items-center">
+        <div class="container px-3 py-2 post-instruction-title rounded-top text-white" style="background-color: #F06205; height: 70px;">
+            <div class="row d-flex align-items-center">
                 <!-- INSTRUCTION -->
                 <div class="col post-description">
-                    <div class="mb-3">
-                        <textarea class="form-control" style="background-color:#F06205; border: 0px;" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="1"></textarea>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control text-white ps-5" style="background-color: #F06205; border: 0px;" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Instruction</label>
                     </div>
                 </div>
             </div>
@@ -130,23 +131,26 @@
                 </div>
                 <!-- STEP TITLE -->
                 <div class="col">
-                    <div class="my-3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="1"></textarea>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control border-0" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Step Title</label>
                     </div>
                 </div>
             </div>
             <!-- IMG -->
             <div class="row">
                 <div class="container d-flex justify-content-center" style="background-color: rgb(223, 223, 223); height: 450px;">
-                    <img class="forum-img" src="images/card_placeholder_img.png" alt="">
+                        <img class="forum-img" src="images/card_placeholder_img.png" alt="">
+                        <label style="background-color: rgb(223, 223, 223);">
+                            <input type="file" accept="image/*">
+                        </label>
                 </div>
             </div>
             <!-- IMG DESCRIPTION -->
             <div class="row pt-2 px-4">
-                <div class="col">
-                    <div class="my-3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="4"></textarea>
-                    </div>
+                <div class="form-floating">
+                    <textarea class="form-control px-4" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label class="ms-4" for="floatingTextarea2">Step description</label>
                 </div>
             </div>
         </div>
@@ -163,15 +167,9 @@
         <p class="label h1">References</p>
         <hr>
         <div class="row">
-                <div class="col">
-                    <div class="col">
-                        <div class="my-3">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="1"></textarea>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="1"></textarea>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="name@example.com" rows="1"></textarea>
-                        </div>
-                    </div>
-                </div>
+            <div class="mb-3">
+                <textarea class="form-control" id="references" placeholder="Add references here..." rows="3"></textarea>
+            </div>
         </div>
     </div>
 </div>
