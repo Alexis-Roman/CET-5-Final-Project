@@ -58,14 +58,10 @@
                   Start Recycling
                 </a>
                 <ul class="dropdown-menu">
-                  {% if user.is_authenticated %}
                   <!-- VIEW POST -->
                   <li><a class="dropdown-item" id="SRCategories" href="/start-recycling-categories">View Post</a></li>
                   <!-- CREATE POST -->
                   <li><a class="dropdown-item" id="CreatePost" href="/create-post">Create New Post</a></li>
-                  {% else %}
-                  <li><a class="dropdown-item" id="SRCategories" href="/start-recycling-categories">View Post</a></li>
-                  {% endif %}
                 </ul>
               </li>
               <!-- RECENT POST -->
