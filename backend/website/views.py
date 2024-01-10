@@ -9,23 +9,23 @@ def home():
 
 @views.route('/start-recycling-categories')
 def SRCategories():
-    return render_template("SRCategories.html")
+    return render_template("SRCategories.html", user=current_user)
 
 @views.route('/forum')
 def forum():
-    return render_template("Forum.html")
+    return render_template("Forum.html", user=current_user)
 
 @views.route('/post')
 def post():
-    return render_template("Post-page.html") 
+    return render_template("Post-page.html", user=current_user) 
 
 # CAN BE VIEWED WHEN LOGGED IN
 @views.route('/create-post')
 @login_required
 def CreatePost():
-    return render_template("Create-Post.html")
+    return render_template("Create-Post.html", user=current_user)
 
 @views.route('/account')
 @login_required
 def account():
-    return render_template("Account.html") 
+    return render_template("Account.html", user=current_user) 
