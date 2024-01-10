@@ -58,10 +58,14 @@
                   Start Recycling
                 </a>
                 <ul class="dropdown-menu">
+                  {% if user.is_authenticated %}
                   <!-- VIEW POST -->
                   <li><a class="dropdown-item" id="SRCategories" href="/start-recycling-categories">View Post</a></li>
                   <!-- CREATE POST -->
                   <li><a class="dropdown-item" id="CreatePost" href="/create-post">Create New Post</a></li>
+                  {% else %}
+                  <li><a class="dropdown-item" id="SRCategories" href="/start-recycling-categories">View Post</a></li>
+                  {% endif %}
                 </ul>
               </li>
               <!-- RECENT POST -->
@@ -76,8 +80,8 @@
           <!-- LOGIN & SIGN UP -->
           <div class="d-flex justify-content-center flex-xl-row align-items-center gap-2">
           {% if user.is_authenticated %}
-          <a href="#" class="user"> 
-            <img src="/images/Ellipse 12.png" alt="" style="height: 50px; width: 50px">
+          <a href="/account" class="user" id="account"> 
+            <img src="/images/Ellipse 12.png" style="height: 50px; width: 50px">
           </a>
           <a href="/logout" class="login text-white text-decoration-none inner-border px-4 py-2" id="logout"> Logout</a>
           {% else %}

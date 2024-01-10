@@ -23,3 +23,9 @@ def forum():
 @views.route('/post')
 def post():
     return render_template("Post-page.html") 
+
+# CAN BE VIEWED WHEN LOGGED IN
+@views.route('/account')
+@login_required
+def account():
+    return render_template("Account.html") 
