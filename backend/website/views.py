@@ -1,10 +1,12 @@
 from flask import Blueprint, render_template
+from flask_login import login_required, current_user
 
 views = Blueprint('views', __name__)
 
 @views.route('/')
+# @login_required
 def home():
-    return render_template("Homepage.html")
+    return render_template("Homepage.html", user=current_user)
 
 @views.route('/start-recycling-categories')
 def SRCategories():
@@ -20,4 +22,4 @@ def forum():
 
 @views.route('/post')
 def post():
-    return render_template("Post-page.html")
+    return render_template("Post-page.html") 

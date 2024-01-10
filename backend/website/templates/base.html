@@ -50,6 +50,7 @@
           <ul class="navbar-nav justify-content-center align-items-center flex-grow-1 pe-3 gap-1">
             <li class="nav-item">
                 <!-- Navbar starts here -->
+                <!-- HOME -->
               <a class="nav-link active " aria-current="page" id="home" href="/">Home</a>
             </li>
             <li class="nav-item dropdown">
@@ -57,25 +58,33 @@
                   Start Recycling
                 </a>
                 <ul class="dropdown-menu">
+                  <!-- VIEW POST -->
                   <li><a class="dropdown-item" id="SRCategories" href="/start-recycling-categories">View Post</a></li>
-                  <li>
-                  </li>
+                  <!-- CREATE POST -->
                   <li><a class="dropdown-item" id="CreatePost" href="/create-post">Create New Post</a></li>
                 </ul>
               </li>
-
+              <!-- RECENT POST -->
             <li class="nav-item">
               <a class="nav-link" id="post" href="/post">Recent Post</a>
             </li>
-
+            <!-- FORUM -->
             <li class="nav-item">
                 <a class="nav-link" id="forum" href="/forum">Community Forum</a>
               </li>
           </ul>
           <!-- LOGIN & SIGN UP -->
           <div class="d-flex justify-content-center flex-xl-row align-items-center gap-2">
+          {% if user.is_authenticated %}
+          <a href="#" class="user"> 
+            <img src="/images/Ellipse 12.png" alt="" style="height: 50px; width: 50px">
+          </a>
+          <a href="/logout" class="login text-white text-decoration-none inner-border px-4 py-2" id="logout"> Logout</a>
+          {% else %}
             <a href="/login" class="login text-white text-decoration-none inner-border px-4 py-2" id="login"> Login</a>
             <a href="/signup" class="signup text-white text-decoration-none px-4 py-2" id="sign_up">Sign Up</a>
+          {% endif %}
+            
           </div>
         </div>
       </div>
