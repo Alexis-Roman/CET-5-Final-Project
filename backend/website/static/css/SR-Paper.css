@@ -42,7 +42,7 @@ div.offcanvas-header{
 
 /* FOOTER */
 footer.footer{
-    background-image: url(/images/background/footer.png);
+    background-image: url(../images/background/footer.png);
     background-repeat: no-repeat;
     background-blend-mode: normal;
     background-position: center top;
@@ -90,7 +90,7 @@ footer.footer{
     }
 
 /* BANNER SEARCH */
-.banner-bg{
+.banner-bg-paper{
     background-repeat: no-repeat;
     background-blend-mode: normal;
     background-position: center top;

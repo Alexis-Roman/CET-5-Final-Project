@@ -42,7 +42,7 @@ div.offcanvas-header{
 
 /* FOOTER */
 footer.footer{
-    background-image: url(/images/background/footer.png);
+    background-image: url(../images/background/footer.png);
     background-repeat: no-repeat;
     background-blend-mode: normal;
     background-position: center top;
@@ -88,7 +88,6 @@ footer.footer{
     p.copyright{
         color: white;
     }
-
     /* POST INFO */
     div.container.post-info{
         margin-top: 2%; 

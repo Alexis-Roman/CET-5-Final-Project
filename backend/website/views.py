@@ -11,6 +11,24 @@ def home():
 def SRCategories():
     return render_template("SRCategories.html", user=current_user)
 
+
+@views.route('/start-recycling-plastic')
+def SRPlastic():
+    return render_template("SR-Plastic.html", user=current_user)
+
+@views.route('/start-recycling-paper')
+def SRPaper():
+    return render_template("SR-Paper.html", user=current_user)
+
+@views.route('/start-recycling-textile')
+def SRTextile():
+    return render_template("SR-Textile.html", user=current_user)
+
+@views.route('/start-recycling-glass')
+def SRGlass():
+    return render_template("SR-Glass.html", user=current_user)
+
+
 @views.route('/forum')
 def forum():
     return render_template("Forum.html", user=current_user)
