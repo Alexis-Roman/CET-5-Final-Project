@@ -7,10 +7,11 @@
     <title>Upcycle - Forum</title>
     <link rel="stylesheet" href="/css/Forum-Clicked.css">
     <link rel="stylesheet" href="/css/Forum.css">
-    <script src="Forum-Clicked.js" defer></script>
+    <script src="/js/Forum-Clicked.js" defer></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="shortcut icon" href="/src/img/Logo/NGOlogo.png" type="image/x-icon">
 
 </head>
@@ -111,6 +112,7 @@
                 </div>
             </div>
             <hr>
+            <div class="forum" data-forum-id="7712">
             <!-- TITLE -->
             <div class="row">
                 <p class="h4 forum-title">Title placeholder</p>
@@ -124,29 +126,29 @@
             <div class="row">
                 <p class="h6 message mt-3 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolor possimus aspernatur error voluptas illo eius similique rem dolorem, est consectetur molestiae deserunt facilis at quidem ab ut fugit obcaecati!Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, in quod expedita suscipit incidunt cum, delectus hic eius eos, vitae dicta qui repudiandae ut ipsam aperiam similique. Harum, ab alias?</p>
             </div>
-            </div>
+
             <hr>
             <!-- COUNT -->
-            <div class="row mb-3">
-                <div class="col-1 d-flex justify-content-end">
+            <div class="forum-ratings-container row mb-3 d-flex">
+                <!-- <div class="col-1 d-flex justify-content-end">
                     <p class="h6">#</p>
+                </div> -->
+                <div class="forum-rating forum-rating col-2 d-flex justify-content-start">
+                    <span class="forum-rating-button material-icons px-2"> thumb_up </span>
+                    <span class="forum-rating-count">0</span>
                 </div>
-                <div class="col-2">
-                    <p class="h6">Comments</p>
-                </div>
-                <div class="col-1 d-flex justify-content-end">
+                <!-- <div class="col-1 d-flex justify-content-end">
                     <p class="h6">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="h6">Likes</p>
-                </div>
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="h6">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="h6">Dislikes</p>
+                </div> -->
+                <div class="forum-rating forum-rating col-2 d-flex justify-content-start">
+                    <span class="forum-rating-button material-icons px-2"> thumb_down </span>
+                    <span class="forum-rating-count">0</span>
                 </div>
             </div>
+
+            </div>
+
+        </div>
     </div>
 </div>
 <span class="br"></span> 
@@ -192,28 +194,22 @@
                     <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
                 </div>
             </div>
-            <!-- COUNT -->
-            <div class="row">
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Comments</p>
-                </div>
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Likes</p>
-                </div>
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Dislikes</p>
-                </div>
-                <hr>
+        <!-- COUNT -->
+        <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
+            <div class="col-lg-1 col-2"></div>
+            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                <span class="forum-rating-button material-icons px-2"> thumb_up </span>
+                <span class="forum-rating-count">0</span>
             </div>
+            <!-- <div class="col-1 d-flex justify-content-end">
+                <p class="h6">#</p>
+            </div> -->
+            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                <span class="forum-rating-button material-icons px-2"> thumb_down </span>
+                <span class="forum-rating-count">0</span>
+            </div>
+        </div>
+        <hr>
         </div>
 
         <!-- OTHER COMMENT -->
@@ -238,28 +234,22 @@
                     <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
                 </div>
             </div>
-            <!-- COUNT -->
-            <div class="row mb-3">
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Comments</p>
-                </div>
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Likes</p>
-                </div>
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Dislikes</p>
-                </div>
-                <hr>
+        <!-- COUNT -->
+        <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
+            <div class="col-lg-1 col-2"></div>
+            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                <span class="forum-rating-button material-icons px-2"> thumb_up </span>
+                <span class="forum-rating-count">0</span>
             </div>
+            <!-- <div class="col-1 d-flex justify-content-end">
+                <p class="h6">#</p>
+            </div> -->
+            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                <span class="forum-rating-button material-icons px-2"> thumb_down </span>
+                <span class="forum-rating-count">0</span>
+            </div>
+        </div>
+        <hr>
         </div>
 
         <!-- USER INFO -->
@@ -283,28 +273,22 @@
                     <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
                 </div>
             </div>
-            <!-- COUNT -->
-            <div class="row">
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Comments</p>
-                </div>
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Likes</p>
-                </div>
-                <div class="col-1 d-flex justify-content-end">
-                    <p class="">#</p>
-                </div>
-                <div class="col-2">
-                    <p class="">Dislikes</p>
-                </div>
-                <hr>
+        <!-- COUNT -->
+        <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
+            <div class="col-lg-1 col-2"></div>
+            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                <span class="forum-rating-button material-icons px-2"> thumb_up </span>
+                <span class="forum-rating-count">0</span>
             </div>
+            <!-- <div class="col-1 d-flex justify-content-end">
+                <p class="h6">#</p>
+            </div> -->
+            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                <span class="forum-rating-button material-icons px-2"> thumb_down </span>
+                <span class="forum-rating-count">0</span>
+            </div>
+        </div>
+        <hr>
         </div>
     </div>
 </div>

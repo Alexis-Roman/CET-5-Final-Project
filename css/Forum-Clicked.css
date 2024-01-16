@@ -218,3 +218,21 @@ footer.footer{
         font-family: Arial;
         color: black;
     }
+    .forum-rating-count {
+        display: flex;
+        align-items: center;
+        cursor: default;
+    }
+    .forum-rating-selected > .forum-rating-button,
+    .forum-rating-selected > .forum-rating-count {
+        color: #EC5300;
+    }
+    .forum-rating-button {
+        margin-right: 6px;
+        cursor: pointer;
+        color: #5d8c8c;
+    }
+
+    .forum-rating:not(.forum-rating-selected) > .forum-rating-button:hover {
+        color: #00777F;
+    }
