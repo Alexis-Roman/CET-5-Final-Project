@@ -109,7 +109,7 @@ ul{
 
 /* FOOTER */
 footer.footer{
-    background-image: url(../images/background/footer.png);
+    background-image: url(/images/background/footer.png);
     background-repeat: no-repeat;
     background-blend-mode: normal;
     background-position: center top;
@@ -217,4 +217,22 @@ footer.footer{
     p.h6.message{
         font-family: Arial;
         color: black;
+    }
+    .forum-rating-count {
+        display: flex;
+        align-items: center;
+        cursor: default;
+    }
+    .forum-rating-selected > .forum-rating-button,
+    .forum-rating-selected > .forum-rating-count {
+        color: #EC5300;
+    }
+    .forum-rating-button {
+        margin-right: 6px;
+        cursor: pointer;
+        color: #5d8c8c;
+    }
+
+    .forum-rating:not(.forum-rating-selected) > .forum-rating-button:hover {
+        color: #00777F;
     }
