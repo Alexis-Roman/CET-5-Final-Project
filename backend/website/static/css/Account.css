@@ -64,6 +64,15 @@ p.username{
     color: #FF6B00;
     font-size: clamp(10px, 2vw, 15px)
 }
+.like-num p.h1, .like-num p.h6{
+    color: #FF2458;
+}
+.read-num p.h1, .read-num p.h6{
+    color: #578E6D;
+}
+.create-num p.h1, .create-num p.h6{
+    color: #3855A1;
+}
     /* USER ACTIVITY */
     
 
@@ -104,10 +113,11 @@ h5.card-title.history, h5.card-title.favorite{
     height:clamp(9rem, 1vw, 10rem) ;
     object-fit: cover;
 }
-.card-body.post{
+.card-body.favorite, .card-body.history{
     height:clamp(6rem, 1vw, 8rem);
     padding-top: 10px;
 }
+
 /* FOR TOPIC CARDS */
 .card-title.topic{
     color: #F06205;
@@ -178,4 +188,7 @@ footer.footer{
     }
     p.copyright{
         color: white;
+    }
+    .account-profile-img{
+        border-radius: 50%;
     }

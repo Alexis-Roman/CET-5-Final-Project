@@ -7,6 +7,7 @@
     <title>Upcycle - {% block title %}Base{% endblock %}</title>
     <!-- CSS LINK -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Homepage.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/Account.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/SRCategories.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/SR-Plastic.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/Post-page.css') }}">
@@ -81,7 +82,7 @@
           <div class="d-flex justify-content-center flex-xl-row align-items-center gap-2">
           {% if user.is_authenticated %}
           <a href="/account" class="user" id="account"> 
-            <img src="/images/Ellipse 12.png" style="height: 50px; width: 50px">
+            <img class="profile-img mx-3" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" style="height: 50px; width: 50px">
           </a>
           <a href="/logout" class="login text-white text-decoration-none inner-border px-4 py-2" id="logout"> Logout</a>
           {% else %}

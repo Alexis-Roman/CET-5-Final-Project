@@ -23,13 +23,13 @@
 
 {% block content %}
 <!-- PROFILE -->
-<section class="banner profile-cover p-5" style="background-image: url(/images/background/account-var5.jpg);">
+<section class="banner profile-cover p-5" style="background-image: url(static/images/background/account-var5.jpg);">
     <div class="container">
         <div class="profile d-flex justify-content-center">
             <div class="row col-xl-8 col-lg-8 col-11 profile py-5 px-3 rounded-4 shadow-sm align-items-center" style="background-color: white;">
                 <div class="row d-flex justify-content-center">
-                    <div class="col-2 d-flex my-3 justify-content-center align-items-center">
-                        <img src="/images/profile.png" alt="">
+                    <div class="col-4 col-md-2 d-flex my-3 justify-content-center align-items-center">
+                        <img class="account-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
                     </div>
                     <div class="col-6">
                         <div class="row align-items-center">
@@ -45,8 +45,8 @@
                 <h5>User Activity</h5>
                 <div class="col mt-2">
                     <div class="row text-center">
-                        <div class="col r">
-                            <p class="h1 like-num">10</p>
+                        <div class="col like-num">
+                            <p class="h1">10</p>
                             <p class="h6">Liked Post</p>
                         </div>
                         
@@ -77,7 +77,7 @@
             <div class="row history">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                     <div class="card history">
-                        <img src="/images/card_placeholder_img.png" class="card-img-top" alt="...">
+                        <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
                         <div class="card-body history">
                         <p class="card-text category">How to recycle 'Category'</p>
                         <h5 class="card-title history">TITLE PLACEHOLDER</h5>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                     <div class="card history">
-                        <img src="/images/card_placeholder_img.png" class="card-img-top" alt="...">
+                        <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
                         <div class="card-body history">
                         <p class="card-text category">How to recycle 'Category'</p>
                         <h5 class="card-title history">TITLE PLACEHOLDER</h5>
@@ -95,7 +95,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                     <div class="card history">
-                        <img src="/images/card_placeholder_img.png" class="card-img-top" alt="...">
+                        <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
                         <div class="card-body history">
                         <p class="card-text category">How to recycle 'Category'</p>
                         <h5 class="card-title history">TITLE PLACEHOLDER</h5>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                     <div class="card history">
-                        <img src="/images/card_placeholder_img.png" class="card-img-top" alt="...">
+                        <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
                         <div class="card-body history">
                         <p class="card-text category">How to recycle 'Category'</p>
                         <h5 class="card-title history">TITLE PLACEHOLDER</h5>
@@ -125,7 +125,7 @@
         <div class="row favorite">
             <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card favorite">
-                    <img src="/images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
                     <div class="card-body favorite">
                     <p class="card-text category">How to recycle 'Category'</p>
                     <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
@@ -134,7 +134,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card favorite">
-                    <img src="/images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
                     <div class="card-body favorite">
                     <p class="card-text category">How to recycle 'Category'</p>
                     <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
@@ -143,7 +143,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card favorite">
-                    <img src="/images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
                     <div class="card-body favorite">
                     <p class="card-text category">How to recycle 'Category'</p>
                     <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
@@ -152,7 +152,7 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
                 <div class="card favorite">
-                    <img src="/images/card_placeholder_img.png" class="card-img-top" alt="...">
+                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
                     <div class="card-body favorite">
                     <p class="card-text category">How to recycle 'Category'</p>
                     <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>

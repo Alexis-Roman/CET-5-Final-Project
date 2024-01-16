@@ -39,6 +39,10 @@ div.offcanvas-header{
         background-color: #EC5300;
         border-radius: 5px;
     }
+/* PROFILE IMG */
+.profile-img{
+    border-radius: 50%;
+}
 
 /* FOOTER */
 footer.footer{
