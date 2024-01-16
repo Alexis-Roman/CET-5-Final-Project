@@ -109,7 +109,7 @@ ul{
 
 /* FOOTER */
 footer.footer{
-    background-image: url(/images/background/footer.png);
+    background-image: url(../images/background/footer.png);
     background-repeat: no-repeat;
     background-blend-mode: normal;
     background-position: center top;
