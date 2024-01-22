@@ -40,6 +40,9 @@ div.offcanvas-header{
         border-radius: 5px;
     }
 
+
+    
+
 /* FOOTER */
 footer.footer{
     background-image: url(/images/background/footer.png);
@@ -99,8 +102,10 @@ footer.footer{
         background-color: white;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
+
     p.post-title{
-        color: #242424;
+        color: #03696E;
         font-family: 'Open Sans';
         font-weight: bold;
     }
@@ -233,12 +238,6 @@ p.label.h1 {
         font-weight: bold;
         font-size: 24px;
     }
-
-    /* textarea:focus { 
-        outline: none !important;
-        border-color: transparent;
-        box-shadow: 0;
-    } */
 
     .form-control {
         display: list-item;
