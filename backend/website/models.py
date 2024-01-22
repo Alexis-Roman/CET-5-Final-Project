@@ -14,3 +14,16 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String (150))
     first_name = db.Column(db.String(150))
     notes = db.relationship('Note')
+
+class Post(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    category =  db.Column(db.Integer)
+    title = db.Column(db.String(1000))
+    description = db.Column(db.String(1000))
+    materials = db.Column(db.String(1000))
+    instruction_title = db.Column(db.String(1000))
+    instruction_description = db.Column(db.String(10000))
+    # instruction_image = db.Column(db.Image)
+    reference = db.Column(db.String(1000))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))

@@ -86,8 +86,9 @@
           <a href="/account" class="user" id="account"> 
             <img class="profile-img mx-3" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" style="height: 50px; width: 50px">
           </a>
-          <a href="/logout" class="login text-white text-decoration-none inner-border px-4 py-2" id="logout"> Logout</a>
+          <a href="/logout" class="logout text-white text-decoration-none inner-border px-4 py-2" id="logout"> Logout</a>
           {% else %}
+          <!-- add  target="blank" to 'a' tag to go to new tab -->
             <a href="/login" class="login text-white text-decoration-none inner-border px-4 py-2" id="login"> Login</a>
             <a href="/signup" class="signup text-white text-decoration-none px-4 py-2" id="sign_up">Sign Up</a>
           {% endif %}

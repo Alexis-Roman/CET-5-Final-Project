@@ -24,6 +24,17 @@
 <!-- POST INFO-->
 <div class="container post-info col-xl-8 col-xs-12 pb-4" style="background-color: white;">
     <div class="row">
+        <!-- CATEGORY -->
+        <div class="my-3">
+            <label for="post-form-category" class="form-label"><strong>Category</strong></label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Choose a category</option>
+                <option value="1">Plastic</option>
+                <option value="2">Paper</option>
+                <option value="3">Textile</option>
+                <option value="4">Glass</option>
+            </select>
+        </div>
         <!-- TITLE -->
         <div class="my-3">
             <label for="post-form-title" class="form-label"><strong>Title</strong></label>
@@ -52,48 +63,53 @@
 <div class="container post-content col-xl-8 col-xs-12 mt-3">
     <div class="row">
         <div class="container px-3 py-2 post-instruction-title rounded-top text-white" style="background-color: #F06205; height: 70px;">
-            <div class="row d-flex align-items-center">
+            <div class="row align-items-center">
                 <!-- INSTRUCTION -->
-                <div class="col post-description">
-                    <div class="form-floating mb-3">
-                        <input type="email" class="form-control text-white ps-5" style="background-color: #F06205; border: 0px;" id="floatingInput" placeholder="name@example.com">
-                        <label for="floatingInput">Instruction</label>
+                <div class="col post-instruction">
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="background-color: #F06205; border: 0px"></textarea>
+                        <label for="floatingTextarea">Comments</label>
                     </div>
                 </div>
             </div>
         </div>
         <div class="container py-4" style="background-color: white;">
             <!-- STEP INDICATOR -->
-            <div class="row d-flex align-items-center pb-4">
+            <!-- <div class="row d-flex align-items-center pb-4">
                 <div class="col-xl-2 col-3 step-bg" style="background-image: url(/images/steps.png);">
                     <div class="row text-white">
                         <p class="step pt-2">STEP</p>
                         <p class="step-num pb-2">1</p>
                     </div>
-                </div>
+                </div> -->
                 <!-- STEP TITLE -->
-                <div class="col">
+                <!-- <div class="col">
                     <div class="form-floating mb-3">
                         <input type="email" class="form-control border-0" id="floatingInput" placeholder="name@example.com">
                         <label for="floatingInput">Step Title</label>
                     </div>
                 </div>
-            </div>
+            </div> -->
             <!-- IMG -->
             <div class="row">
-                <div class="container d-flex justify-content-center" style="background-color: rgb(223, 223, 223); height: 450px;">
+                <div class="container d-flex justify-content-center my-5" style="background-color: rgb(223, 223, 223);">
                     <div>
-                        <form id="imageForm">
-                            <label for="imageUpload" id="uploadLabel" style="display: block; font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">[Insert Image Here]</label>
+                        <form id="imageForm" class="my-5 d-flex-row justify-content-center">
+                            <!-- <label for="imageUpload" id="uploadLabel" style="display: block; font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">[Insert Image Here]</label>
                             <input type="file" id="imageUpload" name="imageUpload" accept="image/*" style="display: none;" />
                             <img id="uploadedImage" src="" alt="Uploaded Image" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; max-height: 565px; cursor: pointer; display: none;">
-                            <img src="images/image icon.jpg" alt="Image Icon" id="imageIcon" style="width: 70px; height: 70px; margin-top: 20px; cursor: pointer;">
+                                    <img src="{{ url_for('static', filename='images/img/addimage-createpost.png')}}" alt="Image Icon" id="imageIcon" style="width: 100%; height: 100%; object-fit: cover; cursor: pointer;"> -->
+                            <input type="file" id="image_input" accept="image/*"/>
+                            <div id="image_display" style="height: 450px; background-position: center; background-size: cover;">
+                                <!-- <img src="{{ url_for('static', filename='images/img/addimage-createpost.png')}}" alt="Image Icon" id="imageIcon" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;"> -->
+                            </div>
                         </form>
+                        <script src="{{ url_for('static', filename='js/image-display.js')}}"></script>
                     </div>
                 </div>
             </div>
 
-            <script>
+            <!-- <script>
                 document.getElementById('imageForm').addEventListener('click', function() {
                     document.getElementById('imageUpload').click();
                 });
@@ -119,7 +135,7 @@
                 document.getElementById('uploadedImage').addEventListener('click', function() {
                     document.getElementById('imageUpload').click();
                 });
-            </script>
+            </script> -->
 
             <!-- IMG DESCRIPTION -->
             <div class="row pt-2 px-4">
@@ -128,9 +144,10 @@
                     <label class="ms-4" for="floatingTextarea2">Step description</label>
                 </div>
             </div>
+            
         </div>
         <hr>
-        
+        <button type="button" class="btn text-white" style="background-color: #F06205;">Add Instruction</button>
         <!-- MULTIPLE STEP JUST COPY -->
         
         </div>
@@ -146,6 +163,7 @@
                 <textarea class="form-control" id="references" placeholder="Add references here..." rows="3"></textarea>
             </div>
         </div>
+        <button type="button" class="btn text-white" style="background-color: #F06205;">Add Reference</button>
     </div>
 </div>
 
