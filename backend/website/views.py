@@ -1,5 +1,7 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
+from .models import Post
+from . import db
 
 views = Blueprint('views', __name__)
 
@@ -45,9 +47,22 @@ def login():
     return render_template("Login.html", user=current_user)
 
 # CAN BE VIEWED WHEN LOGGED IN
-@views.route('/create-post')
+@views.route('/create-post', methods=['GET', 'POST'])
 @login_required
 def CreatePost():
+    if request.method == "POST":
+        title = request.form.get('postTitle')
+
+        if len(title) == 0:
+            flash('Please fill up the required form', category='error')
+
+        else:
+            new_post = Post(title=title)
+            db.session.add(new_post)
+            db.session.commit()
+            flash('Post created!', category='success')
+
+
     return render_template("Create-Post.html", user=current_user)
 
 @views.route('/account')
