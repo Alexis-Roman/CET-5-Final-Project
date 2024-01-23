@@ -46,6 +46,7 @@ div.offcanvas-header{
     background-blend-mode: normal;
     background-position: center top;
     background-size: 100% 100%;
+    object-fit: fill;
 }
 p.username, p.date-joined, p.signature{
     font-family: 'Poppins';
