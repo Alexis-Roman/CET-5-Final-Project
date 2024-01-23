@@ -28,7 +28,6 @@ def SRTextile():
 def SRGlass():
     return render_template("SR-Glass.html", user=current_user)
 
-
 @views.route('/forum')
 def forum():
     return render_template("Forum.html", user=current_user)
