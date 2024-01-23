@@ -41,6 +41,10 @@ def forumClicked():
 def post():
     return render_template("Post-page.html", user=current_user) 
 
+@views.route('/login')
+def login():
+    return render_template("Login.html", user=current_user)
+
 # CAN BE VIEWED WHEN LOGGED IN
 @views.route('/create-post')
 @login_required
