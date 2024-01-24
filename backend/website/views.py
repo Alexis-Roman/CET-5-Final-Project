@@ -51,16 +51,24 @@ def login():
 @login_required
 def CreatePost():
     if request.method == "POST":
+        category = request.form.get('chosenCat')
         title = request.form.get('postTitle')
+        description = request.form.get('postDescription')
+        materials = request.form.get('postMaterial')
+        instruction_title = request.form.get('postTitle')
+        instruction_description = request.form.get('postTitle')
+        reference = request.form.get('postTitle')
 
-        if len(title) == 0:
-            flash('Please fill up the required form', category='error')
+        if not category or len(title) == 0 or len(description) == 0 or len(materials) == 0 or len(instruction_title) == 0 or len(instruction_description) == 0 or len(reference) == 0:
+            flash('Please fill up all the required forms', category='error')
+        #elif len(title) > 16:
+        #   flash('Title reached maximum limit of characters', category='error')
 
-        else:
-            new_post = Post(title=title)
-            db.session.add(new_post)
-            db.session.commit()
-            flash('Post created!', category='success')
+#        else:
+#            new_post = Post(category=category, title=title)
+#            db.session.add(new_post)
+#            db.session.commit()
+#            flash('Post created!', category='success')
 
 
     return render_template("Create-Post.html", user=current_user)
