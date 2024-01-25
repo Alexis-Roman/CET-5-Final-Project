@@ -55,9 +55,9 @@ def CreatePost():
         title = request.form.get('postTitle')
         description = request.form.get('postDescription')
         materials = request.form.get('postMaterial')
-        instruction_title = request.form.get('postTitle')
-        instruction_description = request.form.get('postTitle')
-        reference = request.form.get('postTitle')
+        instruction_title = request.form.get('instructionTitle')
+        instruction_description = request.form.get('stepDescription')
+        reference = request.form.get('postReference')
 
         if not category or len(title) == 0 or len(description) == 0 or len(materials) == 0 or len(instruction_title) == 0 or len(instruction_description) == 0 or len(reference) == 0:
             flash('Please fill up all the required forms', category='error')
