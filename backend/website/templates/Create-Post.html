@@ -103,33 +103,10 @@
     </div>
 </div>
 
-<script>
-    var containerCount = 2; // Initial count of existing containers
-
-    function addContainer() {
-      containerCount++;
-
-      // Create a new container
-      var newContainer = document.createElement('div');
-      newContainer.className = 'htmlContainer';
-      newContainer.id = 'container' + containerCount;
-
-      // Add content to the new container
-      newContainer.innerHTML = '<h1>Hello, this is my HTML container ' + containerCount + '!</h1>' +
-                               '<button onclick="removeContainer(\'container' + containerCount + '\')">Delete Container</button>';
-
-      // Append the new container to the container wrapper
-      document.getElementById('containerWrapper').appendChild(newContainer);
-    }
-
-    function removeContainer(containerId) {
-      var container = document.getElementById(containerId);
-      container.parentNode.removeChild(container);
-    }
-  </script>
-
-<div class="container">
-    <button id="addInstructionButton" class="btn text-white" style="background-color: #F06205;">Add Instruction</button>
+<div class="container post-content col-xl-8 col-xs-12 mt-3">
+    <div class="row">
+        <button id="addInstructionButton" class="btn text-white" style="background-color: #F06205;">Add Instruction</button>
+    </div>
     <script src="{{ url_for('static', filename='js/new-instruction.js')}}"></script>
 </div>
 <!-- REFERENCES -->
