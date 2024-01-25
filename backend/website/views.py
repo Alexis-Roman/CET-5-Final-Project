@@ -61,8 +61,10 @@ def CreatePost():
 
         if not category or len(title) == 0 or len(description) == 0 or len(materials) == 0 or len(instruction_title) == 0 or len(instruction_description) == 0 or len(reference) == 0:
             flash('Please fill up all the required forms', category='error')
-        #elif len(title) > 16:
-        #   flash('Title reached maximum limit of characters', category='error')
+        elif len(title) > 70:
+            flash('Title reached maximum limit of characters', category='error')
+        elif len(instruction_title) >70:
+            flash('Instruction title reached maximum limit of characters', category='error')
 
 #        else:
 #            new_post = Post(category=category, title=title)
