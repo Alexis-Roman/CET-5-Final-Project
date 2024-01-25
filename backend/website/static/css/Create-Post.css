@@ -242,3 +242,7 @@ p.label.h1 {
       textarea#references.form-control{
         display: list-item;
       }
+
+li.list-group-item::before{
+    pointer-events: none;
+}
