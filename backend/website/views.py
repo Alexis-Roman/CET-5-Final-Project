@@ -63,7 +63,7 @@ def CreatePost():
             flash('Please fill up all the required forms', category='error')
         elif len(title) > 70:
             flash('Title reached maximum limit of characters', category='error')
-        elif len(instruction_title) >70:
+        elif len(instruction_title) > 70:
             flash('Instruction title reached maximum limit of characters', category='error')
 
 #        else:
