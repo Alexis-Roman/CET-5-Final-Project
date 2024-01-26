@@ -57,20 +57,26 @@ def CreatePost():
         materials = request.form.get('postMaterial')
         instruction_title = request.form.get('instructionTitle')
         instruction_description = request.form.get('stepDescription')
-        reference = request.form.get('postReference')
 
-        if not category or len(title) == 0 or len(description) == 0 or len(materials) == 0 or len(instruction_title) == 0 or len(instruction_description) == 0 or len(reference) == 0:
+        if not category or len(title) == 0 or len(description) == 0 or len(materials) == 0 or len(instruction_title) == 0 or len(instruction_description) == 0:
             flash('Please fill up all the required forms', category='error')
         elif len(title) > 70:
             flash('Title reached maximum limit of characters', category='error')
         elif len(instruction_title) > 70:
             flash('Instruction title reached maximum limit of characters', category='error')
 
-#        else:
-#            new_post = Post(category=category, title=title)
-#            db.session.add(new_post)
-#            db.session.commit()
-#            flash('Post created!', category='success')
+        else:
+            new_post = Post(
+               category=category, 
+                title=title,
+                description=description,
+                materials=materials,
+                instruction_title=instruction_title,
+                instruction_description=instruction_description,
+                user_id=current_user.id)
+            db.session.add(new_post)
+            db.session.commit()
+            flash('Post created!', category='success')
 
 
     return render_template("Create-Post.html", user=current_user)
