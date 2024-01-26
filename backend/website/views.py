@@ -62,7 +62,7 @@ def CreatePost():
         image = request.files.get('instructionImage')
         image_filename = save_image(image)
 
-        if not category or not title or not description or not materials or not instruction_title or not instruction_description or not reference:
+        if not category or len(title) == 0 or len(description) == 0 or len(materials) == 0 or len(instruction_title) == 0 or len(instruction_description) == 0 or len(reference) == 0:
             flash('Please fill up all the required forms', category='error')
         elif len(title) > 70:
             flash('Title reached maximum limit of characters', category='error')
@@ -88,7 +88,7 @@ def CreatePost():
 def save_image(image):
     if image:
         image_name = image.filename
-        image_path = os.path.join('website/static/images/', image_name)  # Adjust the path as needed
+        image_path = os.path.join('backend\website\static\uploaded', image_name)  # Adjust the path as needed
         image.save(image_path)
         return image_name  # Return the filename instead of the full path
     return None
