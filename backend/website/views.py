@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
 from .models import Post
 from . import db
+import os
 
 views = Blueprint('views', __name__)
 
@@ -58,6 +59,8 @@ def CreatePost():
         instruction_title = request.form.get('instructionTitle')
         instruction_description = request.form.get('stepDescription')
         reference = request.form.get('postReferences')
+        image = request.files.get('instructionImage')
+        image_filename = save_image(image)
 
         if not category or not title or not description or not materials or not instruction_title or not instruction_description or not reference:
             flash('Please fill up all the required forms', category='error')
@@ -68,7 +71,7 @@ def CreatePost():
 
         else:
             new_post = Post(
-               category=category, 
+                category=category, 
                 title=title,
                 description=description,
                 materials=materials,
@@ -78,9 +81,17 @@ def CreatePost():
             db.session.add(new_post)
             db.session.commit()
             flash('Post created!', category='success')
-
+            return redirect(url_for('views.create-post'))
 
     return render_template("Create-Post.html", user=current_user)
+
+def save_image(image):
+    if image:
+        image_name = image.filename
+        image_path = os.path.join('website/static/images/', image_name)  # Adjust the path as needed
+        image.save(image_path)
+        return image_name  # Return the filename instead of the full path
+    return None
 
 @views.route('/account')
 @login_required

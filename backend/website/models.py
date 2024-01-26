@@ -11,7 +11,7 @@ class Post(db.Model):
     materials = db.Column(db.String(1000))
     instruction_title = db.Column(db.String(1000))
     instruction_description = db.Column(db.String(10000))
-    # instruction_image = db.Column(db.Image)
+    instructionImage = db.Column(db.String(255))
     reference = db.Column(db.String(1000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
