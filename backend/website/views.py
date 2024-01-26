@@ -88,7 +88,7 @@ def CreatePost():
 def save_image(image):
     if image:
         image_name = image.filename
-        image_path = os.path.join('backend\website\static\uploaded', image_name)  # Adjust the path as needed
+        image_path = os.path.join('backend/website/static/uploaded', image_name)  # Adjust the path as needed
         image.save(image_path)
         return image_name  # Return the filename instead of the full path
     return None
