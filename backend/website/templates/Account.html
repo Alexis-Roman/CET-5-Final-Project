@@ -33,10 +33,10 @@
                     </div>
                     <div class="col-6">
                         <div class="row align-items-center">
-                            <p class="username h4">Username here</p>
+                            <p class="username h4" style="margin-left: 10px;">{{current_user.first_name}}</p>
                         </div>
                         
-                        <p class="date-joined"> Joined October 10, 2023</p>
+                        <p class="date-joined"> Joined {{ current_user.date.strftime('%B %d, %Y') }}</p>
                         <p class="signature">This will be my signature ^^!
                             Nice to meet you~</p>
                     </div>
