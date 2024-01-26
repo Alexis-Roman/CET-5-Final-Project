@@ -57,8 +57,9 @@ def CreatePost():
         materials = request.form.get('postMaterial')
         instruction_title = request.form.get('instructionTitle')
         instruction_description = request.form.get('stepDescription')
+        reference = request.form.get('postReferences')
 
-        if not category or len(title) == 0 or len(description) == 0 or len(materials) == 0 or len(instruction_title) == 0 or len(instruction_description) == 0:
+        if not category or not title or not description or not materials or not instruction_title or not instruction_description or not reference:
             flash('Please fill up all the required forms', category='error')
         elif len(title) > 70:
             flash('Title reached maximum limit of characters', category='error')
