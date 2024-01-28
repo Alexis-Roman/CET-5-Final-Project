@@ -59,6 +59,7 @@ def CreatePost():
         instruction_title = request.form.get('instructionTitle')
         instruction_description = request.form.get('stepDescription')
         reference = request.form.getlist('references[]')
+        print("Received references:", reference)
         image = request.files.get('instructionImage')
         image_filename = save_image(image)
 

@@ -173,14 +173,14 @@
                     newReference.innerHTML = '<a href="' + referenceText + '" target="_blank" class="mb-0 me-2">' + referenceText + '</a>' +
                     '<button type="button" class="btn btn-danger btn-sm delete-btn" style="background: none; border: none; color: #808080;">X</button>';
                     referenceList.appendChild(newReference);
-    
-                    document.getElementById('addReferences').value = "";
 
                     var hiddenInput = document.createElement('input');
                         hiddenInput.type = 'hidden';
-                        hiddenInput.name = 'references[]';
+                        hiddenInput.name = 'references[]';  // Use an array to handle multiple references
                         hiddenInput.value = referenceText;
-                        document.getElementById('postReferences').appendChild(hiddenInput);
+                        newReference.appendChild(hiddenInput);
+    
+                    document.getElementById('addReferences').value = "";
 
                     var deleteButtons = document.getElementsByClassName('delete-btn');
                     for (var i = 0; i < deleteButtons.length; i++) {
