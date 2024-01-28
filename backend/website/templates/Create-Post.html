@@ -29,7 +29,7 @@
             <!-- CATEGORY -->
             <div class="my-3">
                 <label for="post-form-category" class="form-label"><strong>Category*</strong></label>
-                <select class="form-select" aria-label="Default select example">
+                <select class="form-select" id="chosenCat" name="chosenCat" aria-label="Default select example">
                     <option selected>Choose a category</option>
                     <option value="1">Plastic</option>
                     <option value="2">Paper</option>
@@ -40,21 +40,21 @@
             <!-- TITLE -->
             <div class="my-3">
                 <label for="post-form-title" class="form-label"><strong>Title*</strong></label>
-                <textarea class="form-control" id="post-form-title" placeholder="Add title here" rows="1"></textarea>
+                <textarea class="form-control" name="postTitle" id="postTitle" placeholder="Add title here" rows="1"></textarea>
             </div>
             <div class="row g-3">
                 <!-- DESCRIPTION -->
                 <div class="col post-description px-5">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label"><strong>Description:*</strong></label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Add post description..." rows="5"></textarea>
+                        <textarea class="form-control" id="postDescription" name="postDescription" placeholder="Add post description..." rows="5"></textarea>
                     </div>
                 </div>
                 <!-- MATERIALS NEEDED -->
                     <div class="col post-description">
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label"><strong>Materials Needed:*</strong></label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Add needed materials..." rows="5"></textarea>
+                            <textarea class="form-control" id="postMaterial" name="postMaterial" placeholder="Add needed materials..." rows="5"></textarea>
                         </div>
                     </div>
             </div>
