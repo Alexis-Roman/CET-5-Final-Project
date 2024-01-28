@@ -31,10 +31,10 @@
                 <label for="post-form-category" class="form-label"><strong>Category*</strong></label>
                 <select class="form-select" id="chosenCat" name="chosenCat" aria-label="Default select example">
                     <option selected>Choose a category</option>
-                    <option value="1">Plastic</option>
-                    <option value="2">Paper</option>
-                    <option value="3">Textile</option>
-                    <option value="4">Glass</option>
+                    <option value="Plastic">Plastic</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Textile">Textile</option>
+                    <option value="Glass">Glass</option>
                 </select>
             </div>
             <!-- TITLE -->
@@ -174,8 +174,13 @@
                     '<button type="button" class="btn btn-danger btn-sm delete-btn" style="background: none; border: none; color: #808080;">X</button>';
                     referenceList.appendChild(newReference);
     
-                    // Clear the input after adding a reference
                     document.getElementById('addReferences').value = "";
+
+                    var hiddenInput = document.createElement('input');
+                        hiddenInput.type = 'hidden';
+                        hiddenInput.name = 'references[]';
+                        hiddenInput.value = referenceText;
+                        document.getElementById('postReferences').appendChild(hiddenInput);
 
                     var deleteButtons = document.getElementsByClassName('delete-btn');
                     for (var i = 0; i < deleteButtons.length; i++) {
