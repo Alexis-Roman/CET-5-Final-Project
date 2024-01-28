@@ -147,14 +147,45 @@
         <div class="row p-3">
             <p class="label h1">References:</p>
             <hr>
+            <div id="postReferences" name="postReferences">
+                <!-- References will be dynamically added here -->
+            </div>
             <div class="row">
                 <div class="mb-3">
-                    <ol id="postReferences" name="postReferences" class="list-group list-group-numbered" contenteditable="true">
-                        <li class="list-group-item"></li>
-                    </ol>
+                    <textarea id="addReferences" name="addReferences" class="form-control" rows="5" placeholder="Add references..." style="resize: none;"></textarea>
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="container post-content col-xl-8 col-xs-12 mt-3">
+        <div class="row">
+            <button type="button" id="addReferenceButton" class="btn text-white" style="background-color: #F06205;">Add Reference</button>
+        </div>
+        <script>
+            document.getElementById('addReferenceButton').addEventListener('click', function () {
+                var referenceText = document.getElementById('addReferences').value;
+                
+                if (referenceText.trim() !== "") {
+                    var referenceList = document.getElementById('postReferences');
+                    var newReference = document.createElement('div');
+                    newReference.className = 'mb-2 d-flex justify-content-between align-items-center';
+                    newReference.innerHTML = '<a href="' + referenceText + '" target="_blank" class="mb-0 me-2">' + referenceText + '</a>' +
+                    '<button type="button" class="btn btn-danger btn-sm delete-btn" style="background: none; border: none; color: #808080;">X</button>';
+                    referenceList.appendChild(newReference);
+    
+                    // Clear the input after adding a reference
+                    document.getElementById('addReferences').value = "";
+
+                    var deleteButtons = document.getElementsByClassName('delete-btn');
+                    for (var i = 0; i < deleteButtons.length; i++) {
+                        deleteButtons[i].addEventListener('click', function () {
+                        this.parentNode.remove();
+                        });
+                    }
+                }
+            });
+        </script>
     </div>
 
     <br>

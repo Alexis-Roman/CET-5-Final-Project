@@ -32,7 +32,7 @@ var instructionCount = 1;
                     <!-- INSTRUCTION -->
                     <div class="col post-instruction">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Add instruction here" name="instructionTitle" id="instructionTitle" style="background-color: #F06205; border: 0px"></textarea>
+                            <textarea class="form-control" name="instructionTitle" id="instructionTitle" style="background-color: #F06205; border: 0px"></textarea>
                             <label for="instructionTitle">Instruction</label>
                         </div>
                     </div>
