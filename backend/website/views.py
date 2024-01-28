@@ -54,15 +54,8 @@ def CreatePost():
     if request.method == "POST":
         category = request.form.get('chosenCat')
         title = request.form.get('postTitle')
-#        description = request.form.get('postDescription')
-#        materials = request.form.get('postMaterial')
-#        instruction_title = request.form.get('instructionTitle')
-#        instruction_description = request.form.get('stepDescription')
-#        reference = request.form.get('postReferences')
-#        image = request.files.get('instructionImage')
-#        image_filename = save_image(image)
 
-        if len(category) or len(title) == 0:
+        if len(category) == 0 or len(title) == 0:
             flash('Please fill up all the required forms', category='error')
         elif len(title) > 70:
             flash('Title reached maximum limit of characters', category='error')
@@ -71,15 +64,11 @@ def CreatePost():
             new_post = Post(
                 category=category, 
                 title=title,
-#                description=description,
-#                materials=materials,
-#                instruction_title=instruction_title,
-#                instruction_description=instruction_description,
                 user_id=current_user.id)
             db.session.add(new_post)
             db.session.commit()
             flash('Post created!', category='success')
-            return redirect(url_for('views.create-post'))
+            return redirect(url_for('views.CreatePost'))
 
     return render_template("Create-Post.html", user=current_user)
 

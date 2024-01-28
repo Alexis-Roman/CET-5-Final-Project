@@ -6,7 +6,7 @@ from sqlalchemy.sql import func
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     category =  db.Column(db.Integer)
-#    title = db.Column(db.String(1000))
+    title = db.Column(db.String(1000))
 #    description = db.Column(db.String(1000))
 #    materials = db.Column(db.String(1000))
 #    instruction_title = db.Column(db.String(1000))
