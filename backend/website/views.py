@@ -40,6 +40,7 @@ def forumClicked():
     return render_template("Forum-Clicked.html", user=current_user)
 
 @views.route('/post')
+@login_required
 def post():
     return render_template("Post-page.html", user=current_user) 
 
