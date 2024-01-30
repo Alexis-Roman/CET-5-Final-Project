@@ -46,17 +46,17 @@
                 <div class="col mt-2">
                     <div class="row text-center">
                         <div class="col like-num">
-                            <p class="h1">10</p>
+                            <p class="h1">0</p>
                             <p class="h6">Liked Post</p>
                         </div>
                         
                         <div class="col read-num">
-                            <p class="h1">10</p>
+                            <p class="h1">0</p>
                             <p class="h6">Read Post</p>
                             
                         </div>
                         <div class="col create-num">
-                            <p class="h1">10</p>
+                            <p class="h1">{{ current_user.posts|length }}</p>
                             <p class="h6">Created Post</p>
                             
                         </div>
@@ -110,35 +110,6 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                <div class="card favorite">
-                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body favorite">
-                    <p class="card-text category">How to recycle 'Category'</p>
-                    <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                <div class="card favorite">
-                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body favorite">
-                    <p class="card-text category">How to recycle 'Category'</p>
-                    <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                <div class="card favorite">
-                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body favorite">
-                    <p class="card-text category">How to recycle 'Category'</p>
-                    <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
-                    </div>
-                </div>
-            </div>
-            
-            
         </div>
     </div>
 </div>
@@ -151,62 +122,6 @@
         <div class="row topic">
             <div class="card topic">
                 <div class="row my-3 mx-2 ">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
-                    </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        <div class="row topic">
-            <div class="card topic g-3">
-                <div class="row my-3 mx-2">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
-                    </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        <div class="row topic">
-            <div class="card topic g-3">
-                <div class="row my-3 mx-2">
                     <div class="col">
                         <h4 class="card-title topic">Hello!</h4>
                         <p class="card-text topic">Glass Category</p>
