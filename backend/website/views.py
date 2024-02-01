@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Post
+from .models import Post, Discussions
 from . import db
 import os
 
@@ -35,8 +35,24 @@ def SRGlass():
 def forum():
     return render_template("Forum.html", user=current_user)
 
-@views.route('/createForum')
+@views.route('/createForum', methods=['GET', 'POST'])
+@login_required
 def forumClicked():
+    if request.method == "POST":
+        dTitle = request.form.get('discussionTitle')
+        dDescription = request.form.get('discussionDescription')
+
+        if not all([dTitle, dDescription]):
+            flash('Please fill up all the required forms', category='error')
+        elif len(dTitle) > 70:
+            flash('Title reached maximum limit of characters', category='error')
+        else:
+            new_discussion = Discussions(dTitle=dTitle, dDescription=dDescription)
+            db.session.add(new_discussion)
+            db.session.commit()
+            flash('Discussion created!', category='success')
+            return redirect(url_for('views.forum'))
+    
     return render_template("Create-Forum.html", user=current_user)
 
 @views.route('/Discussion')
