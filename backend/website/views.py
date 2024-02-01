@@ -35,7 +35,7 @@ def forum():
 
 @views.route('/forumClicked')
 def forumClicked():
-    return render_template("Forum-Clicked.html", user=current_user)
+    return render_template("Create-Forum.html", user=current_user)
 
 @views.route('/post')
 def post():
