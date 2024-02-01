@@ -86,35 +86,6 @@
                             </form>
                         </div>
                     </div>
-
-                    <script>
-                        document.getElementById('imageForm').addEventListener('click', function() {
-                            document.getElementById('instructionImage').click();
-                        });
-                
-                        document.getElementById('instructionImage').addEventListener('change', function() {
-                            var uploadedImage = document.getElementById('uploadedImage');
-                            var uploadLabel = document.getElementById('uploadLabel');
-                            var imageIcon = document.getElementById('imageIcon');
-                            var fileInput = document.getElementById('instructionImage');
-                            var file = fileInput.files[0];
-                            var reader = new FileReader();
-                
-                            reader.onload = function(e) {
-                                uploadedImage.src = e.target.result;
-                                uploadedImage.style.display = 'block';
-                                uploadLabel.style.display = 'none';
-                                imageIcon.style.display = 'none';
-                            };
-                
-                            reader.readAsDataURL(file);
-                        });
-                
-                        document.getElementById('uploadedImage').addEventListener('click', function() {
-                            document.getElementById('imageUpload').click();
-                        });
-                    </script>
-
                 </div>
 
                 <!-- IMG DESCRIPTION -->

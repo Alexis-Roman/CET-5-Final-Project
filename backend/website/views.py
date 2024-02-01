@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Post, Discussions
+from .models import Post, Discussions, IMG
 from . import db
+from werkzeug.utils import secure_filename
 import os
 
 views = Blueprint('views', __name__)
@@ -41,23 +42,22 @@ def forumClicked():
     if request.method == "POST":
         dTitle = request.form.get('discussionTitle')
         dDescription = request.form.get('discussionDescription')
-        dImage = request.files.get('imageUpload1')
+        pic = request.files['imageUpload1']
 
         if not all([dTitle, dDescription]):
             flash('Please fill up all the required forms', category='error')
         elif len(dTitle) > 70:
             flash('Title reached maximum limit of characters', category='error')
         else:
+            filename = secure_filename(pic.filename)
+            mimetype = pic.mimetype
+            img = IMG(img=pic.read(), mimetype=mimetype, name=filename)
             new_discussion = Discussions(dTitle=dTitle, dDescription=dDescription)
+            db.session.add(img)
             db.session.add(new_discussion)
             db.session.commit()
 
-            if dImage:
-                new_discussion.save_image(dImage)
-                db.session.commit()
-
-            flash('Discussion created!', category='success')
-            return redirect(url_for('views.forum'))
+        flash('Discussion created!', category='success')
     
     return render_template("Create-Forum.html", user=current_user)
 
