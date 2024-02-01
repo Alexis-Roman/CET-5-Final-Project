@@ -24,58 +24,58 @@
 {% block content %}
 <div class="mt-5"></div>
 <!-- FORUM -->
-<form method="post" action="/createForum">
-    <div class="container d-flex justify-content-center">
-        <div class="forum-content row justify-content-center" style="background-color: white;">
-            <div class="row justify-content-center">
-                <div class="forum" data-forum-id="7712">
-                <!-- TITLE -->
-                <!-- TITLE -->
-            <div class="my-3">
-                <label for="post-form-title" class="form-label"><strong>Title*</strong></label>
-                <textarea class="form-control" id="discussionTitle" name="discussionTitle" placeholder="Add title here" rows="1"></textarea>
-            </div>
-                <!-- IMG -->
-                <!-- IMG -->
-                <div class="row">
-                    <div class="container d-flex align-items-center justify-content-center mb-3" style="background-color: rgb(223, 223, 223); height: 450px; ">
-                        <div class="text-center">
-                            <form id="imageForm1">
-                                <label for="imageUpload1" id="uploadLabel1">
-                                    <div class="row text-center">
-                                        <p class="h1" style="font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">
-                                            [Insert Image Here]
-                                        </p>
-                                        <span class="material-icons" style="font-size: 48px; margin-top: 20px; cursor: pointer; color: gray;">
-                                            add_photo_alternate
-                                        </span>
-                                    </div>
-                                </label>
-                                <input type="file" id="imageUpload1" name="imageUpload1" accept="image/*" style="display: none;" />
-                                <img id="uploadedImage1" src="" style="height: 450px; background-position: center; background-size: cover;">
-                            </form>
-                        </div>
+
+<div class="container d-flex justify-content-center">
+    <div class="forum-content row justify-content-center" style="background-color: white;">
+        <div class="row justify-content-center">
+            <div class="forum" data-forum-id="7712">
+            <!-- TITLE -->
+            <!-- TITLE -->
+        <div class="my-3">
+            <label for="post-form-title" class="form-label"><strong>Title*</strong></label>
+            <textarea class="form-control" id="post-form-title" placeholder="Add title here" rows="1"></textarea>
+        </div>
+            <!-- IMG -->
+            <!-- IMG -->
+            <div class="row">
+                <div class="container d-flex align-items-center justify-content-center mb-3" style="background-color: rgb(223, 223, 223); height: 450px; ">
+                    <div class="text-center">
+                        
+                        <form id="imageForm1">
+                            <label for="imageUpload1" id="uploadLabel1">
+                                <div class="row text-center">
+                                    <p class="h1" style="font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">
+                                        [Insert Image Here]
+                                    </p>
+                                    <span class="material-icons" style="font-size: 48px; margin-top: 20px; cursor: pointer; color: gray;">
+                                        add_photo_alternate
+                                    </span>
+                                </div>
+                            </label>
+                            <input type="file" id="imageUpload1" name="imageUpload1" accept="image/*" style="display: none;" />
+                            <img id="uploadedImage1" src="" style="height: 450px; background-position: center; background-size: cover;">
+                        </form>
                     </div>
-                    <script src="{{ url_for('static', filename='js/image-display.js')}}"></script>
                 </div>
-            <!-- DESCRIPTION -->
-            <div class="col post-description">
-                <div class="mb-3 mt-3">
-                    <label for="exampleFormControlTextarea1" class="form-label"><strong>Description:*</strong></label>
-                    <textarea class="form-control" id="discussionDescription" placeholder="Add post description..." rows="5"></textarea>
-                </div>
+                <script src="{{ url_for('static', filename='js/image-display.js')}}"></script>
             </div>
-                </div>
+        <!-- DESCRIPTION -->
+        <div class="col post-description">
+            <div class="mb-3 mt-3">
+                <label for="exampleFormControlTextarea1" class="form-label"><strong>Description:*</strong></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Add post description..." rows="5"></textarea>
+            </div>
+        </div>
             </div>
         </div>
     </div>
-    <!-- <span class="br"></span> 
-    <span class="br"></span> -->
-    <div class="container col-3 p-3">
-        <div class="row justify-content-center mx-5"><button type="button" class="btn text-white justify-content-center" style="background-color:#08989F;">Submit</button></div>
-    </div>
-</form>
-<div class="mb-5"></div>    
+</div>
+<!-- <span class="br"></span> 
+<span class="br"></span> -->
+<div class="container col-3 p-3">
+    <div class="row justify-content-center mx-5"><button type="button" class="btn text-white justify-content-center" style="background-color:#08989F;">Submit</button></div>
+</div>
+<div class="mb-5"></div>
 {% endblock content %}
 </body>
 </html>
