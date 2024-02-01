@@ -41,6 +41,7 @@ def forumClicked():
     if request.method == "POST":
         dTitle = request.form.get('discussionTitle')
         dDescription = request.form.get('discussionDescription')
+        dImage = request.files.get('imageUpload1')
 
         if not all([dTitle, dDescription]):
             flash('Please fill up all the required forms', category='error')
@@ -50,6 +51,11 @@ def forumClicked():
             new_discussion = Discussions(dTitle=dTitle, dDescription=dDescription)
             db.session.add(new_discussion)
             db.session.commit()
+
+            if dImage:
+                new_discussion.save_image(dImage)
+                db.session.commit()
+
             flash('Discussion created!', category='success')
             return redirect(url_for('views.forum'))
     
