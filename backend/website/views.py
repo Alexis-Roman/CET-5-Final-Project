@@ -37,7 +37,7 @@ def forum():
 
 @views.route('/forumClicked')
 def forumClicked():
-    return render_template("Forum-Clicked.html", user=current_user)
+    return render_template("Create-Forum.html", user=current_user)
 
 @views.route('/post')
 @login_required
@@ -56,7 +56,6 @@ def CreatePost():
         category = request.form.get('chosenCat')
         title = request.form.get('postTitle')
         description = request.form.get('postDescription')
-        materials = request.form.get('postMaterial')
         instruction_title = request.form.get('instructionTitle')
         instruction_description = request.form.get('stepDescription')
         reference = request.form.getlist('references[]')
@@ -64,7 +63,7 @@ def CreatePost():
         image = request.files.get('instructionImage')
         image_filename = save_image(image)
 
-        if not all([category, title, description, materials, instruction_title, instruction_description, reference]):
+        if not all([category, title, description, instruction_title, instruction_description, reference]):
             flash('Please fill up all the required forms', category='error')
         elif len(title) > 70:
             flash('Title reached maximum limit of characters', category='error')
@@ -76,7 +75,6 @@ def CreatePost():
                 category=category, 
                 title=title,
                 description=description,
-                materials=materials,
                 instruction_title=instruction_title,
                 instruction_description=instruction_description,
                 user_id=current_user.id)

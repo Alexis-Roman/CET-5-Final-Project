@@ -8,7 +8,6 @@ class Post(db.Model):
     category =  db.Column(db.Integer)
     title = db.Column(db.String(1000))
     description = db.Column(db.String(1000))
-    materials = db.Column(db.String(1000))
     instruction_title = db.Column(db.String(1000))
     instruction_description = db.Column(db.String(10000))
     reference = db.Column(db.String(1000))
