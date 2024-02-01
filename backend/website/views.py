@@ -4,6 +4,7 @@ from .models import Post, Discussions, IMG
 from . import db
 from werkzeug.utils import secure_filename
 import os
+from sqlalchemy.exc import IntegrityError
 
 views = Blueprint('views', __name__)
 
@@ -42,22 +43,28 @@ def forumClicked():
     if request.method == "POST":
         dTitle = request.form.get('discussionTitle')
         dDescription = request.form.get('discussionDescription')
-        pic = request.files['imageUpload1']
+        pic = request.files['pic']
 
         if not all([dTitle, dDescription]):
             flash('Please fill up all the required forms', category='error')
         elif len(dTitle) > 70:
             flash('Title reached maximum limit of characters', category='error')
         else:
-            filename = secure_filename(pic.filename)
-            mimetype = pic.mimetype
-            img = IMG(img=pic.read(), mimetype=mimetype, name=filename)
-            new_discussion = Discussions(dTitle=dTitle, dDescription=dDescription)
-            db.session.add(img)
-            db.session.add(new_discussion)
-            db.session.commit()
-
-        flash('Discussion created!', category='success')
+            try:
+                filename = secure_filename(pic.filename)
+                mimetype = pic.mimetype
+                img = IMG(img=pic.read(), mimetype=mimetype, name=filename)
+                new_discussion = Discussions(dTitle=dTitle, dDescription=dDescription)
+                db.session.add(img)
+                db.session.add(new_discussion)
+                db.session.commit()
+                flash('Discussion created!', category='success')
+            except IntegrityError as e:
+                db.session.rollback()  # Rollback the transaction to avoid leaving the database in an inconsistent state
+                if 'UNIQUE constraint failed: img.img' in str(e):
+                    flash('Image file name is not unique', category='error')
+                else:
+                    flash('An error occurred during discussion creation', category='error')
     
     return render_template("Create-Forum.html", user=current_user)
 
