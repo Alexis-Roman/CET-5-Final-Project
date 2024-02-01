@@ -21,4 +21,10 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(150))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     posts = db.relationship('Post')
+    discussions = db.relationship('Discussions')
 
+class Discussions(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    dTitle = db.Column(db.String(1000))
+    dDescription = db.Column(db.String(1000))
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
