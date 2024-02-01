@@ -1,4 +1,11 @@
 /* NAVBAR */
+.navbar-nav .nav-link {
+    color: rgba(231, 231, 231, 0.765);
+}
+
+.navbar-nav .nav-link.active {
+    color: white;
+}
 .navbar{
     background-color: #08989F;
     height: 70px;
