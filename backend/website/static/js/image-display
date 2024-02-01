@@ -1,11 +1,25 @@
-const image_input = document.querySelector("#image_input");
-var uploaded_image = "";
+document.getElementById('imageForm1').addEventListener('click', function() {
+    document.getElementById('imageUpload1').click();
+});
 
-image_input.addEventListener("change", function(){
-    const reader = new FileReader();
-    reader.addEventListener("load", ()=> {
-        uploaded_image = reader.result;
-        document.querySelector("#image_display").style.backgroundImage =  `url(${uploaded_image})`;
-    });
-    reader.readAsDataURL(this.files[0]);
-})
+document.getElementById('imageUpload1').addEventListener('change', function() {
+    var uploadedImage = document.getElementById('uploadedImage1');
+    var uploadLabel = document.getElementById('uploadLabel1');
+    var imageIcon = document.getElementById('imageIcon');
+    var fileInput = document.getElementById('imageUpload1');
+    var file = fileInput.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+        uploadedImage.src = e.target.result;
+        uploadedImage.style.display = 'block';
+        uploadLabel.style.display = 'none';
+        imageIcon.style.display = 'none';
+    };
+
+    reader.readAsDataURL(file);
+});
+
+document.getElementById('uploadedImage1').addEventListener('click', function() {
+    document.getElementById('imageUpload1').click();
+});
