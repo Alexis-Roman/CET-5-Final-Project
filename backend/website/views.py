@@ -54,7 +54,10 @@ def forumClicked():
                 filename = secure_filename(pic.filename)
                 mimetype = pic.mimetype
                 img = IMG(img=pic.read(), mimetype=mimetype, name=filename)
-                new_discussion = Discussions(dTitle=dTitle, dDescription=dDescription)
+                new_discussion = Discussions(
+                    dTitle=dTitle, 
+                    dDescription=dDescription,
+                    user_id=current_user.id)
                 db.session.add(img)
                 db.session.add(new_discussion)
                 db.session.commit()
@@ -65,9 +68,8 @@ def forumClicked():
                     flash('Image file name is not unique', category='error')
                 else:
                     flash('An error occurred during discussion creation', category='error')
-        discussions = Discussions.query.all()
     
-    return render_template("Create-Forum.html", user=current_user, discussions=discussions)
+    return render_template("Create-Forum.html", user=current_user)
 
 @views.route('/Discussion/')
 def forumPost():
@@ -119,5 +121,4 @@ def CreatePost():
 @views.route('/account')
 @login_required
 def account():
-    discussions = Discussions.query.filter_by(user_id=current_user.id).all()
     return render_template("Account.html", user=current_user) 
