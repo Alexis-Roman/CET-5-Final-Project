@@ -1,7 +1,6 @@
 from . import db
 from flask_login import UserMixin
 from sqlalchemy.sql import func
-import os
 
 
 class Post(db.Model):
@@ -11,7 +10,7 @@ class Post(db.Model):
     description = db.Column(db.String(1000))
     instruction_title = db.Column(db.String(1000))
     instruction_description = db.Column(db.String(10000))
-    reference = db.Column(db.Text, nullable=False)
+    reference = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 

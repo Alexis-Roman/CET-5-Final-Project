@@ -65,10 +65,11 @@ def forumClicked():
                     flash('Image file name is not unique', category='error')
                 else:
                     flash('An error occurred during discussion creation', category='error')
+        discussions = Discussions.query.all()
     
-    return render_template("Create-Forum.html", user=current_user)
+    return render_template("Create-Forum.html", user=current_user, discussions=discussions)
 
-@views.route('/Discussion')
+@views.route('/Discussion/')
 def forumPost():
     return render_template("Forum-Clicked.html", user=current_user)
 
@@ -92,9 +93,6 @@ def CreatePost():
         instruction_title = request.form.get('instructionTitle')
         instruction_description = request.form.get('stepDescription')
         reference = request.form.getlist('references[]')
-        print("Received references:", reference)
-        image = request.files.get('instructionImage')
-        image_filename = save_image(image)
 
         if not all([category, title, description, instruction_title, instruction_description, reference]):
             flash('Please fill up all the required forms', category='error')
@@ -118,15 +116,8 @@ def CreatePost():
 
     return render_template("Create-Post.html", user=current_user)
 
-def save_image(image):
-    if image:
-        image_name = image.filename
-        image_path = os.path.join('backend/website/static/uploaded', image_name)  # Adjust the path as needed
-        image.save(image_path)
-        return image_name 
-    return None
-
 @views.route('/account')
 @login_required
 def account():
+    discussions = Discussions.query.filter_by(user_id=current_user.id).all()
     return render_template("Account.html", user=current_user) 
