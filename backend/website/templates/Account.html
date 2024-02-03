@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}Post{% endblock %}
+{% extends "base.html" %} {% block title %}User{% endblock %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -114,41 +114,46 @@
     </div>
 </div>
 
-<!-- BOOKMARK -->
+<!-- Discussion -->
 <div class="discussion container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
     <div class="row justify-content-center">
         <p class="label h1">Discussion</p>
         <hr>
         <div class="row topic">
-            <div class="card topic">
-                <div class="row my-3 mx-2 ">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
+            {% if user_discussions %}
+                {% for discussion in user_discussions %}
+                    <div class="card topic">
+                        <div class="row my-3 mx-2">
+                            <div class="col">
+                                <h4 class="card-title topic">{{ discussion.dTitle }}</h4>
+                            </div>
+                            <div class="col">
+                                <p class="author">
+                                    by: {{ current_user.username }}
+                                </p>
+                                <p class="date-time">
+                                    {{ discussion.date.strftime('%B %d, %Y %I:%M %p') }}
+                                </p>
+                                <!-- Add the rest of the discussion details here as needed -->
+                            </div>
+                            <div class="col">
+                                <p class="comment">
+                                    30 comments
+                                </p>
+                                <p class="like">
+                                    100 likes
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
+                {% endfor %}
+            {% else %}
+                <p>No discussions yet.</p>
+            {% endif %}
         </div>
-    </div>    
+    </div>   
 </div>
+
 </div>
 
 <!-- FOOTER -->

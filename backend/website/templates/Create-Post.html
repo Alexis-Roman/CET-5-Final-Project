@@ -50,13 +50,6 @@
                         <textarea class="form-control" id="postDescription" name="postDescription" placeholder="Add post description..." rows="5"></textarea>
                     </div>
                 </div>
-                <!-- MATERIALS NEEDED -->
-                    <div class="col post-description">
-                        <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label"><strong>Materials Needed:*</strong></label>
-                            <textarea class="form-control" id="postMaterial" name="postMaterial" placeholder="Add needed materials..." rows="5"></textarea>
-                        </div>
-                    </div>
             </div>
         </div>
     </div>
@@ -80,46 +73,16 @@
             <div class="container py-4" style="background-color: white;">
 
                 <!-- IMG -->
-                <div class="row">
-                    <div class="container d-flex align-items-center justify-content-center" style="background-color: rgb(223, 223, 223); height: 450px;">
-                        <div class="text-center">
-                            <form id="imageForm">
-                                <label for="instructionImage" id="uploadLabel" style="display: block; font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">[Insert Image Here]</label>
-                                <input type="file" id="instructionImage" name="instructionImage" accept="image/*" style="display: none;" />
-                                <img id="uploadedImage" src="" alt="Uploaded Image" style="width: 100%; height: 100%; max-height: 450px; cursor: pointer; display: none;">
-                                <img src="/backend/website/images/image icon.jpg" alt="Image Icon" id="imageIcon" style="width: 70px; height: 70px; margin-top: 20px; cursor: pointer;">
-                            </form>
-                        </div>
-                    </div>
-
-                    <script>
-                        document.getElementById('imageForm').addEventListener('click', function() {
-                            document.getElementById('instructionImage').click();
-                        });
-                
-                        document.getElementById('instructionImage').addEventListener('change', function() {
-                            var uploadedImage = document.getElementById('uploadedImage');
-                            var uploadLabel = document.getElementById('uploadLabel');
-                            var imageIcon = document.getElementById('imageIcon');
-                            var fileInput = document.getElementById('instructionImage');
-                            var file = fileInput.files[0];
-                            var reader = new FileReader();
-                
-                            reader.onload = function(e) {
-                                uploadedImage.src = e.target.result;
-                                uploadedImage.style.display = 'block';
-                                uploadLabel.style.display = 'none';
-                                imageIcon.style.display = 'none';
-                            };
-                
-                            reader.readAsDataURL(file);
-                        });
-                
-                        document.getElementById('uploadedImage').addEventListener('click', function() {
-                            document.getElementById('imageUpload').click();
-                        });
-                    </script>
-
+                <div class="container d-flex align-items-center justify-content-center mb-3" style="background-color: rgb(223, 223, 223); height: 450px; ">
+                    <label class="text-center" for="pic">
+                        <p class="h1" style="font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">
+                            [Insert Image Here]
+                        </p>
+                        <span class="material-icons" style="font-size: 48px; margin-top: 20px; cursor: pointer; color: gray;">
+                            add_photo_alternate
+                        </span>
+                    </label>
+                    <input type="file" name="pic" id="pic" style="display: none;"/>
                 </div>
 
                 <!-- IMG DESCRIPTION -->

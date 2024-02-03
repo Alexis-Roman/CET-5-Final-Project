@@ -1,8 +1,10 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for
 from flask_login import login_required, current_user
-from .models import Post
+from .models import Post, Discussions, IMG
 from . import db
+from werkzeug.utils import secure_filename
 import os
+from sqlalchemy.exc import IntegrityError
 
 views = Blueprint('views', __name__)
 
@@ -35,8 +37,42 @@ def SRGlass():
 def forum():
     return render_template("Forum.html", user=current_user)
 
-@views.route('/forumClicked')
+@views.route('/createForum', methods=['GET', 'POST'])
+@login_required
 def forumClicked():
+    if request.method == "POST":
+        dTitle = request.form.get('discussionTitle')
+        dDescription = request.form.get('discussionDescription')
+        pic = request.files['pic']
+
+        if not all([dTitle, dDescription]):
+            flash('Please fill up all the required forms', category='error')
+        elif len(dTitle) > 70:
+            flash('Title reached maximum limit of characters', category='error')
+        else:
+            try:
+                filename = secure_filename(pic.filename)
+                mimetype = pic.mimetype
+                img = IMG(img=pic.read(), mimetype=mimetype, name=filename)
+                new_discussion = Discussions(
+                    dTitle=dTitle, 
+                    dDescription=dDescription,
+                    user_id=current_user.id)
+                db.session.add(img)
+                db.session.add(new_discussion)
+                db.session.commit()
+                flash('Discussion created!', category='success')
+            except IntegrityError as e:
+                db.session.rollback()  # Rollback the transaction to avoid leaving the database in an inconsistent state
+                if 'UNIQUE constraint failed: img.img' in str(e):
+                    flash('Image file name is not unique', category='error')
+                else:
+                    flash('An error occurred during discussion creation', category='error')
+    
+    return render_template("Create-Forum.html", user=current_user)
+
+@views.route('/Discussion/')
+def forumPost():
     return render_template("Forum-Clicked.html", user=current_user)
 
 @views.route('/post')
@@ -56,15 +92,11 @@ def CreatePost():
         category = request.form.get('chosenCat')
         title = request.form.get('postTitle')
         description = request.form.get('postDescription')
-        materials = request.form.get('postMaterial')
         instruction_title = request.form.get('instructionTitle')
         instruction_description = request.form.get('stepDescription')
         reference = request.form.getlist('references[]')
-        print("Received references:", reference)
-        image = request.files.get('instructionImage')
-        image_filename = save_image(image)
 
-        if not all([category, title, description, materials, instruction_title, instruction_description, reference]):
+        if not all([category, title, description, instruction_title, instruction_description, reference]):
             flash('Please fill up all the required forms', category='error')
         elif len(title) > 70:
             flash('Title reached maximum limit of characters', category='error')
@@ -76,7 +108,6 @@ def CreatePost():
                 category=category, 
                 title=title,
                 description=description,
-                materials=materials,
                 instruction_title=instruction_title,
                 instruction_description=instruction_description,
                 user_id=current_user.id)
@@ -86,14 +117,6 @@ def CreatePost():
             return redirect(url_for('views.CreatePost'))
 
     return render_template("Create-Post.html", user=current_user)
-
-def save_image(image):
-    if image:
-        image_name = image.filename
-        image_path = os.path.join('backend/website/static/uploaded', image_name)  # Adjust the path as needed
-        image.save(image_path)
-        return image_name 
-    return None
 
 @views.route('/account')
 @login_required
