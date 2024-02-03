@@ -53,7 +53,11 @@ def forumClicked():
             try:
                 filename = secure_filename(pic.filename)
                 mimetype = pic.mimetype
-                img = IMG(img=pic.read(), mimetype=mimetype, name=filename)
+                img = IMG(
+                    img=pic.read(),
+                    mimetype=mimetype, 
+                    name=filename,
+                    user_id=current_user.id)
                 new_discussion = Discussions(
                     dTitle=dTitle, 
                     dDescription=dDescription,
@@ -62,6 +66,7 @@ def forumClicked():
                 db.session.add(new_discussion)
                 db.session.commit()
                 flash('Discussion created!', category='success')
+                return redirect(url_for('views.forumClicked'))
             except IntegrityError as e:
                 db.session.rollback()  # Rollback the transaction to avoid leaving the database in an inconsistent state
                 if 'UNIQUE constraint failed: img.img' in str(e):
