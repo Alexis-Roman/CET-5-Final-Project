@@ -13,6 +13,7 @@ class Post(db.Model):
     reference = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User', backref='posts', lazy=True)
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -20,9 +21,9 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String (150))
     username = db.Column(db.String(150))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
-    posts = db.relationship('Post')
-    discussions = db.relationship('Discussions')
-    images = db.relationship('IMG')
+    #posts = db.relationship('Post')
+    #discussions = db.relationship('Discussions')
+    #images = db.relationship('IMG')
 
 class Discussions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -30,11 +31,15 @@ class Discussions(db.Model):
     dDescription = db.Column(db.String(1000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User', backref='discussions', lazy=True)
+    image_id = db.Column(db.Integer, db.ForeignKey('img.id'))
+    image = db.relationship('IMG', backref='discussion', lazy=True)
 
 class IMG(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    img = db.Column(db.Text, unique=True, nullable=False)
+    img_filename = db.Column(db.String(255), nullable=False)
     name = db.Column(db.Text, nullable=False)
     mimetype = db.Column(db.Text, nullable=False)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    user = db.relationship('User', backref='images', lazy=True)

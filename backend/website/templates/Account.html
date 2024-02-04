@@ -125,7 +125,10 @@
                     <div class="card topic mb-3">
                         <div class="row my-3 mx-2">
                             <div class="col">
-                                <h4 class="card-title topic" style="margin-top: 10px;">{{ discussion.dTitle }}</h4>
+                                <!-- Link to discussion page -->
+                                <a href="{{ url_for('views.forumPost', discussion_id=discussion.id) }}">
+                                    <h4 class="card-title topic" style="margin-top: 10px;">{{ discussion.dTitle }}</h4>
+                                </a>
                             </div>
                             <div class="col" style="margin-top: 5px;">
                                 <p class="author">

@@ -1,11 +1,19 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for,abort
+from flask import Blueprint, render_template, request, flash, redirect, url_for,abort, current_app
 from flask_login import login_required, current_user
 from .models import Post, Discussions, IMG
 from . import db
 from werkzeug.utils import secure_filename
 from sqlalchemy.exc import IntegrityError
+import os
 
 views = Blueprint('views', __name__)
+
+UPLOAD_FOLDER = r'backend\website\static\images\UPLOADED IMG'
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg', 'gif'}
+
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @views.route('/')
 def home():
@@ -48,42 +56,51 @@ def forumClicked():
             flash('Please fill up all the required forms', category='error')
         elif len(dTitle) > 70:
             flash('Title reached maximum limit of characters', category='error')
-        else:
+        elif pic and allowed_file(pic.filename):
             try:
                 filename = secure_filename(pic.filename)
                 mimetype = pic.mimetype
-                img = IMG(
-                    img=pic.read(),
-                    mimetype=mimetype, 
-                    name=filename,
-                    user_id=current_user.id)
+
+                # Save the file to the designated folder
+                file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+                pic.save(file_path)
+
+                # Save the filename to the database
+                new_image = IMG(img_filename=file_path, name=filename, mimetype=mimetype, user_id=current_user.id)
+                db.session.add(new_image)
+                db.session.commit()
+
+                # Create a new discussion associated with the uploaded image
                 new_discussion = Discussions(
                     dTitle=dTitle, 
                     dDescription=dDescription,
-                    user_id=current_user.id)
-                db.session.add(img)
+                    user_id=current_user.id,
+                    image_id=new_image.id
+                )
                 db.session.add(new_discussion)
                 db.session.commit()
+
                 flash('Discussion created!', category='success')
                 return redirect(url_for('views.forumClicked'))
             except IntegrityError as e:
-                db.session.rollback()  # Rollback the transaction to avoid leaving the database in an inconsistent state
+                db.session.rollback()
                 if 'UNIQUE constraint failed: img.img' in str(e):
                     flash('Image file name is not unique', category='error')
                 else:
                     flash('An error occurred during discussion creation', category='error')
-    
+
     return render_template("Create-Forum.html", user=current_user)
+
 
 @views.route('/Discussion/<int:discussion_id>')
 def forumPost(discussion_id):
     discussion_data = Discussions.query.get(discussion_id)
 
-
     if not discussion_data:
         abort(404)
 
-    return render_template("Forum-Clicked.html", user=current_user)
+    return render_template("Forum-Clicked.html", user=current_user, discussion_data=discussion_data)
+
 
 @views.route('/post')
 @login_required
@@ -94,7 +111,6 @@ def post():
 def login():
     return render_template("Login.html", user=current_user)
 
-# CAN BE VIEWED WHEN LOGGED IN
 @views.route('/create-post', methods=['GET', 'POST'])
 @login_required
 def CreatePost():
