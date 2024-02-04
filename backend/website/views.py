@@ -1,9 +1,8 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for,abort
 from flask_login import login_required, current_user
 from .models import Post, Discussions, IMG
 from . import db
 from werkzeug.utils import secure_filename
-import os
 from sqlalchemy.exc import IntegrityError
 
 views = Blueprint('views', __name__)
@@ -53,7 +52,11 @@ def forumClicked():
             try:
                 filename = secure_filename(pic.filename)
                 mimetype = pic.mimetype
-                img = IMG(img=pic.read(), mimetype=mimetype, name=filename)
+                img = IMG(
+                    img=pic.read(),
+                    mimetype=mimetype, 
+                    name=filename,
+                    user_id=current_user.id)
                 new_discussion = Discussions(
                     dTitle=dTitle, 
                     dDescription=dDescription,
@@ -62,6 +65,7 @@ def forumClicked():
                 db.session.add(new_discussion)
                 db.session.commit()
                 flash('Discussion created!', category='success')
+                return redirect(url_for('views.forumClicked'))
             except IntegrityError as e:
                 db.session.rollback()  # Rollback the transaction to avoid leaving the database in an inconsistent state
                 if 'UNIQUE constraint failed: img.img' in str(e):
@@ -71,8 +75,14 @@ def forumClicked():
     
     return render_template("Create-Forum.html", user=current_user)
 
-@views.route('/Discussion/')
-def forumPost():
+@views.route('/Discussion/<int:discussion_id>')
+def forumPost(discussion_id):
+    discussion_data = Discussions.query.get(discussion_id)
+
+
+    if not discussion_data:
+        abort(404)
+
     return render_template("Forum-Clicked.html", user=current_user)
 
 @views.route('/post')
