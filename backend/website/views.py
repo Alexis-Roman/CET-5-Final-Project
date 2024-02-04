@@ -1,9 +1,8 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for,abort
 from flask_login import login_required, current_user
 from .models import Post, Discussions, IMG
 from . import db
 from werkzeug.utils import secure_filename
-import os
 from sqlalchemy.exc import IntegrityError
 
 views = Blueprint('views', __name__)
@@ -76,8 +75,14 @@ def forumClicked():
     
     return render_template("Create-Forum.html", user=current_user)
 
-@views.route('/Discussion/')
-def forumPost():
+@views.route('/Discussion/<int:discussion_id>')
+def forumPost(discussion_id):
+    discussion_data = Discussions.query.get(discussion_id)
+
+
+    if not discussion_data:
+        abort(404)
+
     return render_template("Forum-Clicked.html", user=current_user)
 
 @views.route('/post')

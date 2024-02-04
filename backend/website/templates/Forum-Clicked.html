@@ -37,15 +37,15 @@
                         <div class="col">
                             <div class="user-info row">
                                 <div class="col">
-                                    <p class="h5 username">username</p>
-                                    <p class="h6 post-date">posted date</p>
+                                    <p class="h5 username">{{ discussion_data.user.username }}</p>
+                                    <p class="h6 post-date">{{ discussion_data.date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <hr>
-                <div class="forum" data-forum-id="7712">
+            <div class="forum" data-forum-id="{{ discussion_data.id }}">
 
                 <!-- TITLE -->
                 <div class="row">
