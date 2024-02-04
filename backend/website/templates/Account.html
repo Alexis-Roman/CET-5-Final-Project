@@ -122,19 +122,18 @@
         <div class="row topic">
             {% if current_user.discussions|length > 0 %}
                 {% for discussion in current_user.discussions %}
-                    <div class="card topic">
+                    <div class="card topic mb-3">
                         <div class="row my-3 mx-2">
                             <div class="col">
-                                <h4 class="card-title topic">{{ discussion.dTitle }}</h4>
+                                <h4 class="card-title topic" style="margin-top: 10px;">{{ discussion.dTitle }}</h4>
                             </div>
-                            <div class="col">
+                            <div class="col" style="margin-top: 5px;">
                                 <p class="author">
                                     by: {{ current_user.username }}
                                 </p>
                                 <p class="date-time">
                                     {{ discussion.date.strftime('%B %d, %Y %I:%M %p') }}
                                 </p>
-                                <!-- Add the rest of the discussion details here as needed -->
                             </div>
                             <div class="col">
                                 <p class="comment">
