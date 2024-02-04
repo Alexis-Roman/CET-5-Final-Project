@@ -120,8 +120,8 @@
         <p class="label h1">Discussion</p>
         <hr>
         <div class="row topic">
-            {% if current_user.discussion|length > 0 %}
-                {% for discussion in user_discussions %}
+            {% if current_user.discussions|length > 0 %}
+                {% for discussion in current_user.discussions %}
                     <div class="card topic">
                         <div class="row my-3 mx-2">
                             <div class="col">
