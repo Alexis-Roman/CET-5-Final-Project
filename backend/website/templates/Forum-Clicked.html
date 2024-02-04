@@ -52,14 +52,16 @@
                     <p class="h4 forum-title">{{ discussion_data.dTitle }}</p>
                 </div>
 
+                <script>console.log("Image Path:", "{{ url_for('static', filename=discussion_data.img_filename) }}");</script>
+
                 <!-- IMG -->
                 <div class="row">
                     <div class="container d-flex justify-content-center" style="background-color: rgb(223, 223, 223); height: 450px;">
-                        <img class="forum-img" src="{{ url_for('static', filename=discussion_data.img)}}" alt="image not loading">
+                        <img class="forum-img" src="{{ url_for('static', filename='UPLOADED IMG/' + discussion_data.image.name) }}" alt="image not loading">
                     </div>
-                </div>
+                </div>                                
                 <div class="row">
-                    <p class="h6 message mt-3 mb-3">{{ discussion_data.dDescription }}</p>
+                    <p class="h6 message mt-3 mb-3" style="text-align: justify;">{{ discussion_data.dDescription }}</p>
                 </div>
 
                 <hr>
