@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for,abort, current_app
+from flask import Blueprint, render_template, request, flash, redirect, url_for,abort, current_app, jsonify
 from flask_login import login_required, current_user
 from .models import Post, Discussions, IMG
 from . import db
@@ -101,6 +101,33 @@ def forumPost(discussion_id):
         abort(404)
 
     return render_template("Forum-Clicked.html", user=current_user, discussion_data=discussion_data)
+
+@views.route('/like_dislike/<int:discussion_id>', methods=['POST'])
+@login_required
+def like_dislike(discussion_id):
+    discussion = Discussions.query.get(discussion_id)
+
+    if not discussion:
+        return jsonify({'error': 'Discussion not found'}), 404
+
+    is_like = request.json.get('is_like')
+
+    if is_like is None:
+        return jsonify({'error': 'Invalid request'}), 400
+
+    try:
+        if is_like:
+            discussion.likes += 1
+        else:
+            discussion.dislikes += 1
+
+        db.session.commit()
+
+        return jsonify({'likes': discussion.likes, 'dislikes': discussion.dislikes}), 200
+    except Exception as e:
+        print(e)
+        db.session.rollback()
+        return jsonify({'error': 'Failed to update like/dislike'}), 500
 
 
 @views.route('/post')

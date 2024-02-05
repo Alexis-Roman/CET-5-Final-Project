@@ -32,6 +32,8 @@ class Discussions(db.Model):
     user = db.relationship('User', backref='discussions', lazy=True)
     image_id = db.Column(db.Integer, db.ForeignKey('img.id'))
     image = db.relationship('IMG', backref='discussion', lazy=True)
+    likes = db.Column(db.Integer, default=0)
+    dislikes = db.Column(db.Integer, default=0)
 
 class IMG(db.Model):
     id = db.Column(db.Integer, primary_key=True)

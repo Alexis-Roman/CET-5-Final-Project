@@ -68,39 +68,59 @@
 
                 <!-- COUNT -->
                 <div class="forum-ratings-container row mb-3 d-flex">
-
                     <div class="forum-rating forum-rating col-2 d-flex justify-content-start">
-                        <span class="forum-rating-button material-icons px-2" id="likeBtn">thumb_up</span>
-                        <span class="forum-rating-count" id="likeCount">0</span>
+                        <span class="forum-rating-button material-icons px-2" id="likeBtn" onclick="handleLike()">thumb_up</span>
+                        <span class="forum-rating-count" id="likeCount">{{ discussion_data.likes }}</span>
                     </div>
                     
                     <div class="forum-rating forum-rating col-2 d-flex justify-content-start">
-                        <span class="forum-rating-button material-icons px-2" id="dislikeBtn">thumb_down</span>
-                        <span class="forum-rating-count" id="dislikeCount">0</span>
+                        <span class="forum-rating-button material-icons px-2" id="dislikeBtn" onclick="handleDislike()">thumb_down</span>
+                        <span class="forum-rating-count" id="dislikeCount">{{ discussion_data.dislikes }}</span>
                     </div>
-
                 </div>
+
                     <script>
-                        // Get the like and dislike buttons and count elements
-                        const likeBtn = document.getElementById('likeBtn');
-                        const dislikeBtn = document.getElementById('dislikeBtn');
-                        const likeCount = document.getElementById('likeCount');
-                        const dislikeCount = document.getElementById('dislikeCount');
+                        // JavaScript functions for handling likes and dislikes
+                        function handleLike() {
+                            // Implement logic to handle liking a discussion
+                            sendLikeDislikeRequest(true);
+                        }
                     
-                        // Initialize counts
-                        let likeCounter = 0;
-                        let dislikeCounter = 0;
+                        function handleDislike() {
+                            // Implement logic to handle disliking a discussion
+                            sendLikeDislikeRequest(false);
+                        }
                     
-                        // Add click event listeners
-                        likeBtn.addEventListener('click', function () {
-                            likeCounter++;
-                            likeCount.textContent = likeCounter;
-                        });
+                        // Function to send like/dislike data to the server
+                        function sendLikeDislikeRequest(isLike) {
+                            const discussionId = "{{ discussion_data.id }}";
                     
-                        dislikeBtn.addEventListener('click', function () {
-                            dislikeCounter++;
-                            dislikeCount.textContent = dislikeCounter;
-                        });
+                            // Use fetch API to send a POST request to the server
+                            fetch(`/like_dislike/${discussionId}`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    is_like: isLike,
+                                }),
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                // Handle the server response (if needed)
+                                console.log("Server Response:", data);
+                    
+                                // Update the like/dislike count on the front end
+                                if (isLike) {
+                                    document.getElementById('likeCount').textContent = data.likes;
+                                } else {
+                                    document.getElementById('dislikeCount').textContent = data.dislikes;
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
                     </script>
                 </div>
 
