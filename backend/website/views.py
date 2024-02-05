@@ -122,6 +122,7 @@ def CreatePost():
         instruction_title = request.form.get('instructionTitle')
         instruction_description = request.form.get('stepDescription')
         reference = request.form.getlist('references[]')
+        pic = request.files['pic']
 
         if not all([category, title, description, instruction_title, instruction_description, reference]):
             flash('Please fill up all the required forms', category='error')
@@ -129,19 +130,36 @@ def CreatePost():
             flash('Title reached maximum limit of characters', category='error')
         elif len(instruction_title) > 70:
             flash('Instruction title reached maximum limit of characters', category='error')
+        elif pic and allowed_file(pic.filename):
+            try:
+                filename = secure_filename(pic.filename)
+                mimetype = pic.mimetype
 
-        else:
-            new_post = Post(
-                category=category, 
-                title=title,
-                description=description,
-                instruction_title=instruction_title,
-                instruction_description=instruction_description,
-                user_id=current_user.id)
-            db.session.add(new_post)
-            db.session.commit()
-            flash('Post created!', category='success')
-            return redirect(url_for('views.CreatePost'))
+                file_path = os.path.join(current_app.config['UPLOAD_FOLDER'], filename)
+                pic.save(file_path)
+
+                new_image = IMG(img_filename=file_path, name=filename, mimetype=mimetype, user_id=current_user.id)
+                db.session.add(new_image)
+                db.session.commit()
+
+                new_post = Post(
+                    category=category, 
+                    title=title,
+                    description=description,
+                    instruction_title=instruction_title,
+                    instruction_description=instruction_description,
+                    user_id=current_user.id,
+                    image_id=new_image.id)
+                db.session.add(new_post)
+                db.session.commit()
+                flash('Post created!', category='success')
+                return redirect(url_for('views.CreatePost'))
+            except IntegrityError as e:
+                db.session.rollback()
+                if 'UNIQUE constraint failed: img.img' in str(e):
+                    flash('Image file name is not unique', category='error')
+                else:
+                    flash('An error occurred during discussion creation', category='error')
 
     return render_template("Create-Post.html", user=current_user)
 

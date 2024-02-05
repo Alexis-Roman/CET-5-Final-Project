@@ -47,16 +47,20 @@ var instructionCount = 1;
         <div class="container py-4" style="background-color: white;">
             <!-- IMG -->
             <div class="row">
-                    <div class="container d-flex align-items-center justify-content-center" style="background-color: rgb(223, 223, 223); height: 450px;">
-                        <div class="text-center">
-                            <form id="imageForm">
-                                <label for="imageUpload" id="uploadLabel" style="display: block; font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">[Insert Image Here]</label>
-                                <input type="file" id="imageUpload" name="imageUpload" accept="image/*" style="display: none;" />
-                                <img id="uploadedImage" src="" alt="Uploaded Image" style="width: 100%; height: 100%; max-height: 450px; cursor: pointer; display: none;">
-                                <img src="/backend/website/images/image icon.jpg" alt="Image Icon" id="imageIcon" style="width: 70px; height: 70px; margin-top: 20px; cursor: pointer;">
-                            </form>
+                    <div class="container d-flex align-items-center justify-content-center mb-3" style="background-color: rgb(223, 223, 223); height: 450px; ">
+                        <div class="text-center">   
+                            <label class="text-center" for="pic">
+                                <p class="h1" style="font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">
+                                [Display Image Here]
+                                </p>
+                                <span class="material-icons" style="font-size: 48px; margin-top: 20px; cursor: pointer; color: gray;">
+                                add_photo_alternate
+                                </span>
+                            </label>
                         </div>
                     </div>
+                    <br>
+                    <input type="file" name="pic" id="pic" style="display: none;"/>
 
                     <script>
                         document.getElementById('imageForm').addEventListener('click', function() {

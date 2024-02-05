@@ -12,6 +12,7 @@ class Post(db.Model):
     instruction_description = db.Column(db.String(10000))
     reference = db.Column(db.String(10000))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
+    image_id = db.Column(db.Integer, db.ForeignKey('img.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User', backref='posts', lazy=True)
 
@@ -21,9 +22,6 @@ class User(db.Model, UserMixin):
     password = db.Column(db.String (150))
     username = db.Column(db.String(150))
     date = db.Column(db.DateTime(timezone=True), default=func.now())
-    #posts = db.relationship('Post')
-    #discussions = db.relationship('Discussions')
-    #images = db.relationship('IMG')
 
 class Discussions(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -43,3 +41,4 @@ class IMG(db.Model):
     date = db.Column(db.DateTime(timezone=True), default=func.now())
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User', backref='images', lazy=True)
+    posts = db.relationship('Post', lazy=True)
