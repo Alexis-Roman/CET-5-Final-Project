@@ -51,13 +51,13 @@
                         </div>
                         
                         <div class="col read-num">
-                            <p class="h1">0</p>
-                            <p class="h6">Read Post</p>
+                            <p class="h1">{{ current_user.posts|length }}</p>
+                            <p class="h6">Created Post</p>
                             
                         </div>
                         <div class="col create-num">
-                            <p class="h1">{{ current_user.posts|length }}</p>
-                            <p class="h6">Created Post</p>
+                            <p class="h1">{{ current_user.discussions|length }}</p>
+                            <p class="h6">Created Discussion</p>
                             
                         </div>
                     </div>

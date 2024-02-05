@@ -42,7 +42,8 @@ def SRGlass():
 
 @views.route('/forum')
 def forum():
-    return render_template("Forum.html", user=current_user)
+    discussions = Discussions.query.all()
+    return render_template("Forum.html", user=current_user, discussions=discussions)
 
 @views.route('/createForum', methods=['GET', 'POST'])
 @login_required

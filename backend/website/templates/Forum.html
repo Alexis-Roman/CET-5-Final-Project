@@ -33,63 +33,90 @@
     </div>
 </div>
 
-<!-- RECENTLY DISCUSSED -->
+<!-- Latest -->
 <div class="discussion container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
     <div class="row justify-content-center">
-        <p class="label h1">Recently Discussed:</p>
+        <p class="label h1">Discussion</p>
         <hr>
-        <!-- SUBTOPIC STARTS HERE -->
-        <div class="row row-of-every-topic">
-            <a href="/Discussion" id="/Discussion">
-                <div class="container" style="margin-left: 20px; margin-bottom: 20px;">
-                    <div class="row">
+        <div class="row topic">
+            {% if discussions|length > 0 %}
+                {# Get the latest discussion by accessing the last element in the discussions list #}
+                {% set latest_discussion = discussions[-1] %}
+                
+                <div class="card topic mb-3">
+                    <div class="row my-3 mx-2">
                         <div class="col">
-                            <div class="row title">Upcycled lamp</div>
-                            <div class="row category">Category Glass</div>
+                            <!-- Link to discussion page -->
+                            <a href="{{ url_for('views.forumPost', discussion_id=latest_discussion.id) }}">
+                                <h4 class="card-title topic" style="margin-top: 10px;">{{ latest_discussion.dTitle }}</h4>
+                            </a>
                         </div>
-                        <div class="col" style="margin-top: 10px;">
-                            <div class="row author">by: 4Bids</div>
-                            <div class="row date-time">June. 18, 2023 12:15 PM</div>
+                        <div class="col" style="margin-top: 5px;">
+                            <p class="author">
+                                by: {{ latest_discussion.user.username }}
+                            </p>
+                            <p class="date-time">
+                                {{ latest_discussion.date.strftime('%B %d, %Y %I:%M %p') }}
+                            </p>
                         </div>
-                        <div class="col" style="margin-top: 10px;">
-                            <div class="row comments">90 comments</div>
-                            <div class="row likes">728 likes</div>
+                        <div class="col">
+                            <p class="comment">
+                                30 comments <!-- You may replace this with the actual comment count -->
+                            </p>
+                            <p class="like">
+                                100 likes <!-- You may replace this with the actual like count -->
+                            </p>
                         </div>
                     </div>
                 </div>
-            </a>
+            {% else %}
+                <p>No discussions yet.</p>
+            {% endif %}
         </div>
-        <hr>
-    </div>    
+    </div>   
 </div>
 
+
+<!-- Discussion -->
 <div class="discussion container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
     <div class="row justify-content-center">
-        <p class="label h1">All Discussion:</p>
+        <p class="label h1">Discussion</p>
         <hr>
-        <!-- SUBTOPIC STARTS HERE -->
-        <div class="row row-of-every-topic">
-            <a href="/Discussion" id="/Discussion">
-                <div class="container" style="margin-left: 20px; margin-bottom: 20px;">
-                    <div class="row">
-                        <div class="col">
-                            <div class="row title">Upcycled lamp</div>
-                            <div class="row category">Category Glass</div>
-                        </div>
-                        <div class="col" style="margin-top: 10px;">
-                            <div class="row author">by: 4Bids</div>
-                            <div class="row date-time">June. 18, 2023 12:15 PM</div>
-                        </div>
-                        <div class="col" style="margin-top: 10px;">
-                            <div class="row comments">90 comments</div>
-                            <div class="row likes">728 likes</div>
+        <div class="row topic">
+            {% if discussions|length > 0 %}
+                {% for discussion in discussions %}
+                    <div class="card topic mb-3">
+                        <div class="row my-3 mx-2">
+                            <div class="col">
+                                <!-- Link to discussion page -->
+                                <a href="{{ url_for('views.forumPost', discussion_id=discussion.id) }}">
+                                    <h4 class="card-title topic" style="margin-top: 10px;">{{ discussion.dTitle }}</h4>
+                                </a>
+                            </div>
+                            <div class="col" style="margin-top: 5px;">
+                                <p class="author">
+                                    by: {{ discussion.user.username }}
+                                </p>
+                                <p class="date-time">
+                                    {{ discussion.date.strftime('%B %d, %Y %I:%M %p') }}
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="comment">
+                                    30 comments <!-- You may replace this with the actual comment count -->
+                                </p>
+                                <p class="like">
+                                    100 likes <!-- You may replace this with the actual like count -->
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </a>
+                {% endfor %}
+            {% else %}
+                <p>No discussions yet.</p>
+            {% endif %}
         </div>
-        <hr>
-    </div>    
+    </div>   
 </div>
 
 <!-- FOOTER -->
