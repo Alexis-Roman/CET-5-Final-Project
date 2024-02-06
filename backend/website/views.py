@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for,abort, current_app, jsonify
 from flask_login import login_required, current_user
-from .models import Post, Discussions, IMG
+from .models import Post, Discussions, IMG, UserDiscussionLike
 from . import db
 from werkzeug.utils import secure_filename
 from sqlalchemy.exc import IntegrityError
@@ -115,19 +115,31 @@ def like_dislike(discussion_id):
     if is_like is None:
         return jsonify({'error': 'Invalid request'}), 400
 
+    # Check if the user has already liked this discussion
+    existing_like = UserDiscussionLike.query.filter_by(user_id=current_user.id, discussion_id=discussion_id).first()
+
     try:
-        if is_like:
-            discussion.likes += 1
+        if existing_like:
+            # If the user has already liked, remove their previous like
+            db.session.delete(existing_like)
         else:
-            discussion.dislikes += 1
+            # If the user hasn't liked, create a new like
+            new_like = UserDiscussionLike(user_id=current_user.id, discussion_id=discussion_id)
+            db.session.add(new_like)
+
+        # Update the discussion likes count
+        discussion.likes = UserDiscussionLike.query.filter_by(discussion_id=discussion_id).count()
 
         db.session.commit()
 
-        return jsonify({'likes': discussion.likes, 'dislikes': discussion.dislikes}), 200
+        return jsonify({'likes': discussion.likes}), 200
     except Exception as e:
         print(e)
         db.session.rollback()
         return jsonify({'error': 'Failed to update like/dislike'}), 500
+
+
+
 
 
 @views.route('/post')

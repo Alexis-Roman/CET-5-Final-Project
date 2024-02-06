@@ -44,3 +44,9 @@ class IMG(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
     user = db.relationship('User', backref='images', lazy=True)
     posts = db.relationship('Post', lazy=True)
+
+class UserDiscussionLike(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    discussion_id = db.Column(db.Integer, db.ForeignKey('discussions.id'), nullable=False)
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
