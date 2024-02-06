@@ -73,6 +73,45 @@
                         <span class="forum-rating-count" id="likeCount">{{ discussion_data.likes }}</span>
                     </div>
                 </div>
+                <!-- Like Script -->
+                    <script>
+                        // JavaScript functions for handling likes and dislikes
+                        function handleLike() {
+                            // Implement logic to handle liking a discussion
+                            sendLikeDislikeRequest(true);
+                        }
+                    
+                        // Function to send like/dislike data to the server
+                        function sendLikeDislikeRequest(isLike) {
+                            const discussionId = "{{ discussion_data.id }}";
+                    
+                            // Use fetch API to send a POST request to the server
+                            fetch(`/like_dislike/${discussionId}`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    is_like: isLike,
+                                }),
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                // Handle the server response (if needed)
+                                console.log("Server Response:", data);
+                    
+                                // Update the like/dislike count on the front end
+                                if (isLike) {
+                                    document.getElementById('likeCount').textContent = data.likes;
+                                } else {
+                                    document.getElementById('dislikeCount').textContent = data.dislikes;
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
+                    </script>
                 </div>
 
             </div>
@@ -147,46 +186,6 @@
 
 <div class="mb-5"></div>
 {% endblock content %}
-
-    <!-- Like Script -->
-    <script>
-        // JavaScript functions for handling likes and dislikes
-        function handleLike() {
-            // Implement logic to handle liking a discussion
-            sendLikeDislikeRequest(true);
-        }
-    
-        // Function to send like/dislike data to the server
-        function sendLikeDislikeRequest(isLike) {
-            const discussionId = "{{ discussion_data.id }}";
-    
-            // Use fetch API to send a POST request to the server
-            fetch(`/like_dislike/${discussionId}`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    is_like: isLike,
-                }),
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Handle the server response (if needed)
-                console.log("Server Response:", data);
-    
-                // Update the like/dislike count on the front end
-                if (isLike) {
-                    document.getElementById('likeCount').textContent = data.likes;
-                } else {
-                    document.getElementById('dislikeCount').textContent = data.dislikes;
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-        }
-    </script>
 
     <!-- Add Comment Script -->
     <script>
