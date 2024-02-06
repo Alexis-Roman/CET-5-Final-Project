@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, redirect, url_for,abort, current_app, jsonify
 from flask_login import login_required, current_user
-from .models import Post, Discussions, IMG, UserDiscussionVote
+from .models import Post, Discussions, IMG, UserDiscussionVote, Comment
 from . import db
 from werkzeug.utils import secure_filename
 from sqlalchemy.exc import IntegrityError
@@ -82,7 +82,8 @@ def forumClicked():
                 db.session.commit()
 
                 flash('Discussion created!', category='success')
-                return redirect(url_for('views.forumClicked'))
+                return redirect(url_for('views.forumPost', discussion_id=new_discussion.id))
+                
             except IntegrityError as e:
                 db.session.rollback()
                 if 'UNIQUE constraint failed: img.img' in str(e):
@@ -143,7 +144,29 @@ def like_dislike(discussion_id):
         db.session.rollback()
         return jsonify({'error': 'Failed to update like/dislike'}), 500
 
+@views.route('/submit_comment/<int:discussion_id>', methods=['POST'])
+@login_required
+def submit_comment(discussion_id):
+    try:
+        # Get the comment text from the request
+        comment_text = request.form.get('commentText')
 
+        # Validate the comment text (you can add more validation if needed)
+
+        # Create a new comment associated with the discussion
+        new_comment = Comment(
+            text=comment_text,
+            user_id=current_user.id,
+            discussion_id=discussion_id
+        )
+        db.session.add(new_comment)
+        db.session.commit()
+
+        # Return a success message
+        return jsonify({'message': 'Comment submitted successfully'}), 200
+    except Exception as e:
+        print(e)
+        return jsonify({'error': 'Failed to submit comment'}), 500
 
 @views.route('/post')
 @login_required

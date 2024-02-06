@@ -73,45 +73,6 @@
                         <span class="forum-rating-count" id="likeCount">{{ discussion_data.likes }}</span>
                     </div>
                 </div>
-
-                    <script>
-                        // JavaScript functions for handling likes and dislikes
-                        function handleLike() {
-                            // Implement logic to handle liking a discussion
-                            sendLikeDislikeRequest(true);
-                        }
-                    
-                        // Function to send like/dislike data to the server
-                        function sendLikeDislikeRequest(isLike) {
-                            const discussionId = "{{ discussion_data.id }}";
-                    
-                            // Use fetch API to send a POST request to the server
-                            fetch(`/like_dislike/${discussionId}`, {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                },
-                                body: JSON.stringify({
-                                    is_like: isLike,
-                                }),
-                            })
-                            .then(response => response.json())
-                            .then(data => {
-                                // Handle the server response (if needed)
-                                console.log("Server Response:", data);
-                    
-                                // Update the like/dislike count on the front end
-                                if (isLike) {
-                                    document.getElementById('likeCount').textContent = data.likes;
-                                } else {
-                                    document.getElementById('dislikeCount').textContent = data.dislikes;
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Error:', error);
-                            });
-                        }
-                    </script>
                 </div>
 
             </div>
@@ -124,14 +85,15 @@
     <div class="container d-flex justify-content-center">
         <div class="forum-content row justify-content-center px-4 py-2" style="background-color: white;">
             <p class="h6 mt-2">Add Comment</p>
-            <form>
+            <form id="commentForm" method="POST">
                 <div class="form-group">
+                    <label for="commentText">Your Comment:</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 </div>
-            </form>
             <div class="col my-3 d-flex justify-content-end">
                 <button class="btn btn-primary" type="submit">Comment</button>
             </div>
+            </form>
         </div>
     </div>
 
@@ -142,47 +104,123 @@
         <div class="forum-content row px-4 py-2" style="background-color: white;">
             <p class="h6 mt-2">Comments:</p>
             <hr>
-            <!-- User Comment -->
-            <div class="row d-flex">
-                <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
-                    <img class="comment-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
-                </div>
-                <div class="col-lg-8 col-sm-4 col-6">
-                    <div class="col">
-                        <div class="user-info row">
-                            <div class="col">
-                                <p class="h6 comment-username">username</p>
-                                <p class="h6 comment-post-date">posted date</p>
+    
+            <!-- Display existing comments -->
+            {% for comment in discussion_data.comments %}
+                <div class="row d-flex">
+                    <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
+                        <img class="comment-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
+                    </div>
+                    <div class="col-lg-8 col-sm-4 col-6">
+                        <div class="col">
+                            <div class="user-info row">
+                                <div class="col">
+                                    <p class="h6 comment-username">{{ comment.user.username }}</p>
+                                    <p class="h6 comment-post-date">{{ comment.date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-1 col-2"></div>
-                    <div class="col">
-                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
+                    <div class="row">
+                        <div class="col-lg-1 col-2"></div>
+                        <div class="col">
+                            <p class="comment">{{ comment.text }}</p>
+                        </div>
                     </div>
-                </div>
-                <!-- Likes etc -->
-                <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
-                    <div class="col-lg-1 col-2"></div>
-                    <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
-                        <span class="forum-rating-button material-icons px-2"> thumb_up </span>
-                        <span class="forum-rating-count">0</span>
+                    <!-- Likes etc -->
+                    <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
+                        <div class="col-lg-1 col-2"></div>
+                        <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                            <span class="forum-rating-button material-icons px-2"> thumb_up </span>
+                            <span class="forum-rating-count">{{ comment.likes }}</span>
+                        </div>
+                        <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                            <span class="forum-rating-button material-icons px-2"> thumb_down </span>
+                            <span class="forum-rating-count">{{ comment.dislikes }}</span>
+                        </div>
                     </div>
-                    <!-- <div class="col-1 d-flex justify-content-end">
-                        <p class="h6">#</p>
-                    </div> -->
-                    <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
-                        <span class="forum-rating-button material-icons px-2"> thumb_down </span>
-                        <span class="forum-rating-count">0</span>
-                    </div>
+                    <hr>
                 </div>
-                <hr>
-            </div>
+            {% endfor %}
         </div>
     </div>
+
 <div class="mb-5"></div>
 {% endblock content %}
+
+    <!-- Like Script -->
+    <script>
+        // JavaScript functions for handling likes and dislikes
+        function handleLike() {
+            // Implement logic to handle liking a discussion
+            sendLikeDislikeRequest(true);
+        }
+    
+        // Function to send like/dislike data to the server
+        function sendLikeDislikeRequest(isLike) {
+            const discussionId = "{{ discussion_data.id }}";
+    
+            // Use fetch API to send a POST request to the server
+            fetch(`/like_dislike/${discussionId}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    is_like: isLike,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the server response (if needed)
+                console.log("Server Response:", data);
+    
+                // Update the like/dislike count on the front end
+                if (isLike) {
+                    document.getElementById('likeCount').textContent = data.likes;
+                } else {
+                    document.getElementById('dislikeCount').textContent = data.dislikes;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+
+    <!-- Add Comment Script -->
+    <script>
+        // Function to handle form submission
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the comment text from the form
+            var commentText = document.getElementById('commentText').value;
+
+            // Send an AJAX request to the server to submit the comment
+            fetch('/submit_comment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    commentText: commentText,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the server response (if needed)
+                console.log("Server Response:", data);
+                // For example, you could display a success message to the user
+
+                // Clear the comment input field
+                document.getElementById('commentText').value = '';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors, if any
+            });
+        });
+    </script>
 </body>
 </html>

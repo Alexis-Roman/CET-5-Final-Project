@@ -51,3 +51,18 @@ class UserDiscussionVote(db.Model):
     discussion_id = db.Column(db.Integer, db.ForeignKey('discussions.id'), nullable=False)
     is_like = db.Column(db.Boolean, nullable=False)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
+
+class Comment(db.Model):
+    __tablename__ = 'comments'
+
+    id = db.Column(db.Integer, primary_key=True)
+    text = db.Column(db.Text, nullable=False)
+    date = db.Column(db.DateTime(timezone=True), default=func.now())
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    discussion_id = db.Column(db.Integer, db.ForeignKey('discussions.id'), nullable=False)
+    user = db.relationship('User', backref=db.backref('comments', lazy=True))
+    discussion = db.relationship('Discussions', backref=db.backref('comments', lazy=True))
+
+    def __repr__(self):
+        return f"Comment('{self.text}', '{self.date_posted}')"
+
