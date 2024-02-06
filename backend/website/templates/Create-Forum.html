@@ -35,10 +35,11 @@
                     </div>
                     <!-- IMG -->
                     <!-- IMG --> 
-                    <div class="container d-flex align-items-center justify-content-center mb-3" style="background-color: rgb(223, 223, 223); height: 450px; ">
+                    <!-- HTML code -->
+                    <div class="container d-flex align-items-center justify-content-center mb-3" id="imageContainer" style="background-color: rgb(223, 223, 223); height: 450px;">
                         <div class="text-center">   
                             <label class="text-center" for="pic">
-                                <p class="h1" style="font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">
+                                <p id="imagePreview" class="h1" style="font-family: 'Lato', sans-serif; font-weight: bold; font-size: 45px; color: #7E7E7E; margin-bottom: 20px;">
                                 [Display Image Here]
                                 </p>
                                 <span class="material-icons" style="font-size: 48px; margin-top: 20px; cursor: pointer; color: gray;">
@@ -48,7 +49,35 @@
                         </div>
                     </div>
                     <br>
-                    <input type="file" name="pic" id="pic" style="display: none;"/>
+                    <input type="file" name="pic" id="pic" style="display: none;" onchange="previewImage()"/>
+
+                    <script>
+                        // JavaScript code
+                        function previewImage() {
+                            const fileInput = document.getElementById('pic');
+                            const imageContainer = document.getElementById('imageContainer');
+                            const addPhotoSpan = document.querySelector('.material-icons');
+
+                            const file = fileInput.files[0];
+                            const reader = new FileReader();
+
+                            reader.onload = function(e) {
+                                imageContainer.style.backgroundImage = `url('${e.target.result}')`;
+                                imageContainer.style.backgroundSize = 'cover'; // Make sure the image covers the container
+                                imageContainer.style.backgroundPosition = 'center'; // Center the image within the container
+                                imageContainer.style.backgroundRepeat = 'no-repeat'; // Prevent image repetition
+                                document.getElementById('imagePreview').textContent = ''; // Clear the existing text content
+                                
+                                // Hide the span element
+                                addPhotoSpan.style.display = 'none';
+                            }
+
+                            if (file) {
+                                reader.readAsDataURL(file); // Convert the selected file to a Data URL
+                            }
+                        }
+
+                    </script>
                     
                     <!-- DESCRIPTION -->
                     <div class="col post-description">
