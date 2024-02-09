@@ -20,10 +20,22 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 {% block content %}
+<!-- BANNER -->
+<div class="banner-bg-plastic section p-5 text-center" style="background-image: url(static/images/background/account-var2.jpg);">
+    <div class="container" style="padding-block: 30px;">
+        <div>
+            <p class="h1 title">Create Post</p>
+            <p class="text-white mx-5 px-5">
+                Hey Upcyclers! 🌿 Ready to unleash your creative genius? Share your latest upcycling projects, get feedback, and inspire fellow members with your unique transformations. Whether it's turning old furniture into art or repurposing everyday items, let's showcase the magic of creative reuse. 🌟 Fill out our quick and easy Post Form to share the magic of your upcycling journey with the Upcycle community! 🎨✨ 
+            </p>
+        </div>
+        <button type="button" class="btn text-white py-2 px-5" style="background-color:#08989F;">Submit</button>
+    </div>
+</div>
 <div class="div my-5"></div>
 <div class="container">
 <!-- POST INFO-->
-<div class="container post-info col-xl-8 col-xs-12 pb-4" style="background-color: white;">
+<div class="container post-info col-xl-8 col-xs-12 pb-4 mt-2" style="background-color: white;">
     <div class="row">
         <!-- CATEGORY -->
         <div class="my-3">
@@ -60,8 +72,8 @@
                 <!-- INSTRUCTION -->
                 <div class="col post-instruction">
                     <div class="form-floating">
-                        <textarea class="form-control" placeholder="Add instruction here" id="floatingTextarea" style="background-color: #F06205; border: 0px"></textarea>
-                        <label for="floatingTextarea">Instruction*</label>
+                        <textarea class="form-control text-white form-instruction-title" placeholder="Add instruction here" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea" class="floating-label">Instruction*</label>
                     </div>
                 </div>
             </div>
@@ -109,7 +121,7 @@
 
 <div class="container post-content col-xl-8 col-xs-12 mt-3">
     <div class="row">
-        <button id="addInstructionButton" class="btn text-white" style="background-color: #F06205;">Add Instruction</button>
+        <button id="addInstructionButton" class="btn text-white" style="background-color: #007880; padding:10px;">Add Instruction</button>
     </div>
     <script src="{{ url_for('static', filename='js/new-instruction.js')}}"></script>
 </div>
@@ -129,7 +141,6 @@
 </div>
 
 <br>
-<div class="row justify-content-center mx-5"><button type="button" class="btn text-white justify-content-center" style="background-color:#08989F;">Submit</button></div>
 
 <div class="div my-5"></div>
 </div>

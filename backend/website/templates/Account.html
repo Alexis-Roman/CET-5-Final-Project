@@ -26,43 +26,41 @@
 <section class="banner profile-cover p-5" style="background-image: url(static/images/background/account-var8.jpg);">
     <div class="container">
         <div class="profile d-flex justify-content-center">
-            <div class="row col-xl-8 col-lg-8 col-11 profile py-5 px-3 rounded-4 shadow-sm align-items-center" style="background-color: white;">
+            <div class="row col-xl-8 col-lg-8 col-11 profile py-4 px-5 rounded-4 shadow-sm align-items-center" style="background-color: white;">
                 <div class="row d-flex justify-content-center">
                     <div class="col-4 col-md-2 d-flex my-3 justify-content-center align-items-center">
-                        <img class="account-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
+                        <img class="account-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder-sample.jpg')}}" alt="">
                     </div>
-                    <div class="col-6">
-                        <div class="row align-items-center">
-                            <p class="username h4">Username here</p>
+                    <div class="col-8 col-md-10 d-flex align-items-center">
+                        <div class="row">
+                            <p class="username account h5 ps-3">Username here</p>
+                            <p class="date-joined account m-0 ps-3"> Joined October 10, 2023</p>
                         </div>
-                        
-                        <p class="date-joined"> Joined October 10, 2023</p>
-                        <p class="signature">This will be my signature ^^!
-                            Nice to meet you~</p>
+                        <!-- <p class="signature account">This will be my signature ^^!
+                            Nice to meet you~</p> -->
                     </div>
                 </div>
                 <hr>
-                <h5>User Activity</h5>
+                <p class="h5 account activity">User Activity</p>
                 <div class="col mt-2">
                     <div class="row text-center">
-                        <div class="col like-num">
-                            <p class="h1">10</p>
-                            <p class="h6">Liked Post</p>
+                        <div class="col like-num ">
+                            <p class="h1 account">10</p>
+                            <p class="h6 account">VIEWED POST</p>
                         </div>
                         
                         <div class="col read-num">
-                            <p class="h1">10</p>
-                            <p class="h6">Read Post</p>
+                            <p class="h1 account">10</p>
+                            <p class="h6 account">STARTED DISCUSSION</p>
                             
                         </div>
                         <div class="col create-num">
-                            <p class="h1">10</p>
-                            <p class="h6">Created Post</p>
+                            <p class="h1 account">10</p>
+                            <p class="h6 account">CREATED POST</p>
                             
                         </div>
                     </div>
             </div>
-            
         </div>
     </div>
 </section>
@@ -70,9 +68,12 @@
 
 <div class="container contain-all">
     <!-- HISTORY -->
-    <div class="article container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
+    <div class="article container pt-2" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
         <div class="row justify-content-center">
-            <p class="label h1">History</p>
+            <div class="container-fluid rounded-2 my-3" style="background-color:#F06205; color: #ffffff">
+                <p class="account-header h3 py-2 m-0">USER ACTIVITY</p>
+            </div>
+            <p class="account-label h5">History</p>
             <hr>
             <div class="row history">
                 <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
@@ -120,7 +121,7 @@
 <!-- FAVORITE -->
 <div class="article container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
     <div class="row justify-content-center">
-        <p class="label h1">Favorite</p>
+        <p class="account-label h5">Favorite</p>
         <hr>
         <div class="row favorite">
             <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
@@ -168,92 +169,35 @@
 <!-- BOOKMARK -->
 <div class="discussion container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
     <div class="row justify-content-center">
-        <p class="label h1">Discussion</p>
+        <p class="account-label h5">Discussion</p>
         <hr>
-        <div class="row topic">
-            <div class="card topic">
-                <div class="row my-3 mx-2 ">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
-                    </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        <div class="row topic">
-            <div class="card topic g-3">
-                <div class="row my-3 mx-2">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
-                    </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
+        <!-- COPY THIS FOR FORUM CARD -->
+        <a href="#" style="text-decoration: none;">
+            <div class="row topic mx-1">
+                <div class="card topic" style="max-height: 100px;">
+                    <div class="row my-3 mx-2">
+                        <div class="col-5 text-truncate">
+                            <h4 class="card-title topic text-truncate">Hello!</h4>
+                            <p class="card-text topic text-truncate me-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, necessitatibus eos! Minima magnam aspernatur deleniti distinctio voluptatem in vel hic a culpa impedit, error et, corrupti unde officiis corporis quo.</p>
+                        </div>
+                        <div class="col text-truncate d-flex-col align-items-center">
+                            <p class="author-forum-card text-truncate m-0">
+                                by: 4Bids
+                            </p>
+    
+                            <p class="date-time m-0 text-truncate">
+                                June. 18, 2023 12:15 PM
+                            </p>
+                        </div>
+                        <div class="col text-truncate">
+                            <p class="comment text-truncate">
+                                # comments
+                            </p>
+                        </div>
                     </div>
                 </div>
-                
             </div>
-        </div>
-        <div class="row topic">
-            <div class="card topic g-3">
-                <div class="row my-3 mx-2">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
-                    </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
+        </a>
     </div>    
 </div>
 </div>

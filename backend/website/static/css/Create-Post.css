@@ -1,45 +1,3 @@
-/* NAVBAR */
-.navbar{
-    background-color: #08989F;
-    height: 70px;
-}
-a.navbar-brand, h5.offcanvas-title{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 25px;
-    font-weight: 700;
-    color: #fff;
-    margin: 0;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
-}
-div.offcanvas-header{
-    padding: 10px;
-}
-@media(max-width: 1200px){
-    .sidebar.offcanvas{
-        background-color: rgba(38, 208, 188, 0.55);
-        backdrop-filter: blur(5px);
-    }
-    ul.dropdown-menu{
-        background-color: rgba(255, 255, 255, 0.692);
-        border: 0px;
-    }
-    a.dropdown-item{
-        font-family: 'Poppins';
-    }
-    li.navbar{
-        padding: 0px;
-        margin: 0px;
-    }
-}
-    .login.text-white{
-        border: 1px solid white;
-        border-radius: 5px;
-    }
-    .signup.text-white{
-        background-color: #EC5300;
-        border-radius: 5px;
-    }
-
 /* FOOTER */
 footer.footer{
     background-image: url(../images/background/footer.png);
@@ -246,3 +204,26 @@ p.label.h1 {
 li.list-group-item::before{
     pointer-events: none;
 }
+/* ADDED FEB */
+.form-instruction-title:focus {
+    color: white;
+    background-color: #F06205 !important;
+    border-color: #F06205 !important; /* Set the desired border color when focused */
+    box-shadow: none !important; /* Remove the box shadow when focused */
+    outline: none !important; /* Remove the outline when focused */
+}
+textarea.form-instruction-title{
+    color: white;
+    background-color: #F06205;
+    outline: none;
+    border: none;
+}
+/* .floating-label {
+    
+    transition: background-color 0.3s;
+}
+
+.form-instruction-title:focus + .floating-label {
+    color: #EC5300;
+    background-color: #03696E;
+} */

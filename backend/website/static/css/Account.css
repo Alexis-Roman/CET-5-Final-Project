@@ -133,10 +133,7 @@ h5.card-title.history, h5.card-title.favorite{
     font-size: clamp(12px, 1vw, 14px);
 }
 
-p.author, p.date-time, p.comment, p.like {
-    font-size: clamp(12px, 1vw, 14px);
-    font-weight: 500;
-}
+
 
 /* div.container.contain-all{
 margin-top: 20%;
