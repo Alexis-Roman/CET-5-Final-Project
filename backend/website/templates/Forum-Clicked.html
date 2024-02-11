@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}Post{% endblock %}
+{% extends "base.html" %} {% block title %}Discussion{% endblock %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,217 +23,203 @@
 
 {% block content %}
 <div class="mt-5"></div>
-<!-- FORUM -->
+    <!-- FORUM -->
 
-<div class="container d-flex justify-content-center">
-    <div class="forum-content row justify-content-center" style="background-color: white;">
-        <div class="row justify-content-center">
-            <div class="row user mt-3 d-flex align-items-center">
-                <!-- <div class="col-2 like-dislike">
-                    <div class="row text-center align-items-start">
-                        <p class="like">like</p>
-                        <p class="like-num">#</p>
-                        <p class="dislike">dislike</p>
+    <div class="container d-flex justify-content-center">
+        <div class="forum-content row justify-content-center" style="background-color: white;">
+            <div class="row justify-content-center">
+                <div class="row user mt-3 d-flex align-items-center">
+                    <div class="col-lg-1 col-2 d-flex justify-content-end">
+                        <img class="profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
                     </div>
-                </div> -->
-                <!-- USER INFO -->
-                <div class="col-lg-1 col-2 d-flex justify-content-end">
-                    <img class="profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
-                </div>
-                
-                <div class="col-lg-8 col-sm-4 col-6">
-                    <div class="col">
-                        <div class="user-info row">
-                            <div class="col">
-                                <p class="h5 username">username</p>
-                                <p class="h6 post-date">posted date</p>
+                    
+                    <div class="col-lg-8 col-sm-4 col-6">
+                        <div class="col">
+                            <div class="user-info row">
+                                <div class="col">
+                                    <p class="h5 username">{{ discussion_data.user.username | default('N/A') }}</p>
+                                    <p class="h6 post-date">{{ discussion_data.date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <hr>
+            <div class="forum" data-forum-id="{{ discussion_data.id }}">
+
+                <!-- TITLE -->
+                <div class="row">
+                    <p class="h4 forum-title">{{ discussion_data.dTitle }}</p>
+                </div>
+
+                <script>console.log("Image Path:", "{{ url_for('static', filename=discussion_data.img_filename) }}");</script>
+
+                <!-- IMG -->
+                <div class="row">
+                    <div class="container d-flex justify-content-center" style="background-color: rgb(223, 223, 223); height: 450px;">
+                        <img class="forum-img" src="{{ url_for('static', filename='UPLOADED IMG/' + discussion_data.image.name) }}" alt="image not loading">
+                    </div>
+                </div>                                
+                <div class="row">
+                    <p class="h6 message mt-3 mb-3" style="text-align: justify;">{{ discussion_data.dDescription }}</p>
+                </div>
+
+                <hr>
+
+                <!-- COUNT -->
+                <div class="forum-ratings-container row mb-3 d-flex">
+                    <div class="forum-rating forum-rating col-2 d-flex justify-content-start">
+                        <span class="forum-rating-button material-icons px-2" id="likeBtn" onclick="handleLike()">thumb_up</span>
+                        <span class="forum-rating-count" id="likeCount">{{ discussion_data.likes }}</span>
+                    </div>
+                </div>
+                <!-- Like Script -->
+                    <script>
+                        // JavaScript functions for handling likes and dislikes
+                        function handleLike() {
+                            // Implement logic to handle liking a discussion
+                            sendLikeDislikeRequest(true);
+                        }
+                    
+                        // Function to send like/dislike data to the server
+                        function sendLikeDislikeRequest(isLike) {
+                            const discussionId = "{{ discussion_data.id }}";
+                    
+                            // Use fetch API to send a POST request to the server
+                            fetch(`/like_dislike/${discussionId}`, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    is_like: isLike,
+                                }),
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                // Handle the server response (if needed)
+                                console.log("Server Response:", data);
+                    
+                                // Update the like/dislike count on the front end
+                                if (isLike) {
+                                    document.getElementById('likeCount').textContent = data.likes;
+                                } else {
+                                    document.getElementById('dislikeCount').textContent = data.dislikes;
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                            });
+                        }
+                    </script>
+                </div>
+
             </div>
+        </div>
+    </div>
+
+    <span class="br"></span> 
+
+    <!-- ADD COMMENT -->
+    <div class="container d-flex justify-content-center">
+        <div class="forum-content row justify-content-center px-4 py-2" style="background-color: white;">
+            <p class="h6 mt-2">Add Comment</p>
+            <form id="commentForm" method="POST">
+                <div class="form-group">
+                    <label for="commentText">Your Comment:</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            <div class="col my-3 d-flex justify-content-end">
+                <button class="btn btn-primary" type="submit">Comment</button>
+            </div>
+            </form>
+        </div>
+    </div>
+
+    <span class="br"></span>
+    
+    <!-- COMMENT -->
+    <div class="container d-flex justify-content-center">
+        <div class="forum-content row px-4 py-2" style="background-color: white;">
+            <p class="h6 mt-2">Comments:</p>
             <hr>
-            <div class="forum" data-forum-id="7712">
-            <!-- TITLE -->
-            <div class="row">
-                <p class="h4 forum-title">Title placeholder</p>
-            </div>
-            <!-- IMG -->
-            <div class="row">
-                <div class="container d-flex justify-content-center" style="background-color: rgb(223, 223, 223); height: 450px;">
-                    <img class="forum-img" src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" alt="">
-                </div>
-            </div>
-            <div class="row">
-                <p class="h6 message mt-3 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum dolor possimus aspernatur error voluptas illo eius similique rem dolorem, est consectetur molestiae deserunt facilis at quidem ab ut fugit obcaecati!Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, in quod expedita suscipit incidunt cum, delectus hic eius eos, vitae dicta qui repudiandae ut ipsam aperiam similique. Harum, ab alias?</p>
-            </div>
-
-            <hr>
-            <!-- COUNT -->
-            <div class="forum-ratings-container row mb-3 d-flex">
-                <!-- <div class="col-1 d-flex justify-content-end">
-                    <p class="h6">#</p>
-                </div> -->
-                <div class="forum-rating forum-rating col-2 d-flex justify-content-start">
-                    <span class="forum-rating-button material-icons px-2"> thumb_up </span>
-                    <span class="forum-rating-count">0</span>
-                </div>
-                <!-- <div class="col-1 d-flex justify-content-end">
-                    <p class="h6">#</p>
-                </div> -->
-                <div class="forum-rating forum-rating col-2 d-flex justify-content-start">
-                    <span class="forum-rating-button material-icons px-2"> thumb_down </span>
-                    <span class="forum-rating-count">0</span>
-                </div>
-            </div>
-
-            </div>
-
-        </div>
-    </div>
-</div>
-<span class="br"></span> 
-<!-- ADD COMMENT -->
-<div class="container d-flex justify-content-center">
-    <div class="forum-content row justify-content-center px-4 py-2" style="background-color: white;">
-        <p class="h6 mt-2">Add Comment</p>
-        <form>
-            <div class="form-group">
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div>
-        </form>
-        <div class="col my-3 d-flex justify-content-end">
-            <button class="btn btn-primary" type="submit">Comment</button>
-        </div>
-    </div>
-</div>
-
-<span class="br"></span>
-<!-- COMMENT -->
-<div class="container d-flex justify-content-center">
-    <div class="forum-content row px-4 py-2" style="background-color: white;">
-        <p class="h6 mt-2">Comments:</p>
-        <hr>
-        <!-- USER INFO -->
-        <div class="row d-flex">
-            <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
-                <img class="comment-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
-            </div>
-            <div class="col-lg-8 col-sm-4 col-6">
-                <div class="col">
-                    <div class="user-info row">
+    
+            <!-- Display existing comments -->
+            {% for comment in discussion_data.comments %}
+                <div class="row d-flex">
+                    <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
+                        <img class="comment-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
+                    </div>
+                    <div class="col-lg-8 col-sm-4 col-6">
                         <div class="col">
-                            <p class="h6 comment-username">username</p>
-                            <p class="h6 comment-post-date">posted date</p>
+                            <div class="user-info row">
+                                <div class="col">
+                                    <p class="h6 comment-username">{{ comment.user.username }}</p>
+                                    <p class="h6 comment-post-date">{{ comment.date.strftime('%Y-%m-%d %H:%M:%S') }}</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-1 col-2"></div>
-                <div class="col">
-                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
-                </div>
-            </div>
-        <!-- COUNT -->
-        <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
-            <div class="col-lg-1 col-2"></div>
-            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
-                <span class="forum-rating-button material-icons px-2"> thumb_up </span>
-                <span class="forum-rating-count">0</span>
-            </div>
-            <!-- <div class="col-1 d-flex justify-content-end">
-                <p class="h6">#</p>
-            </div> -->
-            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
-                <span class="forum-rating-button material-icons px-2"> thumb_down </span>
-                <span class="forum-rating-count">0</span>
-            </div>
-        </div>
-        <hr>
-        </div>
-
-        <!-- OTHER COMMENT -->
-        <!-- USER INFO -->
-        <div class="row">
-            <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
-                <img class="comment-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
-            </div>
-            <div class="col-lg-8 col-sm-4 col-6">
-                <div class="col">
-                    <div class="user-info row">
+                    <div class="row">
+                        <div class="col-lg-1 col-2"></div>
                         <div class="col">
-                            <p class="h6 comment-username">username</p>
-                            <p class="h6 comment-post-date">posted date</p>
+                            <p class="comment">{{ comment.text }}</p>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-1 col-2"></div>
-                <div class="col">
-                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
-                </div>
-            </div>
-        <!-- COUNT -->
-        <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
-            <div class="col-lg-1 col-2"></div>
-            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
-                <span class="forum-rating-button material-icons px-2"> thumb_up </span>
-                <span class="forum-rating-count">0</span>
-            </div>
-            <!-- <div class="col-1 d-flex justify-content-end">
-                <p class="h6">#</p>
-            </div> -->
-            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
-                <span class="forum-rating-button material-icons px-2"> thumb_down </span>
-                <span class="forum-rating-count">0</span>
-            </div>
-        </div>
-        <hr>
-        </div>
-
-        <!-- USER INFO -->
-        <div class="row d-flex">
-            <div class="col-lg-1 col-2 d-flex justify-content-end align-items-center">
-                <img class="comment-profile-img" src="{{ url_for('static', filename='images/img/profileimg-placeholder.jpg')}}" alt="">
-            </div>
-            <div class="col-lg-8 col-sm-4 col-6">
-                <div class="col">
-                    <div class="user-info row">
-                        <div class="col">
-                            <p class="h6 comment-username">username</p>
-                            <p class="h6 comment-post-date">posted date</p>
+                    <!-- Likes etc -->
+                    <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
+                        <div class="col-lg-1 col-2"></div>
+                        <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                            <span class="forum-rating-button material-icons px-2"> thumb_up </span>
+                            <span class="forum-rating-count">{{ comment.likes }}</span>
+                        </div>
+                        <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
+                            <span class="forum-rating-button material-icons px-2"> thumb_down </span>
+                            <span class="forum-rating-count">{{ comment.dislikes }}</span>
                         </div>
                     </div>
+                    <hr>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-1 col-2"></div>
-                <div class="col">
-                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus excepturi autem eos sint eligendi facilis aliquid quasi magnam temporibus nostrum voluptate suscipit cupiditate possimus repellendus nesciunt quod saepe, eaque culpa.</p>
-                </div>
-            </div>
-        <!-- COUNT -->
-        <div class="forum-ratings-container row mb-3 d-flex" style="justify-content: end;">
-            <div class="col-lg-1 col-2"></div>
-            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
-                <span class="forum-rating-button material-icons px-2"> thumb_up </span>
-                <span class="forum-rating-count">0</span>
-            </div>
-            <!-- <div class="col-1 d-flex justify-content-end">
-                <p class="h6">#</p>
-            </div> -->
-            <div class="forum-rating forum-rating col-2 d-flex justify-content-end">
-                <span class="forum-rating-button material-icons px-2"> thumb_down </span>
-                <span class="forum-rating-count">0</span>
-            </div>
-        </div>
-        <hr>
+            {% endfor %}
         </div>
     </div>
-</div>
+
 <div class="mb-5"></div>
 {% endblock content %}
+
+    <!-- Add Comment Script -->
+    <script>
+        // Function to handle form submission
+        document.getElementById('commentForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the comment text from the form
+            var commentText = document.getElementById('commentText').value;
+
+            // Send an AJAX request to the server to submit the comment
+            fetch('/submit_comment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    commentText: commentText,
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the server response (if needed)
+                console.log("Server Response:", data);
+                // For example, you could display a success message to the user
+
+                // Clear the comment input field
+                document.getElementById('commentText').value = '';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors, if any
+            });
+        });
+    </script>
 </body>
 </html>

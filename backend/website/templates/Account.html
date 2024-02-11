@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block title %}Post{% endblock %}
+{% extends "base.html" %} {% block title %}User{% endblock %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,10 +33,10 @@
                     </div>
                     <div class="col-6">
                         <div class="row align-items-center">
-                            <p class="username h4">Username here</p>
+                            <p class="username h4" style="margin-left: 10px;">{{current_user.username}}</p>
                         </div>
                         
-                        <p class="date-joined"> Joined October 10, 2023</p>
+                        <p class="date-joined"> Joined {{ current_user.date.strftime('%B %d, %Y') }}</p>
                         <p class="signature">This will be my signature ^^!
                             Nice to meet you~</p>
                     </div>
@@ -46,18 +46,18 @@
                 <div class="col mt-2">
                     <div class="row text-center">
                         <div class="col like-num">
-                            <p class="h1">10</p>
+                            <p class="h1">0</p>
                             <p class="h6">Liked Post</p>
                         </div>
                         
                         <div class="col read-num">
-                            <p class="h1">10</p>
-                            <p class="h6">Read Post</p>
+                            <p class="h1">{{ current_user.posts|length }}</p>
+                            <p class="h6">Created Post</p>
                             
                         </div>
                         <div class="col create-num">
-                            <p class="h1">10</p>
-                            <p class="h6">Created Post</p>
+                            <p class="h1">{{ current_user.discussions|length }}</p>
+                            <p class="h6">Created Discussion</p>
                             
                         </div>
                     </div>
@@ -75,44 +75,22 @@
             <p class="label h1">History</p>
             <hr>
             <div class="row history">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                    <div class="card history">
-                        <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body history">
-                        <p class="card-text category">How to recycle 'Category'</p>
-                        <h5 class="card-title history">TITLE PLACEHOLDER</h5>
+                {% if current_user.posts|length > 0 %}
+                {% for post in current_user.posts %}
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
+                        <div class="card history">
+                            <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
+                            <div class="card-body history">
+                                <p class="card-text category">How to recycle {{ post.category }}</p>
+                                <h5 class="card-title history">{{ post.title }}</h5>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                    <div class="card history">
-                        <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body history">
-                        <p class="card-text category">How to recycle 'Category'</p>
-                        <h5 class="card-title history">TITLE PLACEHOLDER</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                    <div class="card history">
-                        <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body history">
-                        <p class="card-text category">How to recycle 'Category'</p>
-                        <h5 class="card-title history">TITLE PLACEHOLDER</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                    <div class="card history">
-                        <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                        <div class="card-body history">
-                        <p class="card-text category">How to recycle 'Category'</p>
-                        <h5 class="card-title history">TITLE PLACEHOLDER</h5>
-                        </div>
-                    </div>
-                </div>
-                
-                
+                {% endfor %}
+                {% else %}
+                    {# Display a message if the user has no posts #}
+                    <p>No posts yet.</p>
+                {% endif %}
             </div>
         </div>
     </div>
@@ -132,130 +110,52 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                <div class="card favorite">
-                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body favorite">
-                    <p class="card-text category">How to recycle 'Category'</p>
-                    <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                <div class="card favorite">
-                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body favorite">
-                    <p class="card-text category">How to recycle 'Category'</p>
-                    <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6 col-6 g-3">
-                <div class="card favorite">
-                    <img src="{{ url_for('static', filename='images/img/card-placeholder.png')}}" class="card-img-top" alt="...">
-                    <div class="card-body favorite">
-                    <p class="card-text category">How to recycle 'Category'</p>
-                    <h5 class="card-title favorite">TITLE PLACEHOLDER</h5>
-                    </div>
-                </div>
-            </div>
-            
-            
         </div>
     </div>
 </div>
 
-<!-- BOOKMARK -->
+<!-- Discussion -->
 <div class="discussion container" style="background-color: white; margin-top: 2%; padding: 3%; margin-bottom: 2%;">
     <div class="row justify-content-center">
         <p class="label h1">Discussion</p>
         <hr>
         <div class="row topic">
-            <div class="card topic">
-                <div class="row my-3 mx-2 ">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
+            {% if current_user.discussions|length > 0 %}
+                {% for discussion in current_user.discussions %}
+                    <div class="card topic mb-3">
+                        <div class="row my-3 mx-2">
+                            <div class="col">
+                                <!-- Link to discussion page -->
+                                <a href="{{ url_for('views.forumPost', discussion_id=discussion.id) }}">
+                                    <h4 class="card-title topic" style="margin-top: 10px;">{{ discussion.dTitle }}</h4>
+                                </a>
+                            </div>
+                            <div class="col" style="margin-top: 5px;">
+                                <p class="author">
+                                    by: {{ current_user.username }}
+                                </p>
+                                <p class="date-time">
+                                    {{ discussion.date.strftime('%B %d, %Y %I:%M %p') }}
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p class="comment">
+                                    30 comments
+                                </p>
+                                <p class="like">
+                                    {{ discussion.likes }} likes
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
+                {% endfor %}
+            {% else %}
+                <p>No discussions yet.</p>
+            {% endif %}
         </div>
-        <div class="row topic">
-            <div class="card topic g-3">
-                <div class="row my-3 mx-2">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
-                    </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        <div class="row topic">
-            <div class="card topic g-3">
-                <div class="row my-3 mx-2">
-                    <div class="col">
-                        <h4 class="card-title topic">Hello!</h4>
-                        <p class="card-text topic">Glass Category</p>
-                    </div>
-                    <div class="col">
-                        <p class="author">
-                            by: 4Bids
-                        </p>
-
-                        <p class="date-time">
-                            June. 18, 2023 12:15 PM
-                        </p>
-                    </div>
-                    <div class="col">
-                        <p class="comment">
-                            30 comments
-                        </p>
-                        <p class="like">
-                            100 likes
-                        </p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-    </div>    
+    </div>   
 </div>
+
 </div>
 
 <!-- FOOTER -->
